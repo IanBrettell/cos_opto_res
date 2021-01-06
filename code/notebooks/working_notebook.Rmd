@@ -1,7 +1,26 @@
 ---
-title: "R Notebook"
+title: "COSMIKK behaviour notebook"
 output: html_notebook
 editor_options: 
   chunk_output_type: inline
 ---
+
+# Setup
+
+# Test data
+
+Test video here on local: `~/Documents/Data/20210104_cos_videos/recorded_with_iphone.avi`
+
+Tried segmenting using `idtrackerai`, but it couldn't distinguish the fish against the background.
+As there are no crossovers, try `ilastik` intead.
+
+## Convert AVI to H5 for Ilastik
+
+```{r, engine='bash'}
+python3 code/scripts/20210106_avi2h5_fynn.py \
+  ~/Documents/Data/20210104_cos_videos/recorded_with_iphone.avi \
+  ~/Documents/Data/20210104_cos_videos/recorded_with_iphone.h5
+```
+
+## Start Ilastik project
 
