@@ -1,4 +1,5 @@
 {
     "julia.environmentPath": "/Users/brettell/Documents/Repositories/cos_behaviour/envs/julia",
-    "python.pythonPath": "/Users/brettell/opt/anaconda3/envs/cos_env/bin/python"
+    "python.pythonPath": "/Users/brettell/opt/anaconda3/envs/fst_env/bin/python",
+    "workbench.colorTheme": "One Dark Pro"
 }
