@@ -1,0 +1,44 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 5000
+Job counts:
+	count	jobs
+	1	all
+	2	tif2h5
+	3
+
+[Sun Feb 21 13:47:54 2021]
+rule tif2h5:
+    input: ../videos/20210203/raw/20210203_cab_50_green_80_op_0.6_sp-2_MMStack_Default.ome-004.tif
+    output: ../videos/20210203/h5s/20210203_cab_50_green_80_op_0.6_sp-2_MMStack_Default.ome-004.h5
+    jobid: 2
+    wildcards: sample=20210203_cab_50_green_80_op_0.6_sp-2_MMStack_Default.ome-004
+
+Submitted job 2 with external jobid 'Job <7705145> is submitted to default queue <research-rh74>.'.
+
+[Sun Feb 21 13:47:55 2021]
+rule tif2h5:
+    input: ../videos/20210203/raw/20210203_cab_50_green_90_op_0.6_sp_MMStack_Default.ome-006.tif
+    output: ../videos/20210203/h5s/20210203_cab_50_green_90_op_0.6_sp_MMStack_Default.ome-006.h5
+    jobid: 1
+    wildcards: sample=20210203_cab_50_green_90_op_0.6_sp_MMStack_Default.ome-006
+
+Submitted job 1 with external jobid 'Job <7705146> is submitted to default queue <research-rh74>.'.
+[Sun Feb 21 13:50:16 2021]
+Error in rule tif2h5:
+    jobid: 2
+    output: ../videos/20210203/h5s/20210203_cab_50_green_80_op_0.6_sp-2_MMStack_Default.ome-004.h5
+    cluster_jobid: Job <7705145> is submitted to default queue <research-rh74>.
+
+Error executing rule tif2h5 on cluster (jobid: 2, external: Job <7705145> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.vqe8ypbu/snakejob.tif2h5.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Feb 21 13:50:16 2021]
+Error in rule tif2h5:
+    jobid: 1
+    output: ../videos/20210203/h5s/20210203_cab_50_green_90_op_0.6_sp_MMStack_Default.ome-006.h5
+    cluster_jobid: Job <7705146> is submitted to default queue <research-rh74>.
+
+Error executing rule tif2h5 on cluster (jobid: 1, external: Job <7705146> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.vqe8ypbu/snakejob.tif2h5.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/log/2021-02-21T134754.173500.snakemake.log

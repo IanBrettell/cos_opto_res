@@ -1,0 +1,78 @@
+# Bash script to run on EBI cluster:
+#
+# cd /hps/research1/birney/users/ian/opto_res/cos_opto_res
+# conda activate snakemake
+# snakemake \
+#   --jobs 5000 \
+#   --latency-wait 100 \
+#   --cluster-config code/snakemake/20210203/config/cluster.json \
+#   --cluster 'bsub -g /snakemake_bgenie -J {cluster.name} -n {cluster.n} -M {cluster.memory} -o {cluster.output} -e {cluster.error}' \
+#   --keep-going \
+#   --rerun-incomplete \
+#   --use-conda \
+#   -s code/snakemake/20210203/Snakefile \
+#   -p
+
+# import functions and packages
+from os.path import join
+
+# Load config file and provide content as config object
+
+configfile: "code/snakemake/20210203/config/config.yaml"
+
+# Load samples to process
+
+SAMPLES, = glob_wildcards(join(config["output_dir"], "raw/{sample}.tif"))
+
+# Rules
+
+rule all:
+    input:
+        expand(join(config["output_dir"], "h5s/{sample}.h5"),
+            sample = SAMPLES),
+        expand(join(config["output_dir"], "h5s/{sample}_Probabilities.h5"),
+            sample = SAMPLES)
+
+rule tif2h5:
+    input:
+        join(config["output_dir"], "raw/{sample}.tif")
+    output:
+        join(config["output_dir"], "h5s/{sample}.h5")
+    run:
+        cmd = f"{config['fiji']} --ij2 --headless --console --run {config['convert_to_h5_script']} 'input_tif=\"{input[0]}\",output_h5=\"{output}\"'"
+        shell(cmd)
+
+rule ilastik_probs:
+    input:
+        join(config["output_dir"], "h5s/{sample}.h5")
+    output:
+        join(config["output_dir"], "h5s/{sample}_Probabilities.h5")
+    shell:
+        "{config[ilastik]} \
+          --headless \
+          --project={config[ilastik_project_pixclass]} \
+          --readonly \
+          --raw_data={input} \
+          --export_source=\"Probabilities\" \
+          --output_filename_format={output}"
+
+#rule track:
+#    input:
+#        "split/{sample}_{quadrant}_{assay}.mp4"
+##    params:
+##        intensity = [SAMPLES.loc["{sample}", 'intensity_floor'], SAMPLES.loc["{sample}", 'intensity_ceiling']],
+##        area = [SAMPLES.loc["{sample}", 'area_floor'], SAMPLES.loc["{sample}", 'area_ceiling']],
+##        range = [0, SAMPLES.loc["{sample}", 'of_video_length']] if "{assay}" == "open_field" else [0, SAMPLES.loc["{sample}", 'no_video_length']],
+##        session_name = "{sample}_{quadrant}_{assay}"
+#    output:
+#        "idtrackerai/session_{sample}_{quadrant}_{assay}/trajectories_wo_gaps.npy"
+#    singularity:
+#        config["idtrackerai_cont"]
+##    conda:
+##        config["idtrackerai_env"]
+#    shell:
+#        """
+#        set +u
+#        . activate idtrackerai
+#        {config[track_script]} {config[samples_file]} {input[0]}
+#        """

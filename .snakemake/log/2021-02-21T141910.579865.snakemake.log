@@ -1,0 +1,42 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 5000
+Job counts:
+	count	jobs
+	1	all
+	2	tif2h5
+	3
+
+[Sun Feb 21 14:19:11 2021]
+rule tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/raw/20210203_cab_50_green_80_op_0.6_sp-2_MMStack_Default.ome-004.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210203_cab_50_green_80_op_0.6_sp-2_MMStack_Default.ome-004.h5
+    jobid: 2
+    wildcards: sample=20210203_cab_50_green_80_op_0.6_sp-2_MMStack_Default.ome-004
+
+Submitted job 2 with external jobid 'Job <7711327> is submitted to default queue <research-rh74>.'.
+
+[Sun Feb 21 14:19:11 2021]
+rule tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/raw/20210203_cab_50_green_90_op_0.6_sp_MMStack_Default.ome-006.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210203_cab_50_green_90_op_0.6_sp_MMStack_Default.ome-006.h5
+    jobid: 1
+    wildcards: sample=20210203_cab_50_green_90_op_0.6_sp_MMStack_Default.ome-006
+
+Submitted job 1 with external jobid 'Job <7711331> is submitted to default queue <research-rh74>.'.
+[Sun Feb 21 14:21:22 2021]
+Finished job 1.
+1 of 3 steps (33%) done
+[Sun Feb 21 14:23:24 2021]
+Finished job 2.
+2 of 3 steps (67%) done
+
+[Sun Feb 21 14:23:24 2021]
+localrule all:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210203_cab_50_green_90_op_0.6_sp_MMStack_Default.ome-006.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210203_cab_50_green_80_op_0.6_sp-2_MMStack_Default.ome-004.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210203_cab_20_green_80_op_0.6_sp_MMStack_Default.ome-005.h5
+    jobid: 0
+
+[Sun Feb 21 14:23:24 2021]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/log/2021-02-21T141910.579865.snakemake.log

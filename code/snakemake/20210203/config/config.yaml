@@ -1,0 +1,14 @@
+input_dir:
+    "/nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210203"
+output_dir:
+    "/hps/research1/birney/users/ian/opto_res/videos/20210203"
+fiji:
+    "/nfs/software/birney/Fiji.app/ImageJ-linux64"
+convert_to_h5_script:
+    "code/snakemake/20210203/scripts/convert_tif_to_h5.ijm"
+ilastik:
+    "/nfs/software/birney/ilastik-1.3.3-Linux/run_ilastik.sh"
+ilastik_project_pixclass:
+    "../ilastik/projects/20210107_test_pixclass.ilp"
+ilastik_project_anitrack:
+    "../ilastik/projects/20210107_test_antrack.ilp"
