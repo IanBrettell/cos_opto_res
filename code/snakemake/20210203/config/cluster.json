@@ -5,10 +5,15 @@
         "n" : "1",
         "name" : "{rule}.{wildcards}",
         "output" : "../log/{rule}_{wildcards}.out",
-        "error" : "../log/{rule}_{wildcards}.err",
+        "error" : "../log/{rule}_{wildcards}.err"
     },
     "tif2h5" :
     {
         "memory" : "10000"
+    },
+    "ilastik_probs" :
+    {
+        "memory" : "30000",
+        "n" : "8"
     }
 }

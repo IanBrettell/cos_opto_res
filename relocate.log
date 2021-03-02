@@ -13,3 +13,23 @@
 /.prefix_previous
 2021-02-21 17:20:01,890 __main__-DEBUG: PrefixConfig(spec_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous'), root_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), clean=True, prefix=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), valid=True)
 2021-02-21 17:20:10,222 __main__-DEBUG: updating prefix file /nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous with /nfs/software/birney/ilastik-1.3.3-Linux
+2021-02-21 17:38:54,560 __main__-DEBUG: ----------Starting relocation--------
+2021-02-21 17:38:54,576 __main__-DEBUG: trying /nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous
+2021-02-21 17:38:54,578 __main__-DEBUG: PrefixConfig(spec_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous'), root_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), clean=True, prefix=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), valid=True)
+2021-02-21 17:39:01,184 __main__-DEBUG: updating prefix file /nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous with /nfs/software/birney/ilastik-1.3.3-Linux
+2021-02-21 17:39:41,892 __main__-DEBUG: ----------Starting relocation--------
+2021-02-21 17:39:41,899 __main__-DEBUG: trying /nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous
+2021-02-21 17:39:41,901 __main__-DEBUG: PrefixConfig(spec_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous'), root_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), clean=True, prefix=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), valid=True)
+2021-02-21 17:39:47,895 __main__-DEBUG: updating prefix file /nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous with /nfs/software/birney/ilastik-1.3.3-Linux
+2021-02-21 22:24:37,474 __main__-DEBUG: ----------Starting relocation--------
+2021-02-21 22:24:37,498 __main__-DEBUG: trying /nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous
+2021-02-21 22:24:37,500 __main__-DEBUG: PrefixConfig(spec_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous'), root_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), clean=True, prefix=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), valid=True)
+2021-02-21 22:24:46,418 __main__-DEBUG: updating prefix file /nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous with /nfs/software/birney/ilastik-1.3.3-Linux
+2021-02-26 09:21:41,305 __main__-DEBUG: ----------Starting relocation--------
+2021-02-26 09:21:41,626 __main__-DEBUG: trying /nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous
+2021-02-26 09:21:41,631 __main__-DEBUG: PrefixConfig(spec_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous'), root_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), clean=True, prefix=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), valid=True)
+2021-02-26 09:21:54,905 __main__-DEBUG: updating prefix file /nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous with /nfs/software/birney/ilastik-1.3.3-Linux
+2021-02-26 13:13:26,509 __main__-DEBUG: ----------Starting relocation--------
+2021-02-26 13:13:26,645 __main__-DEBUG: trying /nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous
+2021-02-26 13:13:26,646 __main__-DEBUG: PrefixConfig(spec_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous'), root_path=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), clean=True, prefix=PosixPath('/nfs/software/birney/ilastik-1.3.3-Linux'), valid=True)
+2021-02-26 13:13:29,448 __main__-DEBUG: updating prefix file /nfs/software/birney/ilastik-1.3.3-Linux/.prefix_previous with /nfs/software/birney/ilastik-1.3.3-Linux

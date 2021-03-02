@@ -1,5 +1,7 @@
+samples_file:
+    "code/snakemake/20210203/config/samples.csv"
 input_dir:
-    "/nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210203"
+    "../videos/20210302_batch"
 output_dir:
     "/hps/research1/birney/users/ian/opto_res/videos/20210203"
 fiji:
