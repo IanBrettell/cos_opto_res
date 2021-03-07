@@ -8,8 +8,12 @@ extract_frames_script:
     "scripts/extract_frames.R"
 output_dir:
     "/hps/research1/birney/users/ian/opto_res/videos/20210203"
+plots_dir:
+    "plots/20210203/lane_demarcations"
 r_container:
     "../sing_conts/baseR.sif"
+plot_lanes_script:
+    "scripts/plot_lanes.R"
 fiji:
     "/nfs/software/birney/Fiji.app/ImageJ-linux64"
 convert_to_h5_script:

@@ -33,6 +33,8 @@ rule all:
     input:
         expand(join(config["output_dir"], "tifs", "{sample}.ome.tif"),
             sample = SAMPLES.index),
+        expand(join(config["plots_dir"], "{sample}.png"),
+            sample = SAMPLES.index),
         expand(join(config["training_dir"], "tifs", "{sample}.ome.tif"),
             sample = SAMPLES.index),
         expand(join(config["training_dir"], "h5s", "{sample}.h5"),
@@ -58,6 +60,19 @@ rule copy_to_wd:
         join(config["output_dir"], "tifs", "{sample}.ome.tif")
     shell:
         "cp {input} {output}"
+
+rule draw_lanes:
+    input:
+        join(config["output_dir"], "tifs", "{sample}.ome.tif")
+    output:
+        join(config["plots_dir"], "{sample}.png")
+    params:
+        samples_file = config["samples_file"],
+        sample_name = lambda wildcards: wildcards.sample
+    singularity:
+        config["r_container"]
+    script:
+        config["plot_lanes_script"]
 
 rule extract_training_frames:
     input:

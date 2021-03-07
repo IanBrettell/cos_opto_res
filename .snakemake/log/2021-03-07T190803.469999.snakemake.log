@@ -1,0 +1,402 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 5000
+Job counts:
+	count	jobs
+	1	all
+	26	draw_lanes
+	5	extract_columns
+	5	full_ilastik_track
+	37
+
+[Sun Mar  7 19:08:08 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.png
+    jobid: 48
+    wildcards: sample=20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 48 with external jobid 'Job <1143810> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:08 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.png
+    jobid: 33
+    wildcards: sample=20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 33 with external jobid 'Job <1143811> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:08 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.png
+    jobid: 40
+    wildcards: sample=20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 40 with external jobid 'Job <1143812> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:08 2021]
+rule full_ilastik_track:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    jobid: 219
+    wildcards: sample=20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+Submitted job 219 with external jobid 'Job <1143813> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:09 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.png
+    jobid: 34
+    wildcards: sample=20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 34 with external jobid 'Job <1143815> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:09 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.png
+    jobid: 41
+    wildcards: sample=20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 41 with external jobid 'Job <1143816> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:09 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.png
+    jobid: 49
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 49 with external jobid 'Job <1143817> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:09 2021]
+rule full_ilastik_track:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    jobid: 213
+    wildcards: sample=20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+Submitted job 213 with external jobid 'Job <1143819> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:09 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.png
+    jobid: 27
+    wildcards: sample=20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 27 with external jobid 'Job <1143820> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:09 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.png
+    jobid: 35
+    wildcards: sample=20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 35 with external jobid 'Job <1143821> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:09 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.png
+    jobid: 42
+    wildcards: sample=20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 42 with external jobid 'Job <1143822> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:10 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.png
+    jobid: 50
+    wildcards: sample=20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 50 with external jobid 'Job <1143823> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:10 2021]
+rule full_ilastik_track:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    jobid: 214
+    wildcards: sample=20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+Submitted job 214 with external jobid 'Job <1143825> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:10 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.png
+    jobid: 30
+    wildcards: sample=20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 30 with external jobid 'Job <1143826> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:10 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.png
+    jobid: 36
+    wildcards: sample=20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 36 with external jobid 'Job <1143827> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:11 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.png
+    jobid: 43
+    wildcards: sample=20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 43 with external jobid 'Job <1143828> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:11 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.png
+    jobid: 51
+    wildcards: sample=20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 51 with external jobid 'Job <1143829> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:11 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.png
+    jobid: 28
+    wildcards: sample=20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 28 with external jobid 'Job <1143830> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:11 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.png
+    jobid: 37
+    wildcards: sample=20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 37 with external jobid 'Job <1143832> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:11 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.png
+    jobid: 44
+    wildcards: sample=20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 44 with external jobid 'Job <1143833> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:12 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.png
+    jobid: 52
+    wildcards: sample=20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 52 with external jobid 'Job <1143834> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:12 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.png
+    jobid: 29
+    wildcards: sample=20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 29 with external jobid 'Job <1143835> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:12 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.png
+    jobid: 38
+    wildcards: sample=20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 38 with external jobid 'Job <1143836> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:12 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.png
+    jobid: 45
+    wildcards: sample=20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 45 with external jobid 'Job <1143837> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:12 2021]
+rule full_ilastik_track:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    jobid: 224
+    wildcards: sample=20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv
+Submitted job 224 with external jobid 'Job <1143838> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:12 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.png
+    jobid: 31
+    wildcards: sample=20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 31 with external jobid 'Job <1143839> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:13 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.png
+    jobid: 39
+    wildcards: sample=20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 39 with external jobid 'Job <1143840> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:13 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.png
+    jobid: 46
+    wildcards: sample=20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 46 with external jobid 'Job <1143841> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:13 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.png
+    jobid: 32
+    wildcards: sample=20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 32 with external jobid 'Job <1143842> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:14 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.png
+    jobid: 47
+    wildcards: sample=20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 47 with external jobid 'Job <1143843> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 19:08:14 2021]
+rule full_ilastik_track:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    jobid: 226
+    wildcards: sample=20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv
+Submitted job 226 with external jobid 'Job <1143844> is submitted to default queue <research-rh74>.'.
+[Sun Mar  7 19:08:30 2021]
+Finished job 48.
+1 of 37 steps (3%) done
+[Sun Mar  7 19:08:30 2021]
+Finished job 33.
+2 of 37 steps (5%) done
+[Sun Mar  7 19:08:30 2021]
+Finished job 40.
+3 of 37 steps (8%) done
+[Sun Mar  7 19:08:30 2021]
+Finished job 34.
+4 of 37 steps (11%) done
+[Sun Mar  7 19:08:30 2021]
+Finished job 41.
+5 of 37 steps (14%) done
+[Sun Mar  7 19:08:31 2021]
+Finished job 49.
+6 of 37 steps (16%) done
+[Sun Mar  7 19:08:31 2021]
+Finished job 42.
+7 of 37 steps (19%) done
+[Sun Mar  7 19:08:31 2021]
+Finished job 50.
+8 of 37 steps (22%) done
+[Sun Mar  7 19:08:31 2021]
+Finished job 36.
+9 of 37 steps (24%) done
+[Sun Mar  7 19:08:32 2021]
+Finished job 43.
+10 of 37 steps (27%) done
+[Sun Mar  7 19:08:32 2021]
+Finished job 51.
+11 of 37 steps (30%) done
+[Sun Mar  7 19:08:32 2021]
+Finished job 37.
+12 of 37 steps (32%) done
+[Sun Mar  7 19:08:32 2021]
+Finished job 52.
+13 of 37 steps (35%) done
+[Sun Mar  7 19:08:32 2021]
+Finished job 38.
+14 of 37 steps (38%) done
+[Sun Mar  7 19:08:33 2021]
+Finished job 45.
+15 of 37 steps (41%) done
+[Sun Mar  7 19:08:44 2021]
+Finished job 35.
+16 of 37 steps (43%) done
+[Sun Mar  7 19:08:44 2021]
+Finished job 30.
+17 of 37 steps (46%) done
+[Sun Mar  7 19:08:44 2021]
+Finished job 28.
+18 of 37 steps (49%) done
+[Sun Mar  7 19:08:44 2021]
+Finished job 44.
+19 of 37 steps (51%) done
+[Sun Mar  7 19:08:44 2021]
+Finished job 29.
+20 of 37 steps (54%) done
+[Sun Mar  7 19:08:45 2021]
+Finished job 31.
+21 of 37 steps (57%) done
+[Sun Mar  7 19:08:45 2021]
+Finished job 39.
+22 of 37 steps (59%) done
+[Sun Mar  7 19:08:45 2021]
+Finished job 46.
+23 of 37 steps (62%) done
+[Sun Mar  7 19:08:45 2021]
+Finished job 32.
+24 of 37 steps (65%) done
+[Sun Mar  7 19:08:45 2021]
+Finished job 47.
+25 of 37 steps (68%) done
+[Sun Mar  7 19:15:06 2021]
+Error in rule full_ilastik_track:
+    jobid: 224
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1143838> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 224, external: Job <1143838> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.chk61zry/snakejob.full_ilastik_track.224.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 19:16:26 2021]
+Error in rule full_ilastik_track:
+    jobid: 219
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1143813> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 219, external: Job <1143813> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.chk61zry/snakejob.full_ilastik_track.219.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 19:18:17 2021]
+Error in rule full_ilastik_track:
+    jobid: 226
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1143844> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 226, external: Job <1143844> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.chk61zry/snakejob.full_ilastik_track.226.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.

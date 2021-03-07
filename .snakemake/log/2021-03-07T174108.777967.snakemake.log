@@ -320,3 +320,49 @@ Error in rule full_ilastik_track:
 
 Error executing rule full_ilastik_track on cluster (jobid: 193, external: Job <1141650> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.bexap9wv/snakejob.full_ilastik_track.193.sh). For error details see the cluster log and the log files of the involved rule(s).
 Job failed, going on with independent jobs.
+[Sun Mar  7 17:50:10 2021]
+Error in rule full_ilastik_track:
+    jobid: 200
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1141646> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 200, external: Job <1141646> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.bexap9wv/snakejob.full_ilastik_track.200.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 17:51:40 2021]
+Error in rule full_ilastik_track:
+    jobid: 188
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1141660> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 188, external: Job <1141660> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.bexap9wv/snakejob.full_ilastik_track.188.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 17:52:41 2021]
+Error in rule full_ilastik_track:
+    jobid: 198
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1141642> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 198, external: Job <1141642> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.bexap9wv/snakejob.full_ilastik_track.198.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 17:57:21 2021]
+Error in rule full_ilastik_track:
+    jobid: 187
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1141656> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 187, external: Job <1141656> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.bexap9wv/snakejob.full_ilastik_track.187.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/log/2021-03-07T174108.777967.snakemake.log
