@@ -1,0 +1,12 @@
+BootStrap: docker
+From: rocker/tidyverse:latest
+
+%post
+    # Update
+    apt update
+
+    # Install linux libraries
+    apt-get -y install libzstd-dev libwebp-dev libtiff5-dev
+
+    # Install R packages
+    R --slave -e 'install.packages("ijtiff", repos="https://cloud.r-project.org/")'

@@ -1,0 +1,3 @@
+NameError in line 42 of /hps/research1/birney/users/ian/opto_res/cos_opto_res/code/snakemake/20210203/Snakefile:
+name 'sample' is not defined
+  File "/hps/research1/birney/users/ian/opto_res/cos_opto_res/code/snakemake/20210203/Snakefile", line 42, in <module>

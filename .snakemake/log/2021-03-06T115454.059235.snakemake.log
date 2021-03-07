@@ -1,0 +1,10 @@
+KeyError in line 42 of /hps/research1/birney/users/ian/opto_res/cos_opto_res/code/snakemake/20210203/Snakefile:
+'{sample}'
+  File "/hps/research1/birney/users/ian/opto_res/cos_opto_res/code/snakemake/20210203/Snakefile", line 42, in <module>
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 873, in __getitem__
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 1044, in _getitem_tuple
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 786, in _getitem_lowerdim
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 1110, in _getitem_axis
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 1059, in _get_label
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/generic.py", line 3493, in xs
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc

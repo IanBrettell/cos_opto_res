@@ -1,0 +1,6 @@
+BootStrap: docker
+From: ilastik/ilastik-from-binary:1.4.0b13
+
+%post
+    apt-get update
+    apt-get install ffmpeg libsm6 libxext6  -y

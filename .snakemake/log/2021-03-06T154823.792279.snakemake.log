@@ -1,0 +1,769 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 5000
+Job counts:
+	count	jobs
+	1	all
+	26	extract_training_frames
+	26	full_tif2h5
+	26	training_tif2h5
+	79
+
+[Sat Mar  6 15:48:27 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 56
+    wildcards: sample=20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 56 with external jobid 'Job <1040025> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:27 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 71
+    wildcards: sample=20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 71 with external jobid 'Job <1040027> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:27 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    jobid: 19
+    wildcards: sample=20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 19 with external jobid 'Job <1040029> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:27 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    jobid: 11
+    wildcards: sample=20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 11 with external jobid 'Job <1040030> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:28 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    jobid: 26
+    wildcards: sample=20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 26 with external jobid 'Job <1040031> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:28 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    jobid: 4
+    wildcards: sample=20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 4 with external jobid 'Job <1040032> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:28 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 64
+    wildcards: sample=20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 64 with external jobid 'Job <1040033> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:28 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 72
+    wildcards: sample=20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 72 with external jobid 'Job <1040035> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:28 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    jobid: 12
+    wildcards: sample=20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 12 with external jobid 'Job <1040036> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:29 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    jobid: 20
+    wildcards: sample=20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 20 with external jobid 'Job <1040038> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:29 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 57
+    wildcards: sample=20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 57 with external jobid 'Job <1040040> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:29 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    jobid: 5
+    wildcards: sample=20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 5 with external jobid 'Job <1040043> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:29 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 65
+    wildcards: sample=20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 65 with external jobid 'Job <1040044> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:29 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 66
+    wildcards: sample=20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 66 with external jobid 'Job <1040046> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:30 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    jobid: 13
+    wildcards: sample=20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 13 with external jobid 'Job <1040047> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:30 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 73
+    wildcards: sample=20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 73 with external jobid 'Job <1040048> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:30 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    jobid: 6
+    wildcards: sample=20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 6 with external jobid 'Job <1040049> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:30 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    jobid: 21
+    wildcards: sample=20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 21 with external jobid 'Job <1040050> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:31 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 58
+    wildcards: sample=20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 58 with external jobid 'Job <1040052> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:31 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    jobid: 14
+    wildcards: sample=20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 14 with external jobid 'Job <1040053> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:31 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 74
+    wildcards: sample=20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 74 with external jobid 'Job <1040055> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:31 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    jobid: 22
+    wildcards: sample=20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 22 with external jobid 'Job <1040056> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:31 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 59
+    wildcards: sample=20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 59 with external jobid 'Job <1040058> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:32 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    jobid: 7
+    wildcards: sample=20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 7 with external jobid 'Job <1040059> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:32 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 67
+    wildcards: sample=20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 67 with external jobid 'Job <1040061> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:32 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    jobid: 15
+    wildcards: sample=20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 15 with external jobid 'Job <1040062> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:32 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 75
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 75 with external jobid 'Job <1040064> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:33 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    jobid: 23
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 23 with external jobid 'Job <1040065> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:33 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    jobid: 1
+    wildcards: sample=20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 1 with external jobid 'Job <1040068> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:34 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 60
+    wildcards: sample=20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 60 with external jobid 'Job <1040069> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:34 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    jobid: 8
+    wildcards: sample=20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 8 with external jobid 'Job <1040071> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:35 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    jobid: 53
+    wildcards: sample=20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 53 with external jobid 'Job <1040072> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:35 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 68
+    wildcards: sample=20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 68 with external jobid 'Job <1040073> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:35 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 76
+    wildcards: sample=20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 76 with external jobid 'Job <1040074> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:35 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    jobid: 16
+    wildcards: sample=20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 16 with external jobid 'Job <1040075> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:35 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    jobid: 24
+    wildcards: sample=20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 24 with external jobid 'Job <1040077> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:36 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 61
+    wildcards: sample=20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 61 with external jobid 'Job <1040078> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:36 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    jobid: 9
+    wildcards: sample=20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 9 with external jobid 'Job <1040080> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:36 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    jobid: 54
+    wildcards: sample=20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 54 with external jobid 'Job <1040081> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:37 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 69
+    wildcards: sample=20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 69 with external jobid 'Job <1040083> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:37 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    jobid: 17
+    wildcards: sample=20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 17 with external jobid 'Job <1040085> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:37 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 77
+    wildcards: sample=20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 77 with external jobid 'Job <1040086> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:37 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    jobid: 25
+    wildcards: sample=20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 25 with external jobid 'Job <1040088> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:38 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    jobid: 2
+    wildcards: sample=20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 2 with external jobid 'Job <1040089> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:38 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 62
+    wildcards: sample=20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 62 with external jobid 'Job <1040091> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:38 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    jobid: 10
+    wildcards: sample=20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 10 with external jobid 'Job <1040093> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:39 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 55
+    wildcards: sample=20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 55 with external jobid 'Job <1040094> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:39 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 70
+    wildcards: sample=20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 70 with external jobid 'Job <1040096> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:39 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    jobid: 18
+    wildcards: sample=20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 18 with external jobid 'Job <1040097> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:39 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 78
+    wildcards: sample=20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 78 with external jobid 'Job <1040099> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:40 2021]
+rule extract_training_frames:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    jobid: 3
+    wildcards: sample=20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 3 with external jobid 'Job <1040101> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 15:48:40 2021]
+rule full_tif2h5:
+    input: /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 63
+    wildcards: sample=20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 63 with external jobid 'Job <1040102> is submitted to default queue <research-rh74>.'.
+[Sat Mar  6 15:48:51 2021]
+Error in rule extract_training_frames:
+    jobid: 19
+    output: ../ilastik/training/20210306/tifs/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040029> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 19, external: Job <1040029> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.19.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:51 2021]
+Error in rule extract_training_frames:
+    jobid: 11
+    output: ../ilastik/training/20210306/tifs/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040030> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 11, external: Job <1040030> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:52 2021]
+Error in rule extract_training_frames:
+    jobid: 26
+    output: ../ilastik/training/20210306/tifs/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040031> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 26, external: Job <1040031> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.26.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:52 2021]
+Error in rule extract_training_frames:
+    jobid: 4
+    output: ../ilastik/training/20210306/tifs/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040032> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 4, external: Job <1040032> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:52 2021]
+Error in rule extract_training_frames:
+    jobid: 12
+    output: ../ilastik/training/20210306/tifs/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040036> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 12, external: Job <1040036> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:53 2021]
+Error in rule extract_training_frames:
+    jobid: 20
+    output: ../ilastik/training/20210306/tifs/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040038> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 20, external: Job <1040038> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.20.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:53 2021]
+Error in rule extract_training_frames:
+    jobid: 5
+    output: ../ilastik/training/20210306/tifs/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040043> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 5, external: Job <1040043> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:53 2021]
+Error in rule extract_training_frames:
+    jobid: 13
+    output: ../ilastik/training/20210306/tifs/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040047> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 13, external: Job <1040047> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:54 2021]
+Error in rule extract_training_frames:
+    jobid: 6
+    output: ../ilastik/training/20210306/tifs/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040049> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 6, external: Job <1040049> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:54 2021]
+Error in rule extract_training_frames:
+    jobid: 21
+    output: ../ilastik/training/20210306/tifs/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040050> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 21, external: Job <1040050> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.21.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:55 2021]
+Error in rule extract_training_frames:
+    jobid: 14
+    output: ../ilastik/training/20210306/tifs/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040053> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 14, external: Job <1040053> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.14.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:55 2021]
+Error in rule extract_training_frames:
+    jobid: 22
+    output: ../ilastik/training/20210306/tifs/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040056> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 22, external: Job <1040056> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.22.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:55 2021]
+Error in rule full_tif2h5:
+    jobid: 59
+    output: ../videos/20210203/h5s/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    cluster_jobid: Job <1040058> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 59, external: Job <1040058> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.full_tif2h5.59.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:56 2021]
+Error in rule extract_training_frames:
+    jobid: 7
+    output: ../ilastik/training/20210306/tifs/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040059> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 7, external: Job <1040059> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:56 2021]
+Error in rule extract_training_frames:
+    jobid: 15
+    output: ../ilastik/training/20210306/tifs/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040062> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 15, external: Job <1040062> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.15.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:56 2021]
+Error in rule extract_training_frames:
+    jobid: 23
+    output: ../ilastik/training/20210306/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040065> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 23, external: Job <1040065> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:56 2021]
+Error in rule extract_training_frames:
+    jobid: 1
+    output: ../ilastik/training/20210306/tifs/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040068> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 1, external: Job <1040068> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:48:56 2021]
+Error in rule extract_training_frames:
+    jobid: 8
+    output: ../ilastik/training/20210306/tifs/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040071> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 8, external: Job <1040071> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:49:07 2021]
+Error in rule extract_training_frames:
+    jobid: 16
+    output: ../ilastik/training/20210306/tifs/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040075> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 16, external: Job <1040075> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.16.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:49:07 2021]
+Error in rule extract_training_frames:
+    jobid: 24
+    output: ../ilastik/training/20210306/tifs/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040077> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 24, external: Job <1040077> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.24.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:49:07 2021]
+Error in rule extract_training_frames:
+    jobid: 9
+    output: ../ilastik/training/20210306/tifs/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040080> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 9, external: Job <1040080> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.9.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:49:08 2021]
+Error in rule extract_training_frames:
+    jobid: 17
+    output: ../ilastik/training/20210306/tifs/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040085> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 17, external: Job <1040085> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.17.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:49:08 2021]
+Error in rule extract_training_frames:
+    jobid: 25
+    output: ../ilastik/training/20210306/tifs/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040088> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 25, external: Job <1040088> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.25.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:49:08 2021]
+Error in rule extract_training_frames:
+    jobid: 2
+    output: ../ilastik/training/20210306/tifs/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040089> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 2, external: Job <1040089> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:49:10 2021]
+Error in rule extract_training_frames:
+    jobid: 10
+    output: ../ilastik/training/20210306/tifs/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040093> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 10, external: Job <1040093> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:49:11 2021]
+Error in rule extract_training_frames:
+    jobid: 18
+    output: ../ilastik/training/20210306/tifs/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040097> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 18, external: Job <1040097> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.18.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:49:11 2021]
+Error in rule extract_training_frames:
+    jobid: 3
+    output: ../ilastik/training/20210306/tifs/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    cluster_jobid: Job <1040101> is submitted to default queue <research-rh74>.
+
+Error executing rule extract_training_frames on cluster (jobid: 3, external: Job <1040101> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.80h5vbng/snakejob.extract_training_frames.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 15:49:58 2021]
+Finished job 72.
+1 of 79 steps (1%) done
+[Sat Mar  6 15:49:58 2021]
+Finished job 73.
+2 of 79 steps (3%) done
+[Sat Mar  6 15:49:59 2021]
+Finished job 67.
+3 of 79 steps (4%) done
+[Sat Mar  6 15:50:10 2021]
+Finished job 69.
+4 of 79 steps (5%) done
+[Sat Mar  6 15:50:10 2021]
+Finished job 71.
+5 of 79 steps (6%) done
+[Sat Mar  6 15:50:11 2021]
+Finished job 66.
+6 of 79 steps (8%) done
+[Sat Mar  6 15:50:11 2021]
+Finished job 74.
+7 of 79 steps (9%) done
+[Sat Mar  6 15:50:11 2021]
+Finished job 60.
+8 of 79 steps (10%) done
+[Sat Mar  6 15:50:11 2021]
+Finished job 70.
+9 of 79 steps (11%) done
+[Sat Mar  6 15:50:22 2021]
+Finished job 61.
+10 of 79 steps (13%) done
+[Sat Mar  6 15:50:22 2021]
+Finished job 77.
+11 of 79 steps (14%) done
+[Sat Mar  6 15:50:22 2021]
+Finished job 62.
+12 of 79 steps (15%) done
+[Sat Mar  6 15:50:22 2021]
+Finished job 65.
+13 of 79 steps (16%) done
+[Sat Mar  6 15:50:22 2021]
+Finished job 75.
+14 of 79 steps (18%) done
+[Sat Mar  6 15:50:23 2021]
+Finished job 53.
+15 of 79 steps (19%) done
+[Sat Mar  6 15:50:23 2021]
+Finished job 68.
+16 of 79 steps (20%) done
+[Sat Mar  6 15:50:33 2021]
+Finished job 56.
+17 of 79 steps (22%) done
+[Sat Mar  6 15:50:33 2021]
+Finished job 64.
+18 of 79 steps (23%) done
+[Sat Mar  6 15:50:34 2021]
+Finished job 63.
+19 of 79 steps (24%) done
+[Sat Mar  6 15:50:44 2021]
+Finished job 57.
+20 of 79 steps (25%) done
+[Sat Mar  6 15:50:54 2021]
+Finished job 54.
+21 of 79 steps (27%) done
+[Sat Mar  6 15:50:54 2021]
+Finished job 76.
+22 of 79 steps (28%) done
+[Sat Mar  6 15:51:04 2021]
+Finished job 58.
+23 of 79 steps (29%) done
+[Sat Mar  6 15:51:24 2021]
+Finished job 55.
+24 of 79 steps (30%) done
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Complete log: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/log/2021-03-06T154823.792279.snakemake.log

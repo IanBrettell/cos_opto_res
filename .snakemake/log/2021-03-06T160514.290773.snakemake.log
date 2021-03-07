@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 5000
+Job counts:
+	count	jobs
+	1	all
+	26	extract_training_frames
+	26	training_tif2h5
+	53
+
+[Sat Mar  6 16:05:31 2021]
+rule extract_training_frames:
+    input: ../videos/20210203/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    jobid: 49
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+InputFunctionException in line 50 of /hps/research1/birney/users/ian/opto_res/cos_opto_res/code/snakemake/20210203/Snakefile:
+Error:
+  KeyError: '{wildcards.sample}'
+Wildcards:
+  sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+Traceback:
+  File "/hps/research1/birney/users/ian/opto_res/cos_opto_res/code/snakemake/20210203/Snakefile", line 54, in <lambda>
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 873, in __getitem__
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 1044, in _getitem_tuple
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 786, in _getitem_lowerdim
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 1110, in _getitem_axis
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexing.py", line 1059, in _get_label
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/generic.py", line 3493, in xs
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 131, in run_jobs
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 926, in run
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 722, in get_jobscript
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 811, in cluster_wildcards
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/snakemake/executors/__init__.py", line 792, in cluster_params

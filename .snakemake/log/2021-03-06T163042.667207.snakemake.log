@@ -1,0 +1,794 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 5000
+Job counts:
+	count	jobs
+	1	all
+	1	extract_training_frames
+	24	full_tif2h5
+	25	training_tif2h5
+	51
+
+[Sat Mar  6 16:30:46 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 94
+    wildcards: sample=20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 94 with external jobid 'Job <1043840> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:46 2021]
+rule extract_training_frames:
+    input: ../videos/20210203/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    jobid: 49
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 49 with external jobid 'Job <1043841> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:46 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 86
+    wildcards: sample=20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 86 with external jobid 'Job <1043842> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:47 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    jobid: 79
+    wildcards: sample=20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 79 with external jobid 'Job <1043843> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:47 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 101
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 101 with external jobid 'Job <1043845> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:47 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 56
+    wildcards: sample=20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 56 with external jobid 'Job <1043846> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:47 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 64
+    wildcards: sample=20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 64 with external jobid 'Job <1043848> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:48 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 71
+    wildcards: sample=20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 71 with external jobid 'Job <1043849> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:48 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    jobid: 80
+    wildcards: sample=20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 80 with external jobid 'Job <1043850> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:48 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 87
+    wildcards: sample=20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 87 with external jobid 'Job <1043851> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:48 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 95
+    wildcards: sample=20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 95 with external jobid 'Job <1043853> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:49 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 102
+    wildcards: sample=20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 102 with external jobid 'Job <1043855> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:49 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 57
+    wildcards: sample=20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 57 with external jobid 'Job <1043857> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:49 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 65
+    wildcards: sample=20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 65 with external jobid 'Job <1043858> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:49 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 72
+    wildcards: sample=20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 72 with external jobid 'Job <1043859> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:49 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 81
+    wildcards: sample=20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 81 with external jobid 'Job <1043860> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:50 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 88
+    wildcards: sample=20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 88 with external jobid 'Job <1043861> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:50 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 96
+    wildcards: sample=20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 96 with external jobid 'Job <1043862> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:50 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 103
+    wildcards: sample=20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 103 with external jobid 'Job <1043863> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:50 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 58
+    wildcards: sample=20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 58 with external jobid 'Job <1043865> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:50 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 66
+    wildcards: sample=20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 66 with external jobid 'Job <1043866> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:51 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 73
+    wildcards: sample=20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 73 with external jobid 'Job <1043868> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:51 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 82
+    wildcards: sample=20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 82 with external jobid 'Job <1043869> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:51 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 89
+    wildcards: sample=20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 89 with external jobid 'Job <1043870> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:51 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 97
+    wildcards: sample=20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 97 with external jobid 'Job <1043872> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:52 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 59
+    wildcards: sample=20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 59 with external jobid 'Job <1043873> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:52 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 67
+    wildcards: sample=20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 67 with external jobid 'Job <1043874> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:52 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 74
+    wildcards: sample=20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 74 with external jobid 'Job <1043875> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:52 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 83
+    wildcards: sample=20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 83 with external jobid 'Job <1043876> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:53 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 90
+    wildcards: sample=20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 90 with external jobid 'Job <1043878> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:53 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 98
+    wildcards: sample=20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 98 with external jobid 'Job <1043879> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:53 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 60
+    wildcards: sample=20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 60 with external jobid 'Job <1043881> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:53 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 68
+    wildcards: sample=20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 68 with external jobid 'Job <1043882> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:53 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 84
+    wildcards: sample=20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 84 with external jobid 'Job <1043884> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:54 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 91
+    wildcards: sample=20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 91 with external jobid 'Job <1043885> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:54 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 99
+    wildcards: sample=20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 99 with external jobid 'Job <1043887> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:54 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    jobid: 54
+    wildcards: sample=20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 54 with external jobid 'Job <1043889> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:54 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 61
+    wildcards: sample=20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 61 with external jobid 'Job <1043890> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:54 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 69
+    wildcards: sample=20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 69 with external jobid 'Job <1043891> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:55 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 76
+    wildcards: sample=20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 76 with external jobid 'Job <1043892> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:55 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 92
+    wildcards: sample=20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 92 with external jobid 'Job <1043893> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:55 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 100
+    wildcards: sample=20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 100 with external jobid 'Job <1043894> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:55 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 55
+    wildcards: sample=20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 55 with external jobid 'Job <1043895> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:55 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 62
+    wildcards: sample=20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 62 with external jobid 'Job <1043897> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:56 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 70
+    wildcards: sample=20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 70 with external jobid 'Job <1043898> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:56 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 77
+    wildcards: sample=20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 77 with external jobid 'Job <1043900> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:56 2021]
+rule full_tif2h5:
+    input: ../videos/20210203/tifs/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: ../videos/20210203/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 93
+    wildcards: sample=20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 93 with external jobid 'Job <1043901> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:57 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 63
+    wildcards: sample=20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 63 with external jobid 'Job <1043903> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:30:57 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 78
+    wildcards: sample=20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 78 with external jobid 'Job <1043905> is submitted to default queue <research-rh74>.'.
+[Sat Mar  6 16:31:24 2021]
+Finished job 49.
+1 of 51 steps (2%) done
+
+[Sat Mar  6 16:31:25 2021]
+rule training_tif2h5:
+    input: ../ilastik/training/20210306/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: ../ilastik/training/20210306/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 75
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 75 with external jobid 'Job <1043958> is submitted to default queue <research-rh74>.'.
+[Sat Mar  6 16:48:26 2021]
+Error in rule full_tif2h5:
+    jobid: 86
+    output: ../videos/20210203/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043842> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 86, external: Job <1043842> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.86.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:26 2021]
+Error in rule full_tif2h5:
+    jobid: 79
+    output: ../videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043843> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 79, external: Job <1043843> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.79.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:27 2021]
+Error in rule full_tif2h5:
+    jobid: 101
+    output: ../videos/20210203/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043845> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 101, external: Job <1043845> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.101.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:28 2021]
+Error in rule full_tif2h5:
+    jobid: 81
+    output: ../videos/20210203/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043860> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 81, external: Job <1043860> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.81.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:40 2021]
+Error in rule training_tif2h5:
+    jobid: 62
+    output: ../ilastik/training/20210306/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043897> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 62, external: Job <1043897> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.62.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:40 2021]
+Error in rule training_tif2h5:
+    jobid: 70
+    output: ../ilastik/training/20210306/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    cluster_jobid: Job <1043898> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 70, external: Job <1043898> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.70.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:40 2021]
+Error in rule training_tif2h5:
+    jobid: 77
+    output: ../ilastik/training/20210306/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043900> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 77, external: Job <1043900> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.77.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:40 2021]
+Error in rule full_tif2h5:
+    jobid: 93
+    output: ../videos/20210203/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043901> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 93, external: Job <1043901> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.93.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:40 2021]
+Error in rule training_tif2h5:
+    jobid: 63
+    output: ../ilastik/training/20210306/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    cluster_jobid: Job <1043903> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 63, external: Job <1043903> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.63.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:40 2021]
+Error in rule full_tif2h5:
+    jobid: 94
+    output: ../videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    cluster_jobid: Job <1043840> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 94, external: Job <1043840> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.94.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:40 2021]
+Error in rule training_tif2h5:
+    jobid: 56
+    output: ../ilastik/training/20210306/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043846> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 56, external: Job <1043846> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.56.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:40 2021]
+Error in rule training_tif2h5:
+    jobid: 64
+    output: ../ilastik/training/20210306/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    cluster_jobid: Job <1043848> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 64, external: Job <1043848> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.64.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:41 2021]
+Error in rule training_tif2h5:
+    jobid: 71
+    output: ../ilastik/training/20210306/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043849> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 71, external: Job <1043849> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.71.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:41 2021]
+Error in rule full_tif2h5:
+    jobid: 80
+    output: ../videos/20210203/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043850> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 80, external: Job <1043850> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.80.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:41 2021]
+Error in rule full_tif2h5:
+    jobid: 102
+    output: ../videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043855> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 102, external: Job <1043855> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.102.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:41 2021]
+Error in rule training_tif2h5:
+    jobid: 57
+    output: ../ilastik/training/20210306/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    cluster_jobid: Job <1043857> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 57, external: Job <1043857> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.57.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:41 2021]
+Error in rule training_tif2h5:
+    jobid: 65
+    output: ../ilastik/training/20210306/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043858> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 65, external: Job <1043858> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.65.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:41 2021]
+Error in rule training_tif2h5:
+    jobid: 72
+    output: ../ilastik/training/20210306/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043859> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 72, external: Job <1043859> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.72.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:41 2021]
+Error in rule full_tif2h5:
+    jobid: 88
+    output: ../videos/20210203/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043861> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 88, external: Job <1043861> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.88.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:41 2021]
+Error in rule full_tif2h5:
+    jobid: 96
+    output: ../videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    cluster_jobid: Job <1043862> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 96, external: Job <1043862> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.96.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:42 2021]
+Error in rule full_tif2h5:
+    jobid: 97
+    output: ../videos/20210203/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043872> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 97, external: Job <1043872> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.97.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:43 2021]
+Error in rule full_tif2h5:
+    jobid: 83
+    output: ../videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    cluster_jobid: Job <1043876> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 83, external: Job <1043876> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.83.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:43 2021]
+Error in rule full_tif2h5:
+    jobid: 90
+    output: ../videos/20210203/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    cluster_jobid: Job <1043878> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 90, external: Job <1043878> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.90.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:43 2021]
+Error in rule full_tif2h5:
+    jobid: 98
+    output: ../videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043879> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 98, external: Job <1043879> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.98.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:44 2021]
+Error in rule training_tif2h5:
+    jobid: 76
+    output: ../ilastik/training/20210306/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043892> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 76, external: Job <1043892> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.76.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:44 2021]
+Error in rule full_tif2h5:
+    jobid: 92
+    output: ../videos/20210203/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043893> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 92, external: Job <1043893> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.92.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:44 2021]
+Error in rule full_tif2h5:
+    jobid: 100
+    output: ../videos/20210203/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043894> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 100, external: Job <1043894> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.100.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:44 2021]
+Error in rule training_tif2h5:
+    jobid: 55
+    output: ../ilastik/training/20210306/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043895> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 55, external: Job <1043895> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.55.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:55 2021]
+Error in rule training_tif2h5:
+    jobid: 78
+    output: ../ilastik/training/20210306/h5s/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043905> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 78, external: Job <1043905> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.78.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:55 2021]
+Error in rule full_tif2h5:
+    jobid: 103
+    output: ../videos/20210203/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043863> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 103, external: Job <1043863> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.103.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:56 2021]
+Error in rule training_tif2h5:
+    jobid: 59
+    output: ../ilastik/training/20210306/h5s/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043873> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 59, external: Job <1043873> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.59.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:56 2021]
+Error in rule training_tif2h5:
+    jobid: 67
+    output: ../ilastik/training/20210306/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043874> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 67, external: Job <1043874> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.67.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:48:56 2021]
+Error in rule training_tif2h5:
+    jobid: 74
+    output: ../ilastik/training/20210306/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043875> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 74, external: Job <1043875> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.74.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:49:07 2021]
+Error in rule training_tif2h5:
+    jobid: 58
+    output: ../ilastik/training/20210306/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    cluster_jobid: Job <1043865> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 58, external: Job <1043865> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.58.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:49:07 2021]
+Error in rule training_tif2h5:
+    jobid: 66
+    output: ../ilastik/training/20210306/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043866> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 66, external: Job <1043866> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.66.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:49:07 2021]
+Error in rule training_tif2h5:
+    jobid: 73
+    output: ../ilastik/training/20210306/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043868> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 73, external: Job <1043868> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.73.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:49:07 2021]
+Error in rule full_tif2h5:
+    jobid: 82
+    output: ../videos/20210203/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043869> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 82, external: Job <1043869> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.82.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:49:07 2021]
+Error in rule full_tif2h5:
+    jobid: 89
+    output: ../videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    cluster_jobid: Job <1043870> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 89, external: Job <1043870> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.89.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:49:18 2021]
+Error in rule full_tif2h5:
+    jobid: 87
+    output: ../videos/20210203/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043851> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 87, external: Job <1043851> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.87.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:49:18 2021]
+Error in rule full_tif2h5:
+    jobid: 95
+    output: ../videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    cluster_jobid: Job <1043853> is submitted to default queue <research-rh74>.
+
+Error executing rule full_tif2h5 on cluster (jobid: 95, external: Job <1043853> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.full_tif2h5.95.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sat Mar  6 16:49:29 2021]
+Error in rule training_tif2h5:
+    jobid: 75
+    output: ../ilastik/training/20210306/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    cluster_jobid: Job <1043958> is submitted to default queue <research-rh74>.
+
+Error executing rule training_tif2h5 on cluster (jobid: 75, external: Job <1043958> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.pnpe5kvm/snakejob.training_tif2h5.75.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Complete log: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/log/2021-03-06T163042.667207.snakemake.log

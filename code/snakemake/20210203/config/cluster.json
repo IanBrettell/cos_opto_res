@@ -7,13 +7,25 @@
         "output" : "../log/{rule}_{wildcards}.out",
         "error" : "../log/{rule}_{wildcards}.err"
     },
-    "tif2h5" :
+    "full_tif2h5" :
     {
         "memory" : "10000"
     },
-    "ilastik_probs" :
+    "training_ilastik_probs" :
+    {
+        "memory" : "30000"
+    },
+    "full_ilastik_probs" :
     {
         "memory" : "30000",
         "n" : "8"
+    },
+    "training_ilastik_track" :
+    {
+        "memory" : "10000"
+    },
+    "full_ilastik_track" :
+    {
+        "memory" : "30000"
     }
 }

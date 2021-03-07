@@ -1,0 +1,426 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 5000
+Job counts:
+	count	jobs
+	1	all
+	26	full_ilastik_probs
+	1	training_ilastik_probs
+	28
+
+[Sun Mar  7 09:06:58 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+    jobid: 148
+    wildcards: sample=20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+Submitted job 148 with external jobid 'Job <1118585> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:58 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_Probabilities.h5
+    jobid: 133
+    wildcards: sample=20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_Probabilities.h5
+Submitted job 133 with external jobid 'Job <1118586> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:58 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default_Probabilities.h5
+    jobid: 144
+    wildcards: sample=20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default_Probabilities.h5
+Submitted job 144 with external jobid 'Job <1118587> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:58 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_Probabilities.h5
+    jobid: 137
+    wildcards: sample=20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_Probabilities.h5
+Submitted job 137 with external jobid 'Job <1118588> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:58 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    jobid: 141
+    wildcards: sample=20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+Submitted job 141 with external jobid 'Job <1118589> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:58 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_Probabilities.h5
+    jobid: 152
+    wildcards: sample=20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_Probabilities.h5
+Submitted job 152 with external jobid 'Job <1118590> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:58 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default_Probabilities.h5
+    jobid: 156
+    wildcards: sample=20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default_Probabilities.h5
+Submitted job 156 with external jobid 'Job <1118591> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:58 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_Probabilities.h5
+    jobid: 134
+    wildcards: sample=20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_Probabilities.h5
+Submitted job 134 with external jobid 'Job <1118592> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:59 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default_Probabilities.h5
+    jobid: 145
+    wildcards: sample=20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default_Probabilities.h5
+Submitted job 145 with external jobid 'Job <1118593> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:59 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_Probabilities.h5
+    jobid: 149
+    wildcards: sample=20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_Probabilities.h5
+Submitted job 149 with external jobid 'Job <1118594> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:59 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_Probabilities.h5
+    jobid: 138
+    wildcards: sample=20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_Probabilities.h5
+Submitted job 138 with external jobid 'Job <1118595> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:59 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    jobid: 142
+    wildcards: sample=20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+Submitted job 142 with external jobid 'Job <1118596> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:59 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default_Probabilities.h5
+    jobid: 153
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default_Probabilities.h5
+Submitted job 153 with external jobid 'Job <1118597> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:59 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_Probabilities.h5
+    jobid: 131
+    wildcards: sample=20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_Probabilities.h5
+Submitted job 131 with external jobid 'Job <1118598> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:06:59 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    jobid: 135
+    wildcards: sample=20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+Submitted job 135 with external jobid 'Job <1118599> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:00 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+    jobid: 146
+    wildcards: sample=20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+Submitted job 146 with external jobid 'Job <1118600> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:00 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_Probabilities.h5
+    jobid: 150
+    wildcards: sample=20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_Probabilities.h5
+Submitted job 150 with external jobid 'Job <1118601> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:00 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_Probabilities.h5
+    jobid: 139
+    wildcards: sample=20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_Probabilities.h5
+Submitted job 139 with external jobid 'Job <1118602> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:00 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_Probabilities.h5
+    jobid: 143
+    wildcards: sample=20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_Probabilities.h5
+Submitted job 143 with external jobid 'Job <1118603> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:01 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default_Probabilities.h5
+    jobid: 154
+    wildcards: sample=20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default_Probabilities.h5
+Submitted job 154 with external jobid 'Job <1118605> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:01 2021]
+rule training_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    jobid: 109
+    wildcards: sample=20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="ztyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+Submitted job 109 with external jobid 'Job <1118606> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:01 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_Probabilities.h5
+    jobid: 132
+    wildcards: sample=20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_Probabilities.h5
+Submitted job 132 with external jobid 'Job <1118607> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:01 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    jobid: 136
+    wildcards: sample=20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+Submitted job 136 with external jobid 'Job <1118608> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:01 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+    jobid: 147
+    wildcards: sample=20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+Submitted job 147 with external jobid 'Job <1118609> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:01 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_Probabilities.h5
+    jobid: 151
+    wildcards: sample=20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_Probabilities.h5
+Submitted job 151 with external jobid 'Job <1118610> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:01 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_Probabilities.h5
+    jobid: 140
+    wildcards: sample=20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_Probabilities.h5
+Submitted job 140 with external jobid 'Job <1118611> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 09:07:02 2021]
+rule full_ilastik_probs:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default_Probabilities.h5
+    jobid: 155
+    wildcards: sample=20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default_Probabilities.h5
+Submitted job 155 with external jobid 'Job <1118612> is submitted to default queue <research-rh74>.'.
+[Sun Mar  7 09:12:13 2021]
+Error in rule full_ilastik_probs:
+    jobid: 131
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_Probabilities.h5
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_Probabilities.h5
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1118598> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_probs on cluster (jobid: 131, external: Job <1118598> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.w1t5uih9/snakejob.full_ilastik_probs.131.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 09:12:14 2021]
+Error in rule full_ilastik_probs:
+    jobid: 135
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1118599> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_probs on cluster (jobid: 135, external: Job <1118599> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.w1t5uih9/snakejob.full_ilastik_probs.135.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 09:12:26 2021]
+Error in rule full_ilastik_probs:
+    jobid: 146
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1118600> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_probs on cluster (jobid: 146, external: Job <1118600> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.w1t5uih9/snakejob.full_ilastik_probs.146.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 09:12:26 2021]
+Error in rule full_ilastik_probs:
+    jobid: 150
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_Probabilities.h5
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_Probabilities.h5
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1118601> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_probs on cluster (jobid: 150, external: Job <1118601> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.w1t5uih9/snakejob.full_ilastik_probs.150.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 09:12:50 2021]
+Error in rule full_ilastik_probs:
+    jobid: 143
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_Probabilities.h5
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_Probabilities.h5
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1118603> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_probs on cluster (jobid: 143, external: Job <1118603> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.w1t5uih9/snakejob.full_ilastik_probs.143.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 09:12:50 2021]
+Error in rule full_ilastik_probs:
+    jobid: 154
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default_Probabilities.h5
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default_Probabilities.h5
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1118605> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_probs on cluster (jobid: 154, external: Job <1118605> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.w1t5uih9/snakejob.full_ilastik_probs.154.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 09:14:51 2021]
+Error in rule full_ilastik_probs:
+    jobid: 136
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1118608> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_probs on cluster (jobid: 136, external: Job <1118608> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.w1t5uih9/snakejob.full_ilastik_probs.136.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 09:14:51 2021]
+Error in rule full_ilastik_probs:
+    jobid: 147
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --project=../ilastik/projects/20210107_test_pixclass.ilp           --readonly           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --export_source="Probabilities"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1118609> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_probs on cluster (jobid: 147, external: Job <1118609> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.w1t5uih9/snakejob.full_ilastik_probs.147.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 09:20:58 2021]
+Finished job 109.
+1 of 28 steps (4%) done
+[Sun Mar  7 09:40:09 2021]
+Finished job 148.
+2 of 28 steps (7%) done
+[Sun Mar  7 09:42:44 2021]
+Finished job 156.
+3 of 28 steps (11%) done
+[Sun Mar  7 09:43:29 2021]
+Finished job 153.
+4 of 28 steps (14%) done
+[Sun Mar  7 09:43:51 2021]
+Finished job 155.
+5 of 28 steps (18%) done
+[Sun Mar  7 09:44:23 2021]
+Finished job 145.
+6 of 28 steps (21%) done
+[Sun Mar  7 09:46:03 2021]
+Finished job 152.
+7 of 28 steps (25%) done
+[Sun Mar  7 09:46:25 2021]
+Finished job 137.
+8 of 28 steps (29%) done
+[Sun Mar  7 09:46:25 2021]
+Finished job 139.
+9 of 28 steps (32%) done
+[Sun Mar  7 09:46:36 2021]
+Finished job 149.
+10 of 28 steps (36%) done
+[Sun Mar  7 09:47:47 2021]
+Finished job 142.
+11 of 28 steps (39%) done
+[Sun Mar  7 09:48:17 2021]
+Finished job 138.
+12 of 28 steps (43%) done
+[Sun Mar  7 09:51:08 2021]
+Finished job 141.
+13 of 28 steps (46%) done
+[Sun Mar  7 09:54:19 2021]
+Finished job 140.
+14 of 28 steps (50%) done
+[Sun Mar  7 09:55:49 2021]
+Finished job 144.
+15 of 28 steps (54%) done
+[Sun Mar  7 09:56:10 2021]
+Finished job 151.
+16 of 28 steps (57%) done
+[Sun Mar  7 10:16:44 2021]
+Finished job 133.
+17 of 28 steps (61%) done
+[Sun Mar  7 10:23:05 2021]
+Finished job 132.
+18 of 28 steps (64%) done
+[Sun Mar  7 10:28:06 2021]
+Finished job 134.
+19 of 28 steps (68%) done
+Exiting because a job execution failed. Look above for error message
+Complete log: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/log/2021-03-07T090654.563904.snakemake.log

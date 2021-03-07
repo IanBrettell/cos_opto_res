@@ -1,0 +1,7 @@
+Building DAG of jobs...
+WorkflowError:
+Conda env file does not exist: /hps/research1/birney/users/ian/opto_res/cos_opto_res/code/snakemake/20210203/envs/baseR.yaml
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/snakemake/deployment/conda.py", line 217, in create
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/snakemake/deployment/conda.py", line 98, in hash
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/snakemake/deployment/conda.py", line 83, in content
+  File "/nfs/research1/birney/users/brettell/anaconda3/envs/snakemake/lib/python3.9/site-packages/snakemake/deployment/conda.py", line 51, in content

@@ -10,11 +10,13 @@
 #   --keep-going \
 #   --rerun-incomplete \
 #   --use-conda \
+#   --use-singularity \
 #   -s code/snakemake/20210203/Snakefile \
 #   -p
 
 # import functions and packages
 from os.path import join
+import pandas as pd
 
 # Load config file and provide content as config object
 
@@ -22,57 +24,154 @@ configfile: "code/snakemake/20210203/config/config.yaml"
 
 # Load samples to process
 
-SAMPLES, = glob_wildcards(join(config["output_dir"], "raw/{sample}.tif"))
+#SAMPLES, = glob_wildcards(join(config["output_dir"], "raw/{sample}.tif"))
+SAMPLES = pd.read_csv(config["samples_file"], comment="#", skip_blank_lines=True, sep=",", index_col=0)
 
 # Rules
 
 rule all:
     input:
-        expand(join(config["output_dir"], "h5s/{sample}.h5"),
-            sample = SAMPLES),
+        expand(join(config["output_dir"], "tifs", "{sample}.ome.tif"),
+            sample = SAMPLES.index),
+        expand(join(config["training_dir"], "tifs", "{sample}.ome.tif"),
+            sample = SAMPLES.index),
+        expand(join(config["training_dir"], "h5s", "{sample}.h5"),
+            sample = SAMPLES.index),
+        expand(join(config["output_dir"], "h5s", "{sample}.h5"),
+            sample = SAMPLES.index),
+        expand(join(config["training_dir"], "h5s/{sample}_Probabilities.h5"),
+            sample = SAMPLES.index),
         expand(join(config["output_dir"], "h5s/{sample}_Probabilities.h5"),
-            sample = SAMPLES)
+            sample = SAMPLES.index),
+        expand(join(config["training_results_dir"], "{sample}_CSV-Table.csv.csv"),
+            sample = SAMPLES.index),
+        expand(join(config["full_results_dir"], "{sample}_CSV-Table.csv.csv"),
+            sample = SAMPLES.index)
 
-rule tif2h5:
+# Need to copy videos to working directory because Singularity can't access /nfs/ftp/private
+rule copy_to_wd:
     input:
-        join(config["output_dir"], "raw/{sample}.tif")
+        join(config["input_dir"], "{sample}.ome.tif")
     output:
-        join(config["output_dir"], "h5s/{sample}.h5")
+        join(config["output_dir"], "tifs", "{sample}.ome.tif")
+    shell:
+        "cp {input} {output}"
+
+rule extract_training_frames:
+    input:
+        join(config["output_dir"], "tifs", "{sample}.ome.tif")
+    params:
+        start = lambda wildcards: SAMPLES.loc[wildcards.sample, 'SAMPLE_START'],
+        end = lambda wildcards: SAMPLES.loc[wildcards.sample, 'SAMPLE_END']
+    output:
+        join(config["training_dir"], "tifs", "{sample}.ome.tif")
+    singularity:
+        config["r_container"]
+    script:
+        config["extract_frames_script"]
+
+rule training_tif2h5:
+    input:
+        join(config["training_dir"], "tifs", "{sample}.ome.tif")
+    output:
+        join(config["training_dir"], "h5s", "{sample}.h5")
     run:
         cmd = f"{config['fiji']} --ij2 --headless --console --run {config['convert_to_h5_script']} 'input_tif=\"{input[0]}\",output_h5=\"{output}\"'"
         shell(cmd)
 
-rule ilastik_probs:
+rule full_tif2h5:
     input:
-        join(config["output_dir"], "h5s/{sample}.h5")
+        join(config["output_dir"], "tifs", "{sample}.ome.tif")
     output:
-        join(config["output_dir"], "h5s/{sample}_Probabilities.h5")
+        join(config["output_dir"], "h5s", "{sample}.h5")
+    run:
+        cmd = f"{config['fiji']} --ij2 --headless --console --run {config['convert_to_h5_script']} 'input_tif=\"{input[0]}\",output_h5=\"{output}\"'"
+        shell(cmd)
+
+rule training_ilastik_probs:
+    input:
+        join(config["training_dir"], "h5s/{sample}.h5")
+    output:
+        join(config["training_dir"], "h5s/{sample}_Probabilities.h5")
+    singularity:
+        config["ilastik_container"]
     shell:
-        "{config[ilastik]} \
+        "{config[ilastik_run]} \
           --headless \
           --project={config[ilastik_project_pixclass]} \
           --readonly \
           --raw_data={input} \
+          --input_axes=\"ztyxc\" \
           --export_source=\"Probabilities\" \
           --output_filename_format={output}"
 
-#rule track:
-#    input:
-#        "split/{sample}_{quadrant}_{assay}.mp4"
-##    params:
-##        intensity = [SAMPLES.loc["{sample}", 'intensity_floor'], SAMPLES.loc["{sample}", 'intensity_ceiling']],
-##        area = [SAMPLES.loc["{sample}", 'area_floor'], SAMPLES.loc["{sample}", 'area_ceiling']],
-##        range = [0, SAMPLES.loc["{sample}", 'of_video_length']] if "{assay}" == "open_field" else [0, SAMPLES.loc["{sample}", 'no_video_length']],
-##        session_name = "{sample}_{quadrant}_{assay}"
-#    output:
-#        "idtrackerai/session_{sample}_{quadrant}_{assay}/trajectories_wo_gaps.npy"
-#    singularity:
-#        config["idtrackerai_cont"]
-##    conda:
-##        config["idtrackerai_env"]
-#    shell:
-#        """
-#        set +u
-#        . activate idtrackerai
-#        {config[track_script]} {config[samples_file]} {input[0]}
-#        """
+rule full_ilastik_probs:
+    input:
+        join(config["output_dir"], "h5s/{sample}.h5")
+    output:
+        join(config["output_dir"], "h5s/{sample}_Probabilities.h5")
+    singularity:
+        config["ilastik_container"]
+    shell:
+        "{config[ilastik_run]} \
+          --headless \
+          --project={config[ilastik_project_pixclass]} \
+          --readonly \
+          --raw_data={input} \
+          --input_axes=\"tzyxc\" \
+          --export_source=\"Probabilities\" \
+          --output_filename_format={output}"
+
+rule training_ilastik_track:
+    input:
+        raw = join(config["training_dir"], "h5s/{sample}.h5"),
+        probs = join(config["training_dir"], "h5s/{sample}_Probabilities.h5")
+    params:
+        output_file = join(config["training_results_dir"], "{sample}_CSV-Table.csv")
+    output:
+        join(config["training_results_dir"], "{sample}_CSV-Table.csv.csv")
+    singularity:
+        config["ilastik_container"]
+    shell:
+        "{config[ilastik_run]} \
+          --headless \
+          --readonly \
+          --project={config[ilastik_project_anitrack]} \
+          --raw_data={input.raw} \
+          --input_axes=\"ztyxc\" \
+          --prediction_maps={input.probs} \
+          --export_source=\"Plugin\" \
+          --export_plugin=\"CSV-Table\" \
+          --output_filename_format={params.output_file}"
+
+rule full_ilastik_track:
+    input:
+        raw = join(config["output_dir"], "h5s/{sample}.h5"),
+        probs = join(config["output_dir"], "h5s/{sample}_Probabilities.h5")
+    params:
+        output_file = join(config["full_results_dir"], "{sample}_CSV-Table.csv")
+    output:
+        join(config["full_results_dir"], "{sample}_CSV-Table.csv.csv")
+    singularity:
+        config["ilastik_container"]
+    shell:
+        "{config[ilastik_run]} \
+          --headless \
+          --readonly \
+          --project={config[ilastik_project_anitrack]} \
+          --raw_data={input.raw} \
+          --input_axes=\"tzyxc\" \
+          --prediction_maps={input.probs} \
+          --export_source=\"Plugin\" \
+          --export_plugin=\"CSV-Table\" \
+          --output_filename_format={params.output_file}"
+
+rule extract_columns:
+    input:
+        join(config["full_results_dir"], "{sample}_CSV-Table.csv.csv")
+    output:
+        join(config["full_results_out"], "{sample}.csv")
+    singularity:
+        config["r_container"]
+    script:
+        config["extract_columns_script"]

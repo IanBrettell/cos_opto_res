@@ -1,2 +1,2 @@
-sample,date,time,tank_side,of_start,of_end,no_start,no_end,fps,adj_top,adj_bottom,adj_left,adj_right,of_video_length,no_video_length,intensity_floor,intensity_ceiling,area_floor,area_ceiling
-20190612_1355_icab_ho5_R,20190612,1355,R,2368,21361,21920,40195,30,5,10,7,10,18993,18275,0,155,80,200
+SAMPLE,TOTAL_FRAMES,SAMPLE_START,SAMPLE_END
+20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default,500,67,76

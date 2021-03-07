@@ -1,0 +1,607 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 5000
+Job counts:
+	count	jobs
+	1	all
+	24	full_tif2h5
+	25	training_tif2h5
+	50
+
+[Sat Mar  6 16:52:45 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    jobid: 79
+    wildcards: sample=20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 79 with external jobid 'Job <1045850> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:46 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 64
+    wildcards: sample=20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 64 with external jobid 'Job <1045853> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:46 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 71
+    wildcards: sample=20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 71 with external jobid 'Job <1045854> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:46 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 86
+    wildcards: sample=20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 86 with external jobid 'Job <1045856> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:46 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 55
+    wildcards: sample=20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 55 with external jobid 'Job <1045857> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:47 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 94
+    wildcards: sample=20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 94 with external jobid 'Job <1045858> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:47 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 101
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 101 with external jobid 'Job <1045859> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:47 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 57
+    wildcards: sample=20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 57 with external jobid 'Job <1045861> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:47 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 65
+    wildcards: sample=20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 65 with external jobid 'Job <1045863> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:47 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 72
+    wildcards: sample=20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 72 with external jobid 'Job <1045865> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:48 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 82
+    wildcards: sample=20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 82 with external jobid 'Job <1045867> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:49 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 87
+    wildcards: sample=20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 87 with external jobid 'Job <1045869> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:49 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 95
+    wildcards: sample=20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 95 with external jobid 'Job <1045870> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:49 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 102
+    wildcards: sample=20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 102 with external jobid 'Job <1045871> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:49 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 58
+    wildcards: sample=20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 58 with external jobid 'Job <1045872> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:50 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 66
+    wildcards: sample=20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 66 with external jobid 'Job <1045874> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:50 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 73
+    wildcards: sample=20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 73 with external jobid 'Job <1045875> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:50 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    jobid: 80
+    wildcards: sample=20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 80 with external jobid 'Job <1045877> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:50 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 88
+    wildcards: sample=20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 88 with external jobid 'Job <1045878> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:51 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 96
+    wildcards: sample=20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 96 with external jobid 'Job <1045880> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:51 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 103
+    wildcards: sample=20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 103 with external jobid 'Job <1045882> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:51 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 59
+    wildcards: sample=20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 59 with external jobid 'Job <1045883> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:52 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 67
+    wildcards: sample=20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 67 with external jobid 'Job <1045884> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:52 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 74
+    wildcards: sample=20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 74 with external jobid 'Job <1045885> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:52 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 81
+    wildcards: sample=20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 81 with external jobid 'Job <1045887> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:52 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 89
+    wildcards: sample=20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 89 with external jobid 'Job <1045888> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:54 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 97
+    wildcards: sample=20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 97 with external jobid 'Job <1045889> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:54 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 60
+    wildcards: sample=20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 60 with external jobid 'Job <1045891> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:54 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 68
+    wildcards: sample=20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 68 with external jobid 'Job <1045892> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:55 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 75
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 75 with external jobid 'Job <1045893> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:55 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 83
+    wildcards: sample=20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 83 with external jobid 'Job <1045894> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:55 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 90
+    wildcards: sample=20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 90 with external jobid 'Job <1045895> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:56 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 98
+    wildcards: sample=20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 98 with external jobid 'Job <1045896> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:57 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 56
+    wildcards: sample=20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 56 with external jobid 'Job <1045897> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:57 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 61
+    wildcards: sample=20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 61 with external jobid 'Job <1045898> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:57 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 69
+    wildcards: sample=20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 69 with external jobid 'Job <1045900> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:57 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 76
+    wildcards: sample=20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 76 with external jobid 'Job <1045901> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:57 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 84
+    wildcards: sample=20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 84 with external jobid 'Job <1045902> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:58 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5
+    jobid: 91
+    wildcards: sample=20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 91 with external jobid 'Job <1045903> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:58 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 99
+    wildcards: sample=20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 99 with external jobid 'Job <1045904> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:58 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5
+    jobid: 54
+    wildcards: sample=20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 54 with external jobid 'Job <1045905> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:58 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5
+    jobid: 62
+    wildcards: sample=20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 62 with external jobid 'Job <1045906> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:58 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5
+    jobid: 70
+    wildcards: sample=20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 70 with external jobid 'Job <1045907> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:59 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5
+    jobid: 77
+    wildcards: sample=20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 77 with external jobid 'Job <1045909> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:59 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 92
+    wildcards: sample=20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 92 with external jobid 'Job <1045910> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:59 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5
+    jobid: 100
+    wildcards: sample=20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 100 with external jobid 'Job <1045911> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:59 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5
+    jobid: 63
+    wildcards: sample=20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 63 with external jobid 'Job <1045912> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:52:59 2021]
+rule training_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 78
+    wildcards: sample=20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 78 with external jobid 'Job <1045913> is submitted to default queue <research-rh74>.'.
+
+[Sat Mar  6 16:53:00 2021]
+rule full_tif2h5:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 93
+    wildcards: sample=20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 93 with external jobid 'Job <1045915> is submitted to default queue <research-rh74>.'.
+[Sat Mar  6 16:54:11 2021]
+Finished job 86.
+1 of 50 steps (2%) done
+[Sat Mar  6 16:54:11 2021]
+Finished job 87.
+2 of 50 steps (4%) done
+[Sat Mar  6 16:54:26 2021]
+Finished job 90.
+3 of 50 steps (6%) done
+[Sat Mar  6 16:54:27 2021]
+Finished job 98.
+4 of 50 steps (8%) done
+[Sat Mar  6 16:54:29 2021]
+Finished job 94.
+5 of 50 steps (10%) done
+[Sat Mar  6 16:54:31 2021]
+Finished job 95.
+6 of 50 steps (12%) done
+[Sat Mar  6 16:54:33 2021]
+Finished job 102.
+7 of 50 steps (14%) done
+[Sat Mar  6 16:54:37 2021]
+Finished job 88.
+8 of 50 steps (16%) done
+[Sat Mar  6 16:54:39 2021]
+Finished job 96.
+9 of 50 steps (18%) done
+[Sat Mar  6 16:54:41 2021]
+Finished job 103.
+10 of 50 steps (20%) done
+[Sat Mar  6 16:54:43 2021]
+Finished job 89.
+11 of 50 steps (22%) done
+[Sat Mar  6 16:54:45 2021]
+Finished job 97.
+12 of 50 steps (24%) done
+[Sat Mar  6 16:54:47 2021]
+Finished job 91.
+13 of 50 steps (26%) done
+[Sat Mar  6 16:54:48 2021]
+Finished job 99.
+14 of 50 steps (28%) done
+[Sat Mar  6 16:54:50 2021]
+Finished job 92.
+15 of 50 steps (30%) done
+[Sat Mar  6 16:54:52 2021]
+Finished job 100.
+16 of 50 steps (32%) done
+[Sat Mar  6 16:55:03 2021]
+Finished job 79.
+17 of 50 steps (34%) done
+[Sat Mar  6 16:55:04 2021]
+Finished job 101.
+18 of 50 steps (36%) done
+[Sat Mar  6 16:55:05 2021]
+Finished job 82.
+19 of 50 steps (38%) done
+[Sat Mar  6 16:55:07 2021]
+Finished job 84.
+20 of 50 steps (40%) done
+[Sat Mar  6 16:55:08 2021]
+Finished job 93.
+21 of 50 steps (42%) done
+[Sat Mar  6 16:55:30 2021]
+Finished job 68.
+22 of 50 steps (44%) done
+[Sat Mar  6 16:55:30 2021]
+Finished job 83.
+23 of 50 steps (46%) done
+[Sat Mar  6 16:55:31 2021]
+Finished job 64.
+24 of 50 steps (48%) done
+[Sat Mar  6 16:55:31 2021]
+Finished job 71.
+25 of 50 steps (50%) done
+[Sat Mar  6 16:55:32 2021]
+Finished job 66.
+26 of 50 steps (52%) done
+[Sat Mar  6 16:55:32 2021]
+Finished job 73.
+27 of 50 steps (54%) done
+[Sat Mar  6 16:55:33 2021]
+Finished job 70.
+28 of 50 steps (56%) done
+[Sat Mar  6 16:55:43 2021]
+Finished job 75.
+29 of 50 steps (58%) done
+[Sat Mar  6 16:55:44 2021]
+Finished job 56.
+30 of 50 steps (60%) done
+[Sat Mar  6 16:55:44 2021]
+Finished job 61.
+31 of 50 steps (62%) done
+[Sat Mar  6 16:55:44 2021]
+Finished job 69.
+32 of 50 steps (64%) done
+[Sat Mar  6 16:55:44 2021]
+Finished job 55.
+33 of 50 steps (66%) done
+[Sat Mar  6 16:55:44 2021]
+Finished job 57.
+34 of 50 steps (68%) done
+[Sat Mar  6 16:55:44 2021]
+Finished job 65.
+35 of 50 steps (70%) done
+[Sat Mar  6 16:55:44 2021]
+Finished job 72.
+36 of 50 steps (72%) done
+[Sat Mar  6 16:55:44 2021]
+Finished job 58.
+37 of 50 steps (74%) done
+[Sat Mar  6 16:55:44 2021]
+Finished job 80.
+38 of 50 steps (76%) done
+[Sat Mar  6 16:55:45 2021]
+Finished job 59.
+39 of 50 steps (78%) done
+[Sat Mar  6 16:55:45 2021]
+Finished job 67.
+40 of 50 steps (80%) done
+[Sat Mar  6 16:55:45 2021]
+Finished job 74.
+41 of 50 steps (82%) done
+[Sat Mar  6 16:55:45 2021]
+Finished job 60.
+42 of 50 steps (84%) done
+[Sat Mar  6 16:55:45 2021]
+Finished job 76.
+43 of 50 steps (86%) done
+[Sat Mar  6 16:55:45 2021]
+Finished job 54.
+44 of 50 steps (88%) done
+[Sat Mar  6 16:55:45 2021]
+Finished job 62.
+45 of 50 steps (90%) done
+[Sat Mar  6 16:55:46 2021]
+Finished job 63.
+46 of 50 steps (92%) done
+[Sat Mar  6 16:55:56 2021]
+Finished job 81.
+47 of 50 steps (94%) done
+[Sat Mar  6 16:55:56 2021]
+Finished job 78.
+48 of 50 steps (96%) done
+[Sat Mar  6 16:56:16 2021]
+Finished job 77.
+49 of 50 steps (98%) done
+
+[Sat Mar  6 16:56:17 2021]
+localrule all:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/tifs/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.ome.tif, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/h5s/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.h5
+    jobid: 0
+
+[Sat Mar  6 16:56:17 2021]
+Finished job 0.
+50 of 50 steps (100%) done
+Complete log: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/log/2021-03-06T165242.272985.snakemake.log
