@@ -29,4 +29,4 @@ full_results_dir:
 extract_columns_script:
     "scripts/extract_columns.R"
 full_results_out:
-    "data/tracking/20210203"
+    "data/tracking/20210203/pass_1"

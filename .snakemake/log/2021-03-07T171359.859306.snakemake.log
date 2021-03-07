@@ -1,0 +1,366 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 5000
+Job counts:
+	count	jobs
+	1	all
+	26	extract_columns
+	5	full_ilastik_track
+	32
+
+[Sun Mar  7 17:14:03 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.csv
+    jobid: 228
+    wildcards: sample=20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 228 with external jobid 'Job <1141334> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:03 2021]
+rule full_ilastik_track:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    jobid: 198
+    wildcards: sample=20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv
+Submitted job 198 with external jobid 'Job <1141335> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:03 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.csv
+    jobid: 220
+    wildcards: sample=20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+Submitted job 220 with external jobid 'Job <1141336> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:03 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.csv
+    jobid: 221
+    wildcards: sample=20210301_1_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 221 with external jobid 'Job <1141337> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:04 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.csv
+    jobid: 229
+    wildcards: sample=20210301_4_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 229 with external jobid 'Job <1141338> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:04 2021]
+rule full_ilastik_track:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    jobid: 200
+    wildcards: sample=20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv
+Submitted job 200 with external jobid 'Job <1141339> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:04 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.csv
+    jobid: 215
+    wildcards: sample=20210227_1_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 215 with external jobid 'Job <1141340> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:04 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.csv
+    jobid: 222
+    wildcards: sample=20210301_10_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 222 with external jobid 'Job <1141341> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:04 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.csv
+    jobid: 230
+    wildcards: sample=20210301_5_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 230 with external jobid 'Job <1141342> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:04 2021]
+rule full_ilastik_track:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    jobid: 193
+    wildcards: sample=20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+Submitted job 193 with external jobid 'Job <1141343> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:04 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.csv
+    jobid: 216
+    wildcards: sample=20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 216 with external jobid 'Job <1141344> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:04 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.csv
+    jobid: 223
+    wildcards: sample=20210301_11_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 223 with external jobid 'Job <1141345> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:04 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.csv
+    jobid: 231
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 231 with external jobid 'Job <1141346> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:05 2021]
+rule full_ilastik_track:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    jobid: 187
+    wildcards: sample=20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+Submitted job 187 with external jobid 'Job <1141347> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:05 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.csv
+    jobid: 209
+    wildcards: sample=20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 209 with external jobid 'Job <1141348> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:05 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.csv
+    jobid: 217
+    wildcards: sample=20210227_3_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 217 with external jobid 'Job <1141350> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:05 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.csv
+    jobid: 232
+    wildcards: sample=20210301_7_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 232 with external jobid 'Job <1141351> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:05 2021]
+rule full_ilastik_track:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    jobid: 188
+    wildcards: sample=20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+Submitted job 188 with external jobid 'Job <1141352> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:06 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.csv
+    jobid: 212
+    wildcards: sample=20210226_4_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 212 with external jobid 'Job <1141353> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:06 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.csv
+    jobid: 218
+    wildcards: sample=20210227_4_5dpi2dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 218 with external jobid 'Job <1141354> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:06 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.csv
+    jobid: 225
+    wildcards: sample=20210301_13_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default
+
+Submitted job 225 with external jobid 'Job <1141355> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:06 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.csv
+    jobid: 233
+    wildcards: sample=20210301_8_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 233 with external jobid 'Job <1141356> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:06 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.csv
+    jobid: 210
+    wildcards: sample=20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 210 with external jobid 'Job <1141357> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:06 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default.csv
+    jobid: 234
+    wildcards: sample=20210301_9_7dpi4dpi_cabcr5inj2_W50_sp0.6_op100_GW_MMStack_Default
+
+Submitted job 234 with external jobid 'Job <1141358> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:07 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default.csv
+    jobid: 211
+    wildcards: sample=20210226_3_4dpi1dpi_cabcr5inj2_W50_sp1_op50_GW_MMStack_Default
+
+Submitted job 211 with external jobid 'Job <1141359> is submitted to default queue <research-rh74>.'.
+
+[Sun Mar  7 17:14:07 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_1/20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.csv
+    jobid: 227
+    wildcards: sample=20210301_2_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 227 with external jobid 'Job <1141360> is submitted to default queue <research-rh74>.'.
+[Sun Mar  7 17:14:25 2021]
+Finished job 228.
+1 of 32 steps (3%) done
+[Sun Mar  7 17:14:25 2021]
+Finished job 220.
+2 of 32 steps (6%) done
+[Sun Mar  7 17:14:25 2021]
+Finished job 229.
+3 of 32 steps (9%) done
+[Sun Mar  7 17:14:25 2021]
+Finished job 215.
+4 of 32 steps (12%) done
+[Sun Mar  7 17:14:25 2021]
+Finished job 222.
+5 of 32 steps (16%) done
+[Sun Mar  7 17:14:25 2021]
+Finished job 230.
+6 of 32 steps (19%) done
+[Sun Mar  7 17:14:26 2021]
+Finished job 216.
+7 of 32 steps (22%) done
+[Sun Mar  7 17:14:26 2021]
+Finished job 223.
+8 of 32 steps (25%) done
+[Sun Mar  7 17:14:26 2021]
+Finished job 231.
+9 of 32 steps (28%) done
+[Sun Mar  7 17:14:26 2021]
+Finished job 209.
+10 of 32 steps (31%) done
+[Sun Mar  7 17:14:26 2021]
+Finished job 217.
+11 of 32 steps (34%) done
+[Sun Mar  7 17:14:26 2021]
+Finished job 232.
+12 of 32 steps (38%) done
+[Sun Mar  7 17:14:26 2021]
+Finished job 212.
+13 of 32 steps (41%) done
+[Sun Mar  7 17:14:26 2021]
+Finished job 218.
+14 of 32 steps (44%) done
+[Sun Mar  7 17:14:27 2021]
+Finished job 225.
+15 of 32 steps (47%) done
+[Sun Mar  7 17:14:27 2021]
+Finished job 233.
+16 of 32 steps (50%) done
+[Sun Mar  7 17:14:27 2021]
+Finished job 210.
+17 of 32 steps (53%) done
+[Sun Mar  7 17:14:27 2021]
+Finished job 234.
+18 of 32 steps (56%) done
+[Sun Mar  7 17:14:27 2021]
+Finished job 211.
+19 of 32 steps (59%) done
+[Sun Mar  7 17:14:27 2021]
+Finished job 227.
+20 of 32 steps (62%) done
+[Sun Mar  7 17:21:09 2021]
+Error in rule full_ilastik_track:
+    jobid: 198
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_12_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1141335> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 198, external: Job <1141335> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.a5bj_2w8/snakejob.full_ilastik_track.198.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 17:21:49 2021]
+Error in rule full_ilastik_track:
+    jobid: 193
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210227_5_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1141343> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 193, external: Job <1141343> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.a5bj_2w8/snakejob.full_ilastik_track.193.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 17:24:09 2021]
+Error in rule full_ilastik_track:
+    jobid: 200
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210301_14_7dpi4dpi_cabcr5inj2_W50_sp0.6_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1141339> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 200, external: Job <1141339> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.a5bj_2w8/snakejob.full_ilastik_track.200.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 17:28:10 2021]
+Error in rule full_ilastik_track:
+    jobid: 188
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_6_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1141352> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 188, external: Job <1141352> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.a5bj_2w8/snakejob.full_ilastik_track.188.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+[Sun Mar  7 17:28:30 2021]
+Error in rule full_ilastik_track:
+    jobid: 187
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv.csv
+    shell:
+        /ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw/20210226_5_4dpi1dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default_CSV-Table.csv
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: Job <1141347> is submitted to default queue <research-rh74>.
+
+Error executing rule full_ilastik_track on cluster (jobid: 187, external: Job <1141347> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.a5bj_2w8/snakejob.full_ilastik_track.187.sh). For error details see the cluster log and the log files of the involved rule(s).
+Job failed, going on with independent jobs.
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Complete log: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/log/2021-03-07T171359.859306.snakemake.log

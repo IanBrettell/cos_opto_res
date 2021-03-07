@@ -46,6 +46,8 @@ rule all:
         expand(join(config["training_results_dir"], "{sample}_CSV-Table.csv.csv"),
             sample = SAMPLES.index),
         expand(join(config["full_results_dir"], "{sample}_CSV-Table.csv.csv"),
+            sample = SAMPLES.index),
+        expand(join(config["full_results_out"], "{sample}.csv"),
             sample = SAMPLES.index)
 
 # Need to copy videos to working directory because Singularity can't access /nfs/ftp/private

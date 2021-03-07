@@ -4,14 +4,11 @@
 
 library(tidyverse)
 
-# Get column types
+# Read in file, select target columns and write to table
 
-cols = c("i", "_", "i", rep("_", 35), "d", "d", rep("_", 8))
-cols = paste(cols, collapse = "")
-
-# Import CSV and extract key columns
-
-readr::read_csv(snakemake@input[[1]],
-                col_types = cols) %>%
-    readr::write_csv(snakemake@output[[2]])
-            
+readr::read_csv(snakemake@input[[1]]) %>%
+  dplyr::select(FRAME = frame,
+                TRACKID = trackId,
+                COORD_X = Object_Center_0,
+                COORD_Y = Object_Center_1) %>%
+  readr::write_csv(snakemake@output[[1]])

@@ -6,7 +6,10 @@ From: rocker/tidyverse:latest
     apt update
 
     # Install linux libraries
-    apt-get -y install libzstd-dev libwebp-dev libtiff5-dev
+    apt-get -y install libzstd-dev libwebp-dev libtiff5-dev libmagick++-dev
 
     # Install R packages
-    R --slave -e 'install.packages("ijtiff", repos="https://cloud.r-project.org/")'
+    R --slave -e 'install.packages(c("ijtiff", "magick", "BiocManager"), repos="https://cloud.r-project.org/")'
+
+    # Install Bioconductor packages
+    R --slave -e 'BiocManager::install("EBImage")'
