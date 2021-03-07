@@ -1,0 +1,462 @@
+---
+title: "COSMIKK behaviour notebook"
+output: html_notebook
+editor_options:
+  chunk_output_type: inline
+---
+
+# Setup
+
+## `conda` env
+
+```{bash}
+# Linux tools
+mamba create -n opto_env av h5py fiji
+conda activate opto_env
+mamba install -c conda-forge av h5py
+#mamba install -c bioconda fiji
+
+# R
+conda activate baseR
+conda env export > code/snakemake/20210203/envs/baseR.yaml
+```
+
+## Singularity
+
+```{bash}
+module load singularity
+
+# R with all 
+singularity build \
+  --remote ../sing_conts/baseR.sif \
+  envs/20210306_baseR.def
+  
+# Ilastik
+singularity build \
+  --remote ../sing_conts/Ilastik.sif \
+  envs/20210306_Ilastik.def
+```
+
+## `renv`
+
+```{r, eval = F}
+conda activate baseR
+# initiate
+renv::init()
+# s
+```
+
+```{r, warning = F, message = F}
+# conda activate baseR
+#renv::activate()
+library(here)
+source(here::here("code", "scripts", "source.R"))
+```
+
+
+# Test data
+
+Raw videos uploaded here: `/nfs/ftp/private/indigene_ftp/upload/OMR_Risa/`
+
+Test video here on local: `~/Documents/Data/20210104_cos_videos/recorded_with_iphone.avi`
+
+Tried segmenting using `idtrackerai`, but it couldn't distinguish the fish against the background.
+As there are no crossovers, try `ilastik` intead.
+
+## Convert AVI to H5 for Ilastik
+
+```{r, engine='bash'}
+python3 code/scripts/20210106_avi2h5_fynn.py \
+  ~/Documents/Data/20210104_cos_videos/recorded_with_iphone.avi \
+  ~/Documents/Data/20210104_cos_videos/recorded_with_iphone.h5
+```
+
+Stalls `Ilastik` and `Fiji`. Try converting from original with `opencv` with `scripts/20210106_avi2avi_opencv.py`.
+
+Didn't work, even to mp4. Created no output. Try converting to a sequence first with `ffmpeg`.
+
+```{r, engine='bash'}
+mkdir /Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone_seq
+
+ffmpeg \
+  -i "/Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone.avi" \
+  -f image2 "/Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone_seq/%05d.png"
+```
+
+```{r, engine='bash'}
+ffmpeg -i \
+  /Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone.avi \
+  -vcodec copy \
+  -acodec copy \
+  /Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone.mp4
+```
+
+```{r, engine='bash'}
+ffmpeg \
+  -i /Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone.avi \
+  -y /Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone.mp4
+```
+Creates 19MB video. Try converting back to AVI.
+
+```{r, engine='bash'}
+ffmpeg \
+  -i /Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone.mp4 \
+  -y /Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone_backconv.avi
+```
+
+Creates a low-res video. Try with a different codec.
+
+```{r, engine='bash'}
+ffmpeg \
+  -i /Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone.mp4 \
+  -vcodec copy \
+  -acodec copy \
+  -y /Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone_backconv.avi
+```
+
+Doesn't play properly. Try to convert with python script anyway.
+
+```{r, engine='bash'}
+python3 code/scripts/20210106_avi2h5_fynn.py \
+  ~/Documents/Data/20210104_cos_videos/recorded_with_iphone_backconv.avi \
+  ~/Documents/Data/20210104_cos_videos/recorded_with_iphone_backconv.h5
+```
+
+Send to cluster to see if it works faster there.
+
+```{r, engine='bash'}
+ffmpeg \
+  -i /Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone.avi \
+  -vcodec h264 \
+  -y /Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone_h264.avi
+```
+
+Extracted frames 900-1100 using `Fiji`, now convert to `h5` for `Ilastik`
+
+```{r, engine='bash'}
+python3 code/scripts/20210106_avi2h5_fynn.py \
+  ~/Documents/Data/20210104_cos_videos/recorded_with_iphone_900-1100.avi \
+  ~/Documents/Data/20210104_cos_videos/recorded_with_iphone_900-1100.h5
+```
+
+# Try with DeepLabCut
+
+Trimmed video with `Fiji` (virtualstack is better because doesn't need to load it into memory.)
+Frames 250-1345, saved here: `/Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone_trimmed.avi`
+
+Opened video with `Fiji` Import -> AVI, selected frames 250 to 1345, then Export -> AVI using jpeg compressed and saved here:
+`/Users/brettell/Documents/Data/20210104_cos_videos/recorded_with_iphone_trimmed_jpeg.avi`
+
+Use that for DeepLabCut and Ilastik.
+
+Now convert that to `h5` for `Ilastik`:
+
+```{r, engine='bash'}
+python3 code/scripts/20210106_avi2h5_fynn.py \
+  ~/Documents/Data/20210104_cos_videos/recorded_with_iphone_trimmed_jpeg.avi \
+  ~/Documents/Data/20210104_cos_videos/recorded_with_iphone_trimmed_jpeg.h5
+```
+
+Also convert original .mov to .avi
+
+```{r, engine='bash'}
+ffmpeg \
+  -i ~/Documents/Data/20210104_cos_videos/raw_vid.mov \
+  -vcodec h264 \
+  -acodec copy \
+  ~/Documents/Data/20210104_cos_videos/raw_vid.avi
+```
+Import `raw_vid.mov` directly to `Fiji`, then save as uncompressed .avi:
+`~/Documents/Data/20210104_cos_videos/raw_vid_fiji.avi` (note large file of 6.3GB)
+Open that .avi, extract frames 900-1000, rotate, and save as:
+`~/Documents/Data/20210104_cos_videos/raw_vid_fiji_short.avi`
+
+*20210114*
+
+New video:
+
+`~/Documents/Data/20210104_cos_videos/20210108_OMR_Metal_halide_injured_Cab_MMStack_Default.ome.tif`
+
+Converted to jpeg-compressed avi with `Fiji`:
+`~/Documents/Data/20210104_cos_videos/20210108_OMR_Metal_halide_injured_Cab_MMStack_Default.ome_jpegcomp.avi`
+
+*20210122*
+
+Convert to `h5` for Ilastik using script
+
+```{r, engine='bash'}
+python code/scripts/20210106_avi2h5_fynn.py \
+  ~/Documents/Data/20210104_cos_videos/20210108_OMR_Metal_halide_injured_Cab_MMStack_Default.ome_jpegcomp.avi \
+  ~/Documents/Data/20210104_cos_videos/20210108_OMR_Metal_halide_injured_Cab_MMStack_Default.ome_jpegcomp.h5
+```
+
+Loads super slowly on the local. Try on the cluster.
+
+Convert video:
+
+```{r, engine='bash'}
+python code/scripts/20210106_avi2h5_fynn.py \
+  ../videos/20210108_OMR_Metal_halide_injured_Cab_MMStack_Default.ome_jpegcomp.avi \
+  ../videos/20210108_OMR_Metal_halide_injured_Cab_MMStack_Default.ome_jpegcomp.h5
+```
+
+
+Tracking params:
+
+* Method: simple
+* Input: 1
+* Threshold: 0.60
+* Size filter min: 200 max: 2000
+
+Frames to refine (/250)
+
+115, 156, 221, 34, 69
+
+________________________
+
+*20210221* 
+
+# Test on 3 videos
+
+Raw videos here: `/nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210203`
+Converted videos here: `/nfs/software/birney/users/ian/opto_res/videos/20210203_test`
+
+## Pixel classification
+
+```{bash, eval = F}
+snmk_proj=20210203
+
+conda activate snakemake
+snakemake \
+  --jobs 5000 \
+  --latency-wait 1000 \
+  --cluster-config code/snakemake/$snmk_proj/config/cluster.json \
+  --cluster 'bsub -g /snakemake_bgenie -J {cluster.name} -n {cluster.n} -M {cluster.memory} -o {cluster.output} -e {cluster.error}' \
+  --keep-going \
+  --rerun-incomplete \
+  --use-conda \
+  --use-singularity \
+  -s code/snakemake/$snmk_proj/Snakefile \
+  -p \
+  --rerun-incomplete
+```
+
+*20210302*
+
+## Copy all videos in upload directory to working directory
+
+`/nfs/ftp/private/indigene_ftp/upload/OMR_Risa`
+
+```{bash}
+in_dir=/nfs/ftp/private/indigene_ftp/upload/OMR_Risa
+out_dir=../videos/20210302_batch
+
+mkdir -p $out_dir
+
+for file in $(find $in_dir/2021022* -type f -name "*.tif") ; do
+  bn=$(basename $file) ;
+  out_file=$out_dir/$bn ;
+  if [ ! -f "$out_file" ] ; then
+    cp $file $out_dir/$bn 
+  fi ;
+done
+```
+
+## Get frame counts and paste to file
+
+```{bash, eval = F}
+conda activate opto_env
+
+in_dir=../videos/20210302_batch
+out_file=
+
+# Get file names
+for file in $(find $in_dir/*.tif ) ; do
+  basename $file ;
+done > tmp.txt
+
+# Get 
+for file in $(find $in_dir/*.tif ) ; do
+  mediainfo $file | grep "Title" | cut -f2 -d'/' | sed 's/\ frames=//g' ;
+done > tmp2.txt
+
+paste -d',' tmp.txt tmp2.txt > code/snakemake/20210203/config/samples.csv
+
+rm tmp*
+```
+
+## Get random frames for each video 
+
+```{r}
+in_dir = "/nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301"
+out_file = "code/snakemake/20210203/config/samples.csv"
+n_frames = 10
+
+# Get full path of files
+files = list.files(in_dir, full.names = T)
+frames = unlist(lapply(files, ijtiff::count_frames))
+
+df = data.frame("SAMPLE" = files,
+                "TOTAL_FRAMES" = frames) %>% 
+  dplyr::mutate(SAMPLE = stringr::str_remove(basename(SAMPLE), ".ome.tif")) %>% 
+  dplyr::mutate(LAST_SAMPLE  = TOTAL_FRAMES - (n_frames - 1))
+
+# get column index
+target_index = which(colnames(df) == "LAST_SAMPLE")
+
+# get random start frames
+set.seed(63)
+df$SAMPLE_START = sapply(1:nrow(df), function(x){
+  sample(1:df[[x, target_index]], size = 1)
+})
+
+# add end frame and write to file
+df %>% 
+  dplyr::mutate(SAMPLE_END = SAMPLE_START + (n_frames - 1)) %>% 
+  dplyr::select(SAMPLE, TOTAL_FRAMES, SAMPLE_START, SAMPLE_END) %>% 
+  readr::write_csv(out_file)
+```
+
+```{bash}
+sample=20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh \
+  --headless \
+  --readonly \
+  --project=../ilastik/projects/20210107_test_anitrack.ilp \
+  --raw_data=../ilastik/training/20210306/h5s/$sample.h5 \
+  --input_axes="ztyxc" \
+  --prediction_maps=../ilastik/training/20210306/h5s/$sample\_Probabilities.h5 \
+  --export_source="Plugin" \
+  --export_plugin="CSV-Table" \
+  --output_filename_format=../ilastik/training/20210306/results/pass_1/raw/$sample\_CSV-Table.csv
+  
+#Exception: Error parsing command-line arguments for tracking data export applet.
+#export_plugin should only be specified if export_source is set to Plugin.
+```
+
+
+# Process videos
+```{r}
+in_file = "~/Desktop/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_CSV-Table.csv.csv"
+
+cols = c("i", "_", "i", rep("_", 35), "d", "d", rep("_", 8))
+cols = paste(cols, collapse = "")
+
+# Import CSV and extract key columns
+
+test = readr::read_csv(in_file,
+                col_types = cols)
+
+
+test %>% 
+  ggplot() +
+    geom_path(aes(Object_Center_0, Object_Center_1, colour = frame)) +
+    facet_wrap(~trackId)
+
+lane_1_end = 135
+lane_2_end = 276
+lane_3_end = 429
+lane_4_end = 567
+lane_5_end = 712
+lane_6_end = 860
+lane_7_end = max(test$Object_Center_1 + 1)
+
+
+breaks = c(0, lane_1_end, lane_2_end, lane_3_end, lane_4_end, lane_5_end, lane_6_end, lane_7_end)
+```
+
+```{r}
+df = test %>% 
+  dplyr::filter(trackId != -1) %>% 
+  dplyr::mutate(LANE = cut(Object_Center_1, breaks = breaks, labels = F)) %>% 
+  dplyr::arrange(LANE, frame) %>% 
+  split(., f = .$LANE) %>% 
+  bind_rows()
+```
+
+```{r}
+df %>% 
+  ggplot() +
+    geom_path(aes(Object_Center_0, Object_Center_1, group = LANE, colour = frame)) +
+    scale_colour_viridis_c() +
+    coord_fixed() #+
+#transition_time(frame) +
+#    ease_aes('linear')
+```
+
+## Tile plot to show which frames have registered
+```{r}
+df %>% 
+  ggplot() +
+    geom_tile(aes(frame, LANE, fill = frame))
+```
+
+## Find frames with least coverage
+
+```{r}
+samples_file = readr::read_csv(here::here("code", "snakemake", "20210203", "config", "samples.csv"))
+```
+
+
+
+## Experiment with `magick` to add horizontal lines splitting lanes
+
+```{r}
+library(ijtiff)
+library(magick)
+
+samples_file = readr::read_csv(here::here("code", "snakemake", "20210203", "config", "samples.csv"))
+
+in_file = "/hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif"
+out_file = "tmp.png"
+
+# read first frame of tiff
+frame_1 = ijtiff::read_tif(in_file, frames = 1)
+
+# display
+display(frame_1)
+
+# write to file (magick can't read directly...)
+ijtiff::write_tif(frame_1, "tmp.tif")
+
+# convert to magick image
+frame_1_m = magick::image_read("tmp.tif")
+
+# display
+magick::image_display(frame_1_m)
+
+# very big. show smaller
+magick::image_display(magick::image_scale(frame_1_m, 800))
+
+# add horizontal lines
+line_coords = c(135, 276, 429, 567, 712, 860)
+
+img = magick::image_draw(frame_1_m)
+abline(h = line_coords, col = "white")
+
+lined_img = image_scale(img, 1000)
+dev.off()
+
+image_write(lined_img, path = out_file, format = "png")
+```
+
+## Add line coords to samples file
+```{r}
+line_coords = c(135, 276, 429, 567, 712, 860)
+samples_file_path = here::here("code", "snakemake", "20210203", "config", "samples.csv")
+
+samples_file = readr::read_csv(samples_file_path)
+
+samples_file %>%
+  dplyr::mutate(TOTAL_LANES = 7,
+                END_LANE_1 = line_coords[1],
+                END_LANE_2 = line_coords[2],
+                END_LANE_3 = line_coords[3],
+                END_LANE_4 = line_coords[4],
+                END_LANE_5 = line_coords[5],
+                END_LANE_6 = line_coords[6]) %>% 
+  readr::write_csv(samples_file_path)
+  
+```
+
