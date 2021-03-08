@@ -237,8 +237,7 @@ snakemake \
   --use-conda \
   --use-singularity \
   -s code/snakemake/$snmk_proj/Snakefile \
-  -p \
-  --rerun-incomplete
+  -p
 ```
 
 *20210302*
