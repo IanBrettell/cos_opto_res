@@ -22679,3 +22679,40 @@ INFO 2021-03-08 18:10:14,751 conservationTrackingWorkflow 83348 47287146780288 B
 INFO 2021-03-08 18:10:14,756 dataSelectionApplet 83348 47287146780288 Forcing input axes to [t z y x c, t z y x c]
 INFO 2021-03-08 18:10:36,995 opConservationTracking 50512 47300480243584 generating traxels
 INFO 2021-03-08 18:10:36,996 opConservationTracking 50512 47300480243584 fetching region features and division probabilities
+INFO 2021-03-08 18:11:01,819 opConservationTracking 83348 47287146780288 generating traxels
+INFO 2021-03-08 18:11:01,851 opConservationTracking 83348 47287146780288 fetching region features and division probabilities
+DEBUG 2021-03-08 18:11:08,502 classifierOperators 445994 47828553467648 Features took 11.225642 seconds. Prediction took 62.127695 seconds. Subregion: start '[0, 0, 0, 0]' stop '[1, 1020, 3246, 2]'
+DEBUG 2021-03-08 18:12:06,075 classifierOperators 445994 47828632094464 Features took 69.463048 seconds. Prediction took 61.160991 seconds. Subregion: start '[1, 0, 0, 0]' stop '[2, 1020, 3246, 2]'
+DEBUG 2021-03-08 18:13:09,459 classifierOperators 445994 47828627891968 Features took 132.981458 seconds. Prediction took 61.025325 seconds. Subregion: start '[2, 0, 0, 0]' stop '[3, 1020, 3246, 2]'
+DEBUG 2021-03-08 18:14:08,266 classifierOperators 445994 47828623689472 Features took 192.314257 seconds. Prediction took 60.497779 seconds. Subregion: start '[3, 0, 0, 0]' stop '[4, 1020, 3246, 2]'
+DEBUG 2021-03-08 18:15:07,904 classifierOperators 445994 47828625790720 Features took 251.165788 seconds. Prediction took 61.282791 seconds. Subregion: start '[4, 0, 0, 0]' stop '[5, 1020, 3246, 2]'
+INFO 2021-03-08 18:15:33,253 opConservationTracking 50512 47300480243584 filling traxelstore
+INFO 2021-03-08 18:15:33,676 hypothesesgraph 50512 47300480243584 generating tracklet graph...
+INFO 2021-03-08 18:15:33,737 hypothesesgraph 50512 47300480243584 tracklet graph has 507 nodes and 439 edges (before 2252,2184)
+INFO 2021-03-08 18:15:34,101 opConservationTracking 50512 47300480243584 Resolving mergers.
+INFO 2021-03-08 18:15:34,143 opConservationTracking 50512 47300480243584 Computing full graph on merger resolver (Only enabled on animal tracking workflow)
+INFO 2021-03-08 18:15:34,230 opConservationTracking 50512 47300480243584 Graph contains no mergers. Skipping merger resolving.
+INFO 2021-03-08 18:15:34,362 batchProcessingApplet 50512 47300480243584 Exporting to /hps/research1/birney/users/ian/opto_res/videos/20210203/pass_2/results/raw/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_CSV-Table.h5/exported_data
+INFO 2021-03-08 18:15:34,368 trackingBaseDataExportApplet 50512 47300480243584 Export source is: Plugin
+INFO 2021-03-08 18:15:34,369 trackingBaseDataExportApplet 50512 47300480243584 Export source plugin selected!
+INFO 2021-03-08 18:15:34,369 trackingBaseDataExportApplet 50512 47300480243584 Exporting tracking result using CSV-Table
+WARNING 2021-03-08 18:15:34,391 warnings 50512 47300712036096 arraytypes.py(1263): FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+DEBUG 2021-03-08 18:16:08,307 classifierOperators 445994 47828634195712 Features took 312.158519 seconds. Prediction took 60.691443 seconds. Subregion: start '[5, 0, 0, 0]' stop '[6, 1020, 3246, 2]'
+DEBUG 2021-03-08 18:18:02,112 classifierOperators 445994 47828636296960 Features took 373.762639 seconds. Prediction took 112.889444 seconds. Subregion: start '[7, 0, 0, 0]' stop '[8, 1020, 3246, 2]'
+DEBUG 2021-03-08 18:18:03,162 classifierOperators 445994 47828629993216 Features took 373.691284 seconds. Prediction took 114.011364 seconds. Subregion: start '[6, 0, 0, 0]' stop '[7, 1020, 3246, 2]'
+INFO 2021-03-08 18:18:31,745 trackingBaseDataExportApplet 50512 47300480243584 Export done
+INFO 2021-03-08 18:18:31,913 conservationTrackingWorkflow 50512 47300480243584 Completed Batch Processing
+DEBUG 2021-03-08 18:19:03,562 classifierOperators 445994 47828627891968 Features took 117.703361 seconds. Prediction took 57.160713 seconds. Subregion: start '[8, 0, 0, 0]' stop '[9, 1020, 3246, 2]'
+DEBUG 2021-03-08 18:19:58,506 classifierOperators 445994 47828553467648 Features took 174.043521 seconds. Prediction took 55.685197 seconds. Subregion: start '[9, 0, 0, 0]' stop '[10, 1020, 3246, 2]'
+INFO 2021-03-08 18:19:59,656 pixelClassificationWorkflow 445994 47828323776384 Completed Batch Processing
+INFO 2021-03-08 18:23:05,592 opConservationTracking 83348 47287146780288 filling traxelstore
+INFO 2021-03-08 18:23:06,864 hypothesesgraph 83348 47287146780288 generating tracklet graph...
+INFO 2021-03-08 18:23:07,072 hypothesesgraph 83348 47287146780288 tracklet graph has 1031 nodes and 873 edges (before 3798,3640)
+INFO 2021-03-08 18:23:07,964 opConservationTracking 83348 47287146780288 Resolving mergers.
+INFO 2021-03-08 18:23:07,966 opConservationTracking 83348 47287146780288 Computing full graph on merger resolver (Only enabled on animal tracking workflow)
+INFO 2021-03-08 18:23:08,119 opConservationTracking 83348 47287146780288 Graph contains no mergers. Skipping merger resolving.
+INFO 2021-03-08 18:23:08,426 batchProcessingApplet 83348 47287146780288 Exporting to /hps/research1/birney/users/ian/opto_res/videos/20210203/pass_2/results/raw/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_CSV-Table.h5/exported_data
+INFO 2021-03-08 18:23:08,447 trackingBaseDataExportApplet 83348 47287146780288 Export source is: Plugin
+INFO 2021-03-08 18:23:08,459 trackingBaseDataExportApplet 83348 47287146780288 Export source plugin selected!
+INFO 2021-03-08 18:23:08,459 trackingBaseDataExportApplet 83348 47287146780288 Exporting tracking result using CSV-Table
+WARNING 2021-03-08 18:23:08,499 warnings 83348 47287380653824 arraytypes.py(1263): FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.

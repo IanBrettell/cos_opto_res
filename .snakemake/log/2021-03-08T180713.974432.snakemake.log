@@ -68,3 +68,21 @@ Error in rule training_ilastik_probs:
 
 Error executing rule training_ilastik_probs on cluster (jobid: 116, external: Job <1242055> is submitted to default queue <research-rh74>., jobscript: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/tmp.jv9305l7/snakejob.training_ilastik_probs.116.sh). For error details see the cluster log and the log files of the involved rule(s).
 Job failed, going on with independent jobs.
+[Mon Mar  8 18:18:41 2021]
+Finished job 175.
+1 of 8 steps (12%) done
+
+[Mon Mar  8 18:18:41 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/pass_2/results/raw/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_2/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.csv
+    jobid: 201
+    wildcards: sample=20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 201 with external jobid 'Job <1243542> is submitted to default queue <research-rh74>.'.
+[Mon Mar  8 18:19:01 2021]
+Finished job 201.
+2 of 8 steps (25%) done
+[Mon Mar  8 18:20:11 2021]
+Finished job 129.
+3 of 8 steps (38%) done
