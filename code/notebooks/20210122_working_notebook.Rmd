@@ -562,7 +562,7 @@ df_list = lapply(files, function(file){
 #### Plot
 
 ```{r}
-out_path = here::here("plots", "20210203", "pass_1", "tiles", "tile.svg")
+out_path = here::here("plots", "20210203", "pass_1", "tiles", "tile.png")
 
 lapply(df_list, function(SAMPLE){
   SAMPLE$CLEAN
@@ -574,10 +574,11 @@ lapply(df_list, function(SAMPLE){
     scale_fill_viridis()
 
 ggsave(out_path, 
-       device = "svg",
+       device = "png",
        width = 20,
        height = 40,
-       units = "cm")
+       units = "cm",
+       dpi = 400)
   
 ```
 
@@ -649,5 +650,50 @@ final_samples = bind_rows(final_nontracked,
 
 # Write to file
 readr::write_csv(final_samples, out_file)
+```
+
+## Pass 2 plots
+
+### Proccess
+
+```{r, message = F}
+samples_file = here::here("code", "snakemake", "20210203", "config", "samples.csv")
+in_dir = here::here("data", "tracking", "20210203", "pass_2")
+
+df_list = process_tracking(samples_file = samples_file, in_dir = in_dir)
+```
+
+### Tiles
+
+```{r}
+out_path = here::here("plots", "20210203", "pass_2", "tiles")
+
+generate_tile_plot(df_list = df_list, out_path = out_path)
+```
+### Paths
+
+```{r}
+out_path = here::here("plots", "20210203", "pass_2", "paths")
+
+dir.create(out_path, recursive = T)
+out_file = file.path(out_path, "path.png")
+
+lapply(df_list, function(SAMPLE){
+  SAMPLE$CLEAN
+}) %>% 
+  dplyr::bind_rows(.id = "SAMPLE") %>% 
+    ggplot() +
+      geom_path(aes(COORD_X, COORD_Y, group = LANE, colour = FRAME)) +
+      scale_colour_viridis_c() +
+      coord_fixed() +
+      facet_wrap(~SAMPLE, ncol = 1) +
+
+
+ggsave(out_file, 
+       device = "png",
+       width = 30,
+       height = 80,
+       units = "cm",
+       dpi = 400)
 ```
 
