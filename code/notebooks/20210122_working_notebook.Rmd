@@ -408,7 +408,7 @@ library(magick)
 
 samples_file = readr::read_csv(here::here("code", "snakemake", "20210203", "config", "samples.csv"))
 
-in_file = "/hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif"
+in_file = "videos/20210203/tifs/20210227_6_5dpi2dpi_cabcr5inj2_W50_sp1_op80_LGG_MMStack_Default.ome.tif"
 out_file = "tmp.png"
 
 # read first frame of tiff
@@ -427,7 +427,11 @@ frame_1_m = magick::image_read("tmp.tif")
 magick::image_display(frame_1_m)
 
 # very big. show smaller
-magick::image_display(magick::image_scale(frame_1_m, 800))
+magick::image_scale(frame_1_m, 1000) %>% 
+  magick::image_modulate(brightness = 700) %>% 
+#  magick::image_contrast(sharpen = 1) %>% 
+  magick::image_display() 
+  
 
 # add horizontal lines
 line_coords = c(135, 276, 429, 567, 712, 860)
@@ -435,11 +439,27 @@ line_coords = c(135, 276, 429, 567, 712, 860)
 img = magick::image_draw(frame_1_m)
 abline(h = line_coords, col = "white")
 
-lined_img = image_scale(img, 1000)
+lined_img = image_scale(img, 1000) %>% 
+  magick::image_modulate(brightness = 700)
 dev.off()
 
 image_write(lined_img, path = out_file, format = "png")
 ```
+
+```{r}
+sample_name = unlist(sample_name)
+
+lanes_n = samples_df %>% 
+  dplyr::filter(SAMPLE == sample_name) %>% 
+  dplyr::pull(TOTAL_LANES)
+
+lane_coords = samples_df %>%
+  dplyr::filter(SAMPLE == sample_name) %>% 
+  dplyr::select(starts_with("END_LANE")) %>%
+  subset(select = 1:lanes_n -1) %>% 
+  unlist(use.names = F)
+```
+
 
 ## Add line coords to samples file
 ```{r}
@@ -458,5 +478,23 @@ samples_file %>%
                 END_LANE_6 = line_coords[6]) %>% 
   readr::write_csv(samples_file_path)
   
+```
+
+## Choose samples to use in next pass
+
+```{r}
+samples_file = here::here("code", "snakemake", "20210203", "config", "samples.csv")
+
+in_dir = here::here("data", "tracking", "20210203", "pass_1")
+
+samples_df = readr::read_csv(samples_file)
+
+samples_complete = list.files(in_dir) %>% 
+  stringr::str_remove(".csv")
+
+samples_incomplete = samples_df$SAMPLE[which(!samples_df$SAMPLE %in% samples_complete)]
+
+training_samples = data.frame(SAMPLE = samples_incomplete) %>% 
+  dplyr::left_join(samples_df, by = "SAMPLE")
 ```
 
