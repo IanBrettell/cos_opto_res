@@ -26,6 +26,7 @@ configfile: "code/snakemake/20210203/config/config.yaml"
 
 #SAMPLES, = glob_wildcards(join(config["output_dir"], "raw/{sample}.tif"))
 SAMPLES = pd.read_csv(config["samples_file"], comment="#", skip_blank_lines=True, sep=",", index_col=0)
+TRAINING_SAMPLES = pd.read_csv(config["training_samples_file"], comment="#", skip_blank_lines=True, sep=",", index_col=0)
 
 # Rules
 
@@ -35,22 +36,22 @@ rule all:
             sample = SAMPLES.index),
         expand(join(config["plots_dir"], "{sample}.png"),
             sample = SAMPLES.index),
-        expand(join(config["training_dir"], "tifs", "{sample}.ome.tif"),
-            sample = SAMPLES.index),
-        expand(join(config["training_dir"], "h5s", "{sample}.h5"),
-            sample = SAMPLES.index),
+        expand(join(config["training_dir"], "tifs", "{training_sample}.ome.tif"),
+            training_sample = TRAINING_SAMPLES.index),
+        expand(join(config["training_dir"], "h5s", "{training_sample}.h5"),
+            training_sample = TRAINING_SAMPLES.index),
         expand(join(config["output_dir"], "h5s", "{sample}.h5"),
             sample = SAMPLES.index),
-        expand(join(config["training_dir"], "h5s/{sample}_Probabilities.h5"),
+        expand(join(config["training_dir"], "h5s/{training_sample}_Probabilities.h5"),
+            training_sample = TRAINING_SAMPLES.index),
+        expand(join(config["pass_dir"], "h5s/{sample}_Probabilities.h5"),
             sample = SAMPLES.index),
-#        expand(join(config["output_dir"], "h5s/{sample}_Probabilities.h5"),
+#        expand(join(config["training_results_dir"], "{sample}_CSV-Table.csv.csv"),
 #            sample = SAMPLES.index),
-        expand(join(config["training_results_dir"], "{sample}_CSV-Table.csv.csv"),
+        expand(join(config["pass_dir"], "results", "raw", "{sample}_CSV-Table.csv.csv"),
+            sample = SAMPLES.index),
+        expand(join(config["full_results_out"], "{sample}.csv"),
             sample = SAMPLES.index)
-#        expand(join(config["full_results_dir"], "{sample}_CSV-Table.csv.csv"),
-#            sample = SAMPLES.index),
-#        expand(join(config["full_results_out"], "{sample}.csv"),
-#            sample = SAMPLES.index)
 
 # Need to copy videos to working directory because Singularity can't access /nfs/ftp/private
 rule copy_to_wd:
@@ -76,12 +77,12 @@ rule draw_lanes:
 
 rule extract_training_frames:
     input:
-        join(config["output_dir"], "tifs", "{sample}.ome.tif")
+        join(config["output_dir"], "tifs", "{training_sample}.ome.tif")
     params:
-        start = lambda wildcards: SAMPLES.loc[wildcards.sample, 'SAMPLE_START'],
-        end = lambda wildcards: SAMPLES.loc[wildcards.sample, 'SAMPLE_END']
+        start = lambda wildcards: TRAINING_SAMPLES.loc[wildcards.training_sample, 'SAMPLE_START'],
+        end = lambda wildcards: TRAINING_SAMPLES.loc[wildcards.training_sample, 'SAMPLE_END']
     output:
-        join(config["training_dir"], "tifs", "{sample}.ome.tif")
+        join(config["training_dir"], "tifs", "{training_sample}.ome.tif")
     singularity:
         config["r_container"]
     script:
@@ -89,9 +90,9 @@ rule extract_training_frames:
 
 rule training_tif2h5:
     input:
-        join(config["training_dir"], "tifs", "{sample}.ome.tif")
+        join(config["training_dir"], "tifs", "{training_sample}.ome.tif")
     output:
-        join(config["training_dir"], "h5s", "{sample}.h5")
+        join(config["training_dir"], "h5s", "{training_sample}.h5")
     run:
         cmd = f"{config['fiji']} --ij2 --headless --console --run {config['convert_to_h5_script']} 'input_tif=\"{input[0]}\",output_h5=\"{output}\"'"
         shell(cmd)
@@ -107,9 +108,9 @@ rule full_tif2h5:
 
 rule training_ilastik_probs:
     input:
-        join(config["training_dir"], "h5s/{sample}.h5")
+        join(config["training_dir"], "h5s/{training_sample}.h5")
     output:
-        join(config["training_dir"], "h5s/{sample}_Probabilities.h5")
+        join(config["training_dir"], "h5s/{training_sample}_Probabilities.h5")
     singularity:
         config["ilastik_container"]
     shell:
@@ -126,7 +127,7 @@ rule full_ilastik_probs:
     input:
         join(config["output_dir"], "h5s/{sample}.h5")
     output:
-        join(config["output_dir"], "h5s/{sample}_Probabilities.h5")
+        join(config["pass_dir"], "h5s/{sample}_Probabilities.h5")
     singularity:
         config["ilastik_container"]
     shell:
@@ -164,11 +165,11 @@ rule full_ilastik_probs:
 rule full_ilastik_track:
     input:
         raw = join(config["output_dir"], "h5s/{sample}.h5"),
-        probs = join(config["output_dir"], "h5s/{sample}_Probabilities.h5")
+        probs = join(config["pass_dir"], "h5s/{sample}_Probabilities.h5")
     params:
-        output_file = join(config["full_results_dir"], "{sample}_CSV-Table.csv")
+        output_file = join(config["pass_dir"], "results", "raw", "{sample}_CSV-Table.csv")
     output:
-        join(config["full_results_dir"], "{sample}_CSV-Table.csv.csv")
+        join(config["pass_dir"], "results", "raw", "{sample}_CSV-Table.csv.csv")
     singularity:
         config["ilastik_container"]
     shell:
@@ -185,7 +186,7 @@ rule full_ilastik_track:
 
 rule extract_columns:
     input:
-        join(config["full_results_dir"], "{sample}_CSV-Table.csv.csv")
+        join(config["pass_dir"], "results", "raw", "{sample}_CSV-Table.csv.csv")
     output:
         join(config["full_results_out"], "{sample}.csv")
     singularity:

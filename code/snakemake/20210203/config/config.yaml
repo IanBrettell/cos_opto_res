@@ -1,9 +1,11 @@
 samples_file:
     "code/snakemake/20210203/config/samples.csv"
+training_samples_file:
+    "code/snakemake/20210203/config/samples_pass_2_training.csv"
 input_dir:
     "/nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301"
 training_dir:
-    "/hps/research1/birney/users/ian/opto_res/ilastik/training/20210306"
+    "/hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/pass_2"
 extract_frames_script:
     "scripts/extract_frames.R"
 output_dir:
@@ -18,6 +20,8 @@ fiji:
     "/nfs/software/birney/Fiji.app/ImageJ-linux64"
 convert_to_h5_script:
     "code/snakemake/20210203/scripts/convert_tif_to_h5.ijm"
+pass_dir:
+    "/hps/research1/birney/users/ian/opto_res/videos/20210203/pass_2"
 ilastik_container:
     "../sing_conts/Ilastik.sif"
 ilastik_run:
@@ -27,10 +31,8 @@ ilastik_project_pixclass:
 ilastik_project_anitrack:
     "../ilastik/projects/20210107_test_anitrack.ilp"
 training_results_dir:
-    "/hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/results/pass_1/raw"
-full_results_dir:
-    "/hps/research1/birney/users/ian/opto_res/videos/20210203/results/pass_1/raw"
+    "/hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/results/pass_2/raw"
 extract_columns_script:
     "scripts/extract_columns.R"
 full_results_out:
-    "data/tracking/20210203/pass_1"
+    "data/tracking/20210203/pass_2"
