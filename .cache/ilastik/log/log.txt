@@ -22716,3 +22716,5 @@ INFO 2021-03-08 18:23:08,447 trackingBaseDataExportApplet 83348 47287146780288 E
 INFO 2021-03-08 18:23:08,459 trackingBaseDataExportApplet 83348 47287146780288 Export source plugin selected!
 INFO 2021-03-08 18:23:08,459 trackingBaseDataExportApplet 83348 47287146780288 Exporting tracking result using CSV-Table
 WARNING 2021-03-08 18:23:08,499 warnings 83348 47287380653824 arraytypes.py(1263): FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+INFO 2021-03-08 18:31:57,694 trackingBaseDataExportApplet 83348 47287146780288 Export done
+INFO 2021-03-08 18:31:57,906 conservationTrackingWorkflow 83348 47287146780288 Completed Batch Processing

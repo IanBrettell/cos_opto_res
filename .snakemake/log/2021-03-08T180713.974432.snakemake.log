@@ -86,3 +86,18 @@ Finished job 201.
 [Mon Mar  8 18:20:11 2021]
 Finished job 129.
 3 of 8 steps (38%) done
+[Mon Mar  8 18:32:03 2021]
+Finished job 157.
+4 of 8 steps (50%) done
+
+[Mon Mar  8 18:32:04 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/pass_2/results/raw/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_2/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.csv
+    jobid: 183
+    wildcards: sample=20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 183 with external jobid 'Job <1244617> is submitted to default queue <research-rh74>.'.
+[Mon Mar  8 18:32:23 2021]
+Finished job 183.
+5 of 8 steps (62%) done
