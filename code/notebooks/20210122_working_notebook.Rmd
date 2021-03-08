@@ -287,13 +287,27 @@ rm tmp*
 ## Get random frames for each video 
 
 ```{r}
-in_dir = "/nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301"
+library(tidyverse)
+library(ijtiff)
+
+in_dir = "videos/20210203/tifs"
 out_file = "code/snakemake/20210203/config/samples.csv"
 n_frames = 10
 
 # Get full path of files
 files = list.files(in_dir, full.names = T)
+
+# Get frames
 frames = unlist(lapply(files, ijtiff::count_frames))
+
+# Get max X and Y
+max_x = integer()
+max_y = integer()
+lapply(seq_along(files), function(i) {
+  target_tif = ijtiff::read_tif(files[i], frames = 1)
+  max_x[i] = dim(target_tif)[2]
+  max_y[i] = dim(target_tif)[3]
+})
 
 df = data.frame("SAMPLE" = files,
                 "TOTAL_FRAMES" = frames) %>% 
@@ -480,6 +494,20 @@ samples_file %>%
 ```
 
 ## Choose samples to use in next pass
+
+### Plot tiles for all files
+
+```{r}
+in_dir = here::here("data", "tracking", "20210203", "pass_1")
+
+files = list.files(in_dir, full.names = T)
+names(files) = basename(files)
+
+df = lapply(files, function(file){
+  readr::read_csv(file)
+})
+```
+
 
 ```{r}
 samples_file = here::here("code", "snakemake", "20210203", "config", "samples.csv")
