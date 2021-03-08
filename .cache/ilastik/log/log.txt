@@ -19971,3 +19971,249 @@ ERROR 2021-03-07 19:18:11,664 excepthooks 341284 47656626567040 Traceback (most 
     prob_predictions[_t] = classifier.predict_probabilities(feats[_t].astype(numpy.float32))
 KeyError: 115
 
+ERROR 2021-03-07 19:20:55,301 log_exception 141126 47145136371584 Traceback (most recent call last):
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/shell/projectManager.py", line 467, in _loadProject
+    self.workflow.onProjectLoaded(self)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/workflows/tracking/conservation/conservationTrackingWorkflow.py", line 415, in onProjectLoaded
+    self.batchProcessingApplet.run_export_from_parsed_args(self._batch_input_args)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 109, in run_export_from_parsed_args
+    export_function=export_function,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 158, in run_export
+    progress_callback=partial(lerpProgressSignal, global_progress_start, global_progress_end),
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 195, in export_dataset
+    self.dataExportApplet.prepare_lane_for_export(self.dataSelectionApplet.num_lanes - 1)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/workflows/tracking/conservation/conservationTrackingWorkflow.py", line 381, in prepare_lane_for_export
+    withBatchProcessing=True,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 517, in track
+    hypothesesGraph = self._createHypothesesGraph()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 286, in _createHypothesesGraph
+    with_classifier_prior=withClassifierPrior,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 812, in _generate_traxelstore
+    detProbs = self.DetectionProbabilities(time_range).wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 541, in wait
+    return self._wait(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 564, in _wait
+    self._wait_within_foreign_thread(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 624, in _wait_within_foreign_thread
+    raise_with_traceback(exc_value, exc_tb)
+  File "/ilastik-release/lib/python3.7/site-packages/future/utils/__init__.py", line 446, in raise_with_traceback
+    raise exc.with_traceback(traceback)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 360, in _execute
+    self._result = self.fn()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/slot.py", line 869, in __call__
+    result_op = self.operator.call_execute(self.slot.top_level_slot, self.slot.subindex, self.roi, destination)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/operator.py", line 592, in call_execute
+    return self.execute(slot, subindex, roi, result, **kwargs)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/objectClassification/opObjectClassification.py", line 1284, in execute
+    pool.wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 1354, in wait
+    self._clear_finishing_requests()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 1448, in _clear_finishing_requests
+    req.block()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 547, in block
+    self._wait(timeout)  # No return value. Use wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 564, in _wait
+    self._wait_within_foreign_thread(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 624, in _wait_within_foreign_thread
+    raise_with_traceback(exc_value, exc_tb)
+  File "/ilastik-release/lib/python3.7/site-packages/future/utils/__init__.py", line 446, in raise_with_traceback
+    raise exc.with_traceback(traceback)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 360, in _execute
+    self._result = self.fn()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/objectClassification/opObjectClassification.py", line 1275, in predict_forest
+    prob_predictions[_t] = classifier.predict_probabilities(feats[_t].astype(numpy.float32))
+KeyError: 386
+
+ERROR 2021-03-07 19:20:55,351 log_exception 141126 47145136371584 Project could not be loaded due to the exception shown above.
+Aborting Project Open Action
+ERROR 2021-03-07 19:20:56,754 excepthooks 141126 47145136371584 Unhandled exception in thread: 'MainThread'
+ERROR 2021-03-07 19:20:56,757 excepthooks 141126 47145136371584 Traceback (most recent call last):
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik.py", line 122, in <module>
+    main()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik.py", line 118, in main
+    main()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/__main__.py", line 30, in main
+    hShell = app.main(parsed_args, workflow_cmdline_args)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/app.py", line 194, in main
+    f(shell)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/app.py", line 372, in loadProject
+    shell.openProjectFile(path, parsed_args.readonly)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/shell/headless/headlessShell.py", line 125, in openProjectFile
+    self.projectManager._loadProject(hdf5File, projectFilePath, readOnly)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/utility/timer.py", line 153, in wrapper
+    return func(*args, **kwargs)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/shell/projectManager.py", line 467, in _loadProject
+    self.workflow.onProjectLoaded(self)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/workflows/tracking/conservation/conservationTrackingWorkflow.py", line 415, in onProjectLoaded
+    self.batchProcessingApplet.run_export_from_parsed_args(self._batch_input_args)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 109, in run_export_from_parsed_args
+    export_function=export_function,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 158, in run_export
+    progress_callback=partial(lerpProgressSignal, global_progress_start, global_progress_end),
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 195, in export_dataset
+    self.dataExportApplet.prepare_lane_for_export(self.dataSelectionApplet.num_lanes - 1)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/workflows/tracking/conservation/conservationTrackingWorkflow.py", line 381, in prepare_lane_for_export
+    withBatchProcessing=True,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 517, in track
+    hypothesesGraph = self._createHypothesesGraph()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 286, in _createHypothesesGraph
+    with_classifier_prior=withClassifierPrior,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 812, in _generate_traxelstore
+    detProbs = self.DetectionProbabilities(time_range).wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 541, in wait
+    return self._wait(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 564, in _wait
+    self._wait_within_foreign_thread(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 624, in _wait_within_foreign_thread
+    raise_with_traceback(exc_value, exc_tb)
+  File "/ilastik-release/lib/python3.7/site-packages/future/utils/__init__.py", line 446, in raise_with_traceback
+    raise exc.with_traceback(traceback)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 360, in _execute
+    self._result = self.fn()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/slot.py", line 869, in __call__
+    result_op = self.operator.call_execute(self.slot.top_level_slot, self.slot.subindex, self.roi, destination)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/operator.py", line 592, in call_execute
+    return self.execute(slot, subindex, roi, result, **kwargs)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/objectClassification/opObjectClassification.py", line 1284, in execute
+    pool.wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 1354, in wait
+    self._clear_finishing_requests()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 1448, in _clear_finishing_requests
+    req.block()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 547, in block
+    self._wait(timeout)  # No return value. Use wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 564, in _wait
+    self._wait_within_foreign_thread(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 624, in _wait_within_foreign_thread
+    raise_with_traceback(exc_value, exc_tb)
+  File "/ilastik-release/lib/python3.7/site-packages/future/utils/__init__.py", line 446, in raise_with_traceback
+    raise exc.with_traceback(traceback)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 360, in _execute
+    self._result = self.fn()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/objectClassification/opObjectClassification.py", line 1275, in predict_forest
+    prob_predictions[_t] = classifier.predict_probabilities(feats[_t].astype(numpy.float32))
+KeyError: 386
+
+ERROR 2021-03-07 19:25:28,890 log_exception 124157 47367279240832 Traceback (most recent call last):
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/shell/projectManager.py", line 467, in _loadProject
+    self.workflow.onProjectLoaded(self)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/workflows/tracking/conservation/conservationTrackingWorkflow.py", line 415, in onProjectLoaded
+    self.batchProcessingApplet.run_export_from_parsed_args(self._batch_input_args)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 109, in run_export_from_parsed_args
+    export_function=export_function,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 158, in run_export
+    progress_callback=partial(lerpProgressSignal, global_progress_start, global_progress_end),
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 195, in export_dataset
+    self.dataExportApplet.prepare_lane_for_export(self.dataSelectionApplet.num_lanes - 1)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/workflows/tracking/conservation/conservationTrackingWorkflow.py", line 381, in prepare_lane_for_export
+    withBatchProcessing=True,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 517, in track
+    hypothesesGraph = self._createHypothesesGraph()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 286, in _createHypothesesGraph
+    with_classifier_prior=withClassifierPrior,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 812, in _generate_traxelstore
+    detProbs = self.DetectionProbabilities(time_range).wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 541, in wait
+    return self._wait(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 564, in _wait
+    self._wait_within_foreign_thread(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 624, in _wait_within_foreign_thread
+    raise_with_traceback(exc_value, exc_tb)
+  File "/ilastik-release/lib/python3.7/site-packages/future/utils/__init__.py", line 446, in raise_with_traceback
+    raise exc.with_traceback(traceback)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 360, in _execute
+    self._result = self.fn()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/slot.py", line 869, in __call__
+    result_op = self.operator.call_execute(self.slot.top_level_slot, self.slot.subindex, self.roi, destination)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/operator.py", line 592, in call_execute
+    return self.execute(slot, subindex, roi, result, **kwargs)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/objectClassification/opObjectClassification.py", line 1284, in execute
+    pool.wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 1354, in wait
+    self._clear_finishing_requests()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 1448, in _clear_finishing_requests
+    req.block()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 547, in block
+    self._wait(timeout)  # No return value. Use wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 564, in _wait
+    self._wait_within_foreign_thread(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 624, in _wait_within_foreign_thread
+    raise_with_traceback(exc_value, exc_tb)
+  File "/ilastik-release/lib/python3.7/site-packages/future/utils/__init__.py", line 446, in raise_with_traceback
+    raise exc.with_traceback(traceback)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 360, in _execute
+    self._result = self.fn()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/objectClassification/opObjectClassification.py", line 1275, in predict_forest
+    prob_predictions[_t] = classifier.predict_probabilities(feats[_t].astype(numpy.float32))
+KeyError: 254
+
+ERROR 2021-03-07 19:25:28,892 log_exception 124157 47367279240832 Project could not be loaded due to the exception shown above.
+Aborting Project Open Action
+ERROR 2021-03-07 19:25:32,187 excepthooks 124157 47367279240832 Unhandled exception in thread: 'MainThread'
+ERROR 2021-03-07 19:25:32,193 excepthooks 124157 47367279240832 Traceback (most recent call last):
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik.py", line 122, in <module>
+    main()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik.py", line 118, in main
+    main()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/__main__.py", line 30, in main
+    hShell = app.main(parsed_args, workflow_cmdline_args)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/app.py", line 194, in main
+    f(shell)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/app.py", line 372, in loadProject
+    shell.openProjectFile(path, parsed_args.readonly)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/shell/headless/headlessShell.py", line 125, in openProjectFile
+    self.projectManager._loadProject(hdf5File, projectFilePath, readOnly)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/utility/timer.py", line 153, in wrapper
+    return func(*args, **kwargs)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/shell/projectManager.py", line 467, in _loadProject
+    self.workflow.onProjectLoaded(self)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/workflows/tracking/conservation/conservationTrackingWorkflow.py", line 415, in onProjectLoaded
+    self.batchProcessingApplet.run_export_from_parsed_args(self._batch_input_args)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 109, in run_export_from_parsed_args
+    export_function=export_function,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 158, in run_export
+    progress_callback=partial(lerpProgressSignal, global_progress_start, global_progress_end),
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/batchProcessing/batchProcessingApplet.py", line 195, in export_dataset
+    self.dataExportApplet.prepare_lane_for_export(self.dataSelectionApplet.num_lanes - 1)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/workflows/tracking/conservation/conservationTrackingWorkflow.py", line 381, in prepare_lane_for_export
+    withBatchProcessing=True,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 517, in track
+    hypothesesGraph = self._createHypothesesGraph()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 286, in _createHypothesesGraph
+    with_classifier_prior=withClassifierPrior,
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/tracking/conservation/opConservationTracking.py", line 812, in _generate_traxelstore
+    detProbs = self.DetectionProbabilities(time_range).wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 541, in wait
+    return self._wait(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 564, in _wait
+    self._wait_within_foreign_thread(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 624, in _wait_within_foreign_thread
+    raise_with_traceback(exc_value, exc_tb)
+  File "/ilastik-release/lib/python3.7/site-packages/future/utils/__init__.py", line 446, in raise_with_traceback
+    raise exc.with_traceback(traceback)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 360, in _execute
+    self._result = self.fn()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/slot.py", line 869, in __call__
+    result_op = self.operator.call_execute(self.slot.top_level_slot, self.slot.subindex, self.roi, destination)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/operator.py", line 592, in call_execute
+    return self.execute(slot, subindex, roi, result, **kwargs)
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/objectClassification/opObjectClassification.py", line 1284, in execute
+    pool.wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 1354, in wait
+    self._clear_finishing_requests()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 1448, in _clear_finishing_requests
+    req.block()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 547, in block
+    self._wait(timeout)  # No return value. Use wait()
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 564, in _wait
+    self._wait_within_foreign_thread(timeout)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 624, in _wait_within_foreign_thread
+    raise_with_traceback(exc_value, exc_tb)
+  File "/ilastik-release/lib/python3.7/site-packages/future/utils/__init__.py", line 446, in raise_with_traceback
+    raise exc.with_traceback(traceback)
+  File "/ilastik-release/ilastik-meta/ilastik/lazyflow/request/request.py", line 360, in _execute
+    self._result = self.fn()
+  File "/ilastik-release/ilastik-meta/ilastik/ilastik/applets/objectClassification/opObjectClassification.py", line 1275, in predict_forest
+    prob_predictions[_t] = classifier.predict_probabilities(feats[_t].astype(numpy.float32))
+KeyError: 254
+

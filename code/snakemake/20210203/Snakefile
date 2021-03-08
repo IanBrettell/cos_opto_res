@@ -43,14 +43,14 @@ rule all:
             sample = SAMPLES.index),
         expand(join(config["training_dir"], "h5s/{sample}_Probabilities.h5"),
             sample = SAMPLES.index),
-        expand(join(config["output_dir"], "h5s/{sample}_Probabilities.h5"),
-            sample = SAMPLES.index),
+#        expand(join(config["output_dir"], "h5s/{sample}_Probabilities.h5"),
+#            sample = SAMPLES.index),
         expand(join(config["training_results_dir"], "{sample}_CSV-Table.csv.csv"),
-            sample = SAMPLES.index),
-        expand(join(config["full_results_dir"], "{sample}_CSV-Table.csv.csv"),
-            sample = SAMPLES.index),
-        expand(join(config["full_results_out"], "{sample}.csv"),
             sample = SAMPLES.index)
+#        expand(join(config["full_results_dir"], "{sample}_CSV-Table.csv.csv"),
+#            sample = SAMPLES.index),
+#        expand(join(config["full_results_out"], "{sample}.csv"),
+#            sample = SAMPLES.index)
 
 # Need to copy videos to working directory because Singularity can't access /nfs/ftp/private
 rule copy_to_wd:
@@ -139,27 +139,27 @@ rule full_ilastik_probs:
           --export_source=\"Probabilities\" \
           --output_filename_format={output}"
 
-rule training_ilastik_track:
-    input:
-        raw = join(config["training_dir"], "h5s/{sample}.h5"),
-        probs = join(config["training_dir"], "h5s/{sample}_Probabilities.h5")
-    params:
-        output_file = join(config["training_results_dir"], "{sample}_CSV-Table.csv")
-    output:
-        join(config["training_results_dir"], "{sample}_CSV-Table.csv.csv")
-    singularity:
-        config["ilastik_container"]
-    shell:
-        "{config[ilastik_run]} \
-          --headless \
-          --readonly \
-          --project={config[ilastik_project_anitrack]} \
-          --raw_data={input.raw} \
-          --input_axes=\"ztyxc\" \
-          --prediction_maps={input.probs} \
-          --export_source=\"Plugin\" \
-          --export_plugin=\"CSV-Table\" \
-          --output_filename_format={params.output_file}"
+#rule training_ilastik_track:
+#    input:
+#        raw = join(config["training_dir"], "h5s/{sample}.h5"),
+#        probs = join(config["training_dir"], "h5s/{sample}_Probabilities.h5")
+#    params:
+#        output_file = join(config["training_results_dir"], "{sample}_CSV-Table.csv")
+#    output:
+#        join(config["training_results_dir"], "{sample}_CSV-Table.csv.csv")
+#    singularity:
+#        config["ilastik_container"]
+#    shell:
+#        "{config[ilastik_run]} \
+#          --headless \
+#          --readonly \
+#          --project={config[ilastik_project_anitrack]} \
+#          --raw_data={input.raw} \
+#          --input_axes=\"ztyxc\" \
+#          --prediction_maps={input.probs} \
+#          --export_source=\"Plugin\" \
+#          --export_plugin=\"CSV-Table\" \
+#          --output_filename_format={params.output_file}"
 
 rule full_ilastik_track:
     input:

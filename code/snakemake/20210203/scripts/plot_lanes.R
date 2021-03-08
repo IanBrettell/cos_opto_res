@@ -39,7 +39,8 @@ frame_1_m = magick::image_read(tmp_file_name)
 
 img = magick::image_draw(frame_1_m) # make image object
 abline(h = lane_coords, col = "white") # draw lines
-lined_img = magick::image_scale(img, 1000) # shrink
+lined_img = magick::image_scale(img, 1000) %>% # shrink
+    magick::image_modulate(brightness = 700) # increase brightness
 dev.off()
 
 # write image
