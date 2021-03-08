@@ -291,7 +291,7 @@ library(tidyverse)
 library(ijtiff)
 
 in_dir = "videos/20210203/tifs"
-out_file = "code/snakemake/20210203/config/samples.csv"
+out_file = "cos_opto_res/code/snakemake/20210203/config/samples.csv"
 n_frames = 10
 
 # Get full path of files
@@ -305,12 +305,14 @@ max_x = integer()
 max_y = integer()
 lapply(seq_along(files), function(i) {
   target_tif = ijtiff::read_tif(files[i], frames = 1)
-  max_x[i] = dim(target_tif)[2]
-  max_y[i] = dim(target_tif)[3]
+  max_x[i] <<- dim(target_tif)[2]
+  max_y[i] <<- dim(target_tif)[1]
 })
 
 df = data.frame("SAMPLE" = files,
-                "TOTAL_FRAMES" = frames) %>% 
+                "TOTAL_FRAMES" = frames,
+                "MAX_X" = max_x,
+                "MAX_Y" = max_y) %>% 
   dplyr::mutate(SAMPLE = stringr::str_remove(basename(SAMPLE), ".ome.tif")) %>% 
   dplyr::mutate(LAST_SAMPLE  = TOTAL_FRAMES - (n_frames - 1))
 
@@ -326,7 +328,7 @@ df$SAMPLE_START = sapply(1:nrow(df), function(x){
 # add end frame and write to file
 df %>% 
   dplyr::mutate(SAMPLE_END = SAMPLE_START + (n_frames - 1)) %>% 
-  dplyr::select(SAMPLE, TOTAL_FRAMES, SAMPLE_START, SAMPLE_END) %>% 
+  dplyr::select(SAMPLE, TOTAL_FRAMES, MAX_X, MAX_Y, SAMPLE_START, SAMPLE_END) %>% 
   readr::write_csv(out_file)
 ```
 
@@ -497,31 +499,155 @@ samples_file %>%
 
 ### Plot tiles for all files
 
-```{r}
+#### Read and process data
+
+```{r, message = F}
+samples_file = here::here("code", "snakemake", "20210203", "config", "samples.csv")
 in_dir = here::here("data", "tracking", "20210203", "pass_1")
 
-files = list.files(in_dir, full.names = T)
-names(files) = basename(files)
+# Get samples metadata
+samples_df = readr::read_csv(samples_file)
 
-df = lapply(files, function(file){
-  readr::read_csv(file)
+# Get list of files
+files = list.files(in_dir, full.names = T)
+names(files) = basename(files) %>% 
+  stringr::str_remove(".csv")
+
+# Read all into list
+df_list = lapply(files, function(file){
+  # get sample name
+  sample_name = basename(file) %>% 
+    stringr::str_remove(".csv")
+  # get target_row from samples_df
+  target_row = samples_df %>% 
+    dplyr::filter(SAMPLE == sample_name)
+  # set up output list
+  out = list()
+  # get sample name
+  out[["META"]] = list()
+  out[["META"]][["SAMPLE"]] = sample_name
+  # add some metadata
+  out[["META"]][["TOTAL_FRAMES"]] = target_row %>% 
+    dplyr::pull(TOTAL_FRAMES)
+  out[["META"]][["MAX_Y"]] = target_row %>% 
+    dplyr::pull(MAX_Y)
+  out[["META"]][["N_LANES"]] = target_row %>% 
+    dplyr::pull(TOTAL_LANES)
+  
+  # add lane breaks
+  lanes_n = out$META$N_LANES
+  
+  out[["META"]][["LANE_BREAKS"]] = samples_df %>%
+    dplyr::filter(SAMPLE == out$META$SAMPLE) %>%
+    dplyr::select(starts_with("END_LANE")) %>%
+    subset(select = 1:lanes_n -1) %>%
+    unlist(use.names = F) %>% 
+    c(0, ., out$META$MAX_Y)
+  
+  # add tracking data
+  out[["RAW"]] = readr::read_csv(file)
+  
+  # process by dividing by lane
+  out[["CLEAN"]] = out$RAW %>% 
+    dplyr::filter(TRACKID != -1) %>% 
+    dplyr::mutate(LANE = cut(COORD_Y,
+                             breaks = out$META$LANE_BREAKS,
+                             labels = F)) %>% 
+    dplyr::arrange(LANE, FRAME) 
+  
+  return(out)
 })
 ```
 
+#### Plot
 
 ```{r}
-samples_file = here::here("code", "snakemake", "20210203", "config", "samples.csv")
+out_path = here::here("plots", "20210203", "pass_1", "tiles", "tile.svg")
 
-in_dir = here::here("data", "tracking", "20210203", "pass_1")
+lapply(df_list, function(SAMPLE){
+  SAMPLE$CLEAN
+}) %>% 
+  dplyr::bind_rows(.id = "SAMPLE") %>% 
+  ggplot() +
+    geom_tile(aes(FRAME, LANE, fill = LANE)) +
+    facet_wrap(~SAMPLE, ncol = 1) +
+    scale_fill_viridis()
 
+ggsave(out_path, 
+       device = "svg",
+       width = 20,
+       height = 40,
+       units = "cm")
+  
+```
+
+### Find frames that were the least tracked
+```{r}
+n_frames = 10
+
+# Find frames only covered by one lane
+poor_tracking = lapply(df_list, function(SAMPLE){
+  SAMPLE$CLEAN
+}) %>% 
+  dplyr::bind_rows(.id = "SAMPLE") %>% 
+  dplyr::group_by(SAMPLE, FRAME) %>% 
+  dplyr::count() %>% 
+  dplyr::filter(n <= 1)
+
+set.seed(72)
+poor_frames = lapply(unique(poor_tracking$SAMPLE), function(target_sample){
+  # get final frame
+  final_frame = df_list[[SAMPLE]]$META$TOTAL_FRAMES
+  # get last frame to sample
+  final_frame_sample = final_frame - n_frames
+  # extract random frame
+  target_frame = poor_tracking %>% 
+    dplyr::filter(SAMPLE == target_sample & FRAME <= final_frame_sample) %>% 
+    dplyr::ungroup() %>% 
+    dplyr::slice_sample(n = 1) %>% 
+    dplyr::pull(FRAME)
+  
+  # create output df
+  out = data.frame(SAMPLE = target_sample,
+                   TOTAL_FRAMES = final_frame,
+                   SAMPLE_START = target_frame,
+                   SAMPLE_END = target_frame + (n_frames -1 ))
+}) %>% 
+  dplyr::bind_rows()
+```
+
+## Bind into single training DF
+```{r}
+batch = "20210203"
+samples_file = here::here("code", "snakemake", batch, "config", "samples.csv")
+in_dir = here::here("data", "tracking", batch, "pass_1")
+out_file = here::here("code", "snakemake", batch, "config", "samples_pass_2_training.csv")
+
+# Read samples DF
 samples_df = readr::read_csv(samples_file)
 
+# List completed files
 samples_complete = list.files(in_dir) %>% 
   stringr::str_remove(".csv")
 
+# Find incomplete samples
 samples_incomplete = samples_df$SAMPLE[which(!samples_df$SAMPLE %in% samples_complete)]
 
+# Bind back to original DF
 training_samples = data.frame(SAMPLE = samples_incomplete) %>% 
-  dplyr::left_join(samples_df, by = "SAMPLE")
+  dplyr::left_join(dplyr::select(samples_df, SAMPLE, TOTAL_FRAMES, SAMPLE_START, SAMPLE_END),
+                   by = "SAMPLE")
+
+# get random start and end
+final_nontracked = get_random_start(training_samples,
+                                    n_frames = 10,
+                                    seed = 82)
+
+# Bind non-tracked to poorly-tracked DFs
+final_samples = bind_rows(final_nontracked,
+                          poor_frames)
+
+# Write to file
+readr::write_csv(final_samples, out_file)
 ```
 
