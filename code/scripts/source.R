@@ -33,6 +33,62 @@ get_random_start = function(df, n_frames, seed){
   return(df)
 }
 
+get_training_samples = function(samples_file, prev_pass, n_frames = 10, min_lanes_success = 1, seed){
+  # Read in data
+  samples_df = readr::read_csv(samples_file)
+  prev_pass_df = readr::read_csv(prev_pass)
+  
+  # NON-TRACKED
+  failed_samples = samples_df$SAMPLE[which(!samples_df$SAMPLE %in% unique(prev_pass_df$SAMPLE))]
+  
+  training_samples = data.frame(SAMPLE = failed_samples) %>% 
+    dplyr::left_join(dplyr::select(samples_df, SAMPLE, TOTAL_FRAMES, SAMPLE_START, SAMPLE_END),
+                     by = "SAMPLE")
+  
+  # get random start and end
+  final_nontracked = get_random_start(training_samples,
+                                      n_frames = n_frames,
+                                      seed = seed)
+  
+  # POORLY-TRACKED
+  
+  # Find frames only covered by one lane
+  poor_tracking = prev_pass_df %>% 
+    dplyr::group_by(SAMPLE, FRAME) %>% 
+    dplyr::count() %>% 
+    dplyr::filter(n <= min_lanes_success)
+  
+  set.seed(seed)
+  poor_frames = lapply(unique(poor_tracking$SAMPLE), function(target_sample){
+    # get final frame
+    final_frame = samples_df %>% 
+      dplyr::filter(SAMPLE == target_sample) %>% 
+      dplyr::pull(TOTAL_FRAMES)
+    # get last frame to sample
+    final_frame_sample = final_frame - n_frames
+    # extract random frame
+    target_frame = poor_tracking %>% 
+      dplyr::filter(SAMPLE == target_sample & FRAME <= final_frame_sample) %>% 
+      dplyr::ungroup() %>% 
+      dplyr::slice_sample(n = 1) %>% 
+      dplyr::pull(FRAME)
+    
+    # create output df
+    out = data.frame(SAMPLE = target_sample,
+                     TOTAL_FRAMES = final_frame,
+                     SAMPLE_START = target_frame,
+                     SAMPLE_END = target_frame + (n_frames -1 ))
+  }) %>% 
+    dplyr::bind_rows()
+  
+  # Bind non-tracked to poorly-tracked DFs
+  final_samples = bind_rows(final_nontracked,
+                            poor_frames)
+  
+  
+  return(final_samples)
+}
+
 # Process data
 
 process_tracking = function(samples_file, in_dir){

@@ -670,6 +670,7 @@ out_path = here::here("plots", "20210203", "pass_2", "tiles")
 
 generate_tile_plot(df_list = df_list, out_path = out_path)
 ```
+
 ### Paths
 
 ```{r}
@@ -687,13 +688,41 @@ lapply(df_list, function(SAMPLE){
       scale_colour_viridis_c() +
       coord_fixed() +
       facet_wrap(~SAMPLE, ncol = 1) +
+      theme(strip.text = element_text(size = 8)) +
+      # save
+      ggsave(out_file, 
+             device = "png",
+             width = 30,
+             height = 100,
+             units = "cm",
+             dpi = 400)
+```
+### Collapse into single data file and write to table
 
+```{r}
+out_path = here::here("data", "tracking", "20210203", "pass_2_final")
+dir.create(out_path, recursive = T)
+out_file = file.path(out_path, "pass_2_final.csv")
 
-ggsave(out_file, 
-       device = "png",
-       width = 30,
-       height = 80,
-       units = "cm",
-       dpi = 400)
+lapply(df_list, function(SAMPLE){
+  SAMPLE$CLEAN
+}) %>%
+  dplyr::bind_rows(.id = "SAMPLE") %>%
+  dplyr::select(SAMPLE, LANE, FRAME, COORD_X, COORD_Y) %>% 
+  readr::write_csv(out_file)
+```
+
+## Pass 3 
+
+### Get frames for training
+```{r}
+samples_file = here::here("code", "snakemake", "20210203", "config", "samples.csv")
+prev_pass = here::here("data", "tracking", "20210203", "pass_2_final", "pass_2_final.csv")
+out_file = here::here("code", "snakemake", "20210203", "config", "samples_pass_3_training.csv")
+
+final_samples = get_training_samples(samples_file, prev_pass, seed = 80)
+
+# Write to file
+readr::write_csv(final_samples, out_file)
 ```
 
