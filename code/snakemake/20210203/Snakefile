@@ -46,8 +46,6 @@ rule all:
             training_sample = TRAINING_SAMPLES.index),
         expand(join(config["pass_dir"], "h5s/{sample}_Probabilities.h5"),
             sample = SAMPLES.index),
-#        expand(join(config["training_results_dir"], "{sample}_CSV-Table.csv.csv"),
-#            sample = SAMPLES.index),
         expand(join(config["pass_dir"], "results", "raw", "{sample}_CSV-Table.csv.csv"),
             sample = SAMPLES.index),
         expand(join(config["full_results_out"], "{sample}.csv"),

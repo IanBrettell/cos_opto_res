@@ -1,0 +1,71 @@
+Building DAG of jobs...
+Using shell: /usr/local/bin/bash
+Provided cluster nodes: 5000
+Job counts:
+	count	jobs
+	1	all
+	3	draw_lanes
+	2	extract_columns
+	1	full_ilastik_track
+	7
+
+[Wed Mar 10 09:48:59 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default.png
+    jobid: 49
+    wildcards: sample=20210301_6_7dpi4dpi_cabcr5inj2_W50_sp0.6_op20_GW_MMStack_Default
+
+Submitted job 49 with external jobid 'Job <1784084> is submitted to default queue <research-rh74>.'.
+
+[Wed Mar 10 09:49:00 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default.png
+    jobid: 34
+    wildcards: sample=20210227_2_5dpi2dpi_cabcr5inj2_W50_sp0.6_op80_GW_MMStack_Default
+
+Submitted job 34 with external jobid 'Job <1784085> is submitted to default queue <research-rh74>.'.
+
+[Wed Mar 10 09:49:00 2021]
+rule full_ilastik_track:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5, /hps/research1/birney/users/ian/opto_res/videos/20210203/pass_2/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_Probabilities.h5
+    output: /hps/research1/birney/users/ian/opto_res/videos/20210203/pass_2/results/raw/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_CSV-Table.csv.csv
+    jobid: 157
+    wildcards: sample=20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+/ilastik-release/run_ilastik.sh           --headless           --readonly           --project=../ilastik/projects/20210107_test_anitrack.ilp           --raw_data=/hps/research1/birney/users/ian/opto_res/videos/20210203/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.h5           --input_axes="tzyxc"           --prediction_maps=/hps/research1/birney/users/ian/opto_res/videos/20210203/pass_2/h5s/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_Probabilities.h5           --export_source="Plugin"           --export_plugin="CSV-Table"           --output_filename_format=/hps/research1/birney/users/ian/opto_res/videos/20210203/pass_2/results/raw/20210226_2_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default_CSV-Table.csv
+Submitted job 157 with external jobid 'Job <1784088> is submitted to default queue <research-rh74>.'.
+
+[Wed Mar 10 09:49:00 2021]
+rule extract_columns:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/pass_2/results/raw/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default_CSV-Table.csv.csv
+    output: data/tracking/20210203/pass_2/20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default.csv
+    jobid: 201
+    wildcards: sample=20210301_3_7dpi4dpi_cabcr5inj2_W50_sp0.6_op50_GW_MMStack_Default
+
+Submitted job 201 with external jobid 'Job <1784090> is submitted to default queue <research-rh74>.'.
+
+[Wed Mar 10 09:49:00 2021]
+rule draw_lanes:
+    input: /hps/research1/birney/users/ian/opto_res/videos/20210203/tifs/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.ome.tif
+    output: plots/20210203/lane_demarcations/20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default.png
+    jobid: 27
+    wildcards: sample=20210226_1_4dpi1dpi_cabcr5inj2_W50_sp0.93_op80_GW_MMStack_Default
+
+Submitted job 27 with external jobid 'Job <1784092> is submitted to default queue <research-rh74>.'.
+[Wed Mar 10 09:49:18 2021]
+Finished job 201.
+1 of 7 steps (14%) done
+[Wed Mar 10 09:49:28 2021]
+Finished job 49.
+2 of 7 steps (29%) done
+[Wed Mar 10 09:49:29 2021]
+Finished job 34.
+3 of 7 steps (43%) done
+[Wed Mar 10 09:49:39 2021]
+Finished job 27.
+4 of 7 steps (57%) done
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Complete log: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/log/2021-03-10T094853.763752.snakemake.log

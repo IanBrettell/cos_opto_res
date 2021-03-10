@@ -101,3 +101,6 @@ Submitted job 183 with external jobid 'Job <1244617> is submitted to default que
 [Mon Mar  8 18:32:23 2021]
 Finished job 183.
 5 of 8 steps (62%) done
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Complete log: /hps/research1/birney/users/ian/opto_res/cos_opto_res/.snakemake/log/2021-03-08T180713.974432.snakemake.log
