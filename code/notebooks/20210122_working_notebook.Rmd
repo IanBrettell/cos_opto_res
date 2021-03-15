@@ -668,34 +668,16 @@ df_list = process_tracking(samples_file = samples_file, in_dir = in_dir)
 ```{r}
 out_path = here::here("plots", "20210203", "pass_2", "tiles")
 
-generate_tile_plot(df_list = df_list, out_path = out_path)
+generate_tile_plot(df_list = df_list, out_path = out_path, pass = 2)
 ```
 
 ### Paths
 
 ```{r}
-out_path = here::here("plots", "20210203", "pass_2", "paths")
+pass = 2
+out_path = here::here("plots", "20210203", paste("pass_", pass, sep = ""), "paths")
 
-dir.create(out_path, recursive = T)
-out_file = file.path(out_path, "path.png")
-
-lapply(df_list, function(SAMPLE){
-  SAMPLE$CLEAN
-}) %>% 
-  dplyr::bind_rows(.id = "SAMPLE") %>% 
-    ggplot() +
-      geom_path(aes(COORD_X, COORD_Y, group = LANE, colour = FRAME)) +
-      scale_colour_viridis_c() +
-      coord_fixed() +
-      facet_wrap(~SAMPLE, ncol = 1) +
-      theme(strip.text = element_text(size = 8)) +
-      # save
-      ggsave(out_file, 
-             device = "png",
-             width = 30,
-             height = 100,
-             units = "cm",
-             dpi = 400)
+generate_path_plot(df_list = df_list, out_path = out_path, pass = pass)
 ```
 ### Collapse into single data file and write to table
 
@@ -715,7 +697,7 @@ lapply(df_list, function(SAMPLE){
 ## Pass 3 
 
 ### Get frames for training
-```{r}
+```{r, eval = F}
 samples_file = here::here("code", "snakemake", "20210203", "config", "samples.csv")
 prev_pass = here::here("data", "tracking", "20210203", "pass_2_final", "pass_2_final.csv")
 out_file = here::here("code", "snakemake", "20210203", "config", "samples_pass_3_training.csv")
@@ -726,3 +708,42 @@ final_samples = get_training_samples(samples_file, prev_pass, seed = 80)
 readr::write_csv(final_samples, out_file)
 ```
 
+### Proccess
+
+```{r, message = F}
+samples_file = here::here("code", "snakemake", "20210203", "config", "samples.csv")
+in_dir = here::here("data", "tracking", "20210203", "pass_3")
+
+df_list = process_tracking(samples_file = samples_file, in_dir = in_dir)
+```
+
+### Tiles
+
+```{r}
+out_path = here::here("plots", "20210203", "pass_3", "tiles")
+
+generate_tile_plot(df_list = df_list, out_path = out_path, pass = 3)
+```
+
+### Paths
+
+```{r}
+pass = 3
+out_path = here::here("plots", "20210203", paste("pass_", pass, sep = ""), "paths")
+
+generate_path_plot(df_list = df_list, out_path = out_path, pass = pass)
+```
+### Collapse into single data file and write to table
+
+```{r}
+out_path = here::here("data", "tracking", "20210203", "pass_3_final")
+dir.create(out_path, recursive = T)
+out_file = file.path(out_path, "pass_3_final.csv")
+
+lapply(df_list, function(SAMPLE){
+  SAMPLE$CLEAN
+}) %>%
+  dplyr::bind_rows(.id = "SAMPLE") %>%
+  dplyr::select(SAMPLE, LANE, FRAME, COORD_X, COORD_Y) %>% 
+  readr::write_csv(out_file)
+```

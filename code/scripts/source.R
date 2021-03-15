@@ -5,6 +5,7 @@
 library(tidyverse)
 library(ijtiff)
 library(gganimate)
+library(viridis)
 
 ###########################
 # Functions
@@ -158,20 +159,22 @@ process_tracking = function(samples_file, in_dir){
   return(df_list)
 }  
 
-generate_tile_plot = function(df_list, out_path){
+generate_tile_plot = function(df_list, out_path, pass){
   # create directory if it doesn't exist
   dir.create(out_path, showWarnings = F, recursive = T)
-  out_file = file.path(out_path, "tile.png")
+  out_file = file.path(out_path, paste("pass_", pass, "_tile.png", sep = ""))
   
   # extract data from list and bind into DF
   lapply(df_list, function(SAMPLE){
     SAMPLE$CLEAN
   }) %>% 
     dplyr::bind_rows(.id = "SAMPLE") %>% 
+    dplyr::mutate(LANE = factor(LANE, levels = rev(1:max(LANE)))) %>% 
     ggplot() +
-    geom_tile(aes(FRAME, LANE, fill = LANE)) +
-    facet_wrap(~SAMPLE, ncol = 1) +
-    scale_fill_viridis()
+      geom_tile(aes(FRAME, LANE, fill = LANE)) +
+      facet_wrap(~SAMPLE, ncol = 1) +
+      scale_fill_viridis_d() +
+      guides(fill = guide_legend(reverse = T))
   
   # save
   ggsave(out_file, 
@@ -180,4 +183,28 @@ generate_tile_plot = function(df_list, out_path){
          height = 40,
          units = "cm",
          dpi = 400)  
+}
+
+generate_path_plot = function(df_list, out_path, pass){
+  
+  dir.create(out_path, recursive = T)
+  out_file = file.path(out_path, paste("pass_", pass, "_path.png", sep = ""))
+  
+  lapply(df_list, function(SAMPLE){
+    SAMPLE$CLEAN
+  }) %>% 
+    dplyr::bind_rows(.id = "SAMPLE") %>% 
+    ggplot() +
+    geom_path(aes(COORD_X, COORD_Y, group = LANE, colour = FRAME)) +
+    scale_colour_viridis_c() +
+    coord_fixed() +
+    facet_wrap(~SAMPLE, ncol = 1) +
+    theme(strip.text = element_text(size = 8)) +
+    # save
+    ggsave(out_file, 
+           device = "png",
+           width = 30,
+           height = 100,
+           units = "cm",
+           dpi = 400)
 }
