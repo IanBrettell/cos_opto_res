@@ -747,3 +747,11 @@ lapply(df_list, function(SAMPLE){
   dplyr::select(SAMPLE, LANE, FRAME, COORD_X, COORD_Y) %>% 
   readr::write_csv(out_file)
 ```
+
+
+# Try new videos with idtrackerai
+
+*20210414*
+
+
+

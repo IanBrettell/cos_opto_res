@@ -1,0 +1,57 @@
+---
+title: "Test with `idtrackerai`"
+date: '`r format(Sys.Date())`'
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    dev: 'svg'
+    number_sections: true
+    pandoc_args: --lua-filter=color-text.lua
+    highlight: pygments  
+---
+
+# Setup
+
+```{r, message = F, warning = F}
+library(here)
+source(here::here("code/scripts/source.R"))
+```
+
+# Convert .tif videos to .avi
+
+## Copy to local for quick prototyping
+
+```{bash, eval = F}
+# On local
+scp brettell@ebi:/nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210316_11_1dpi_n_cab_cr_5_inj_9_w_50_sp_0.6_op_100_WB_1_MMStack_Default.ome.tif ~/Desktop
+```
+
+## Convert
+
+```{r}
+in_path = "~/Desktop/20210316_11_1dpi_n_cab_cr_5_inj_9_w_50_sp_0.6_op_100_WB_1_MMStack_Default.ome.tif"
+intermediate_file = "~/Desktop/tmp.tif"
+out_path = "~/Desktop/test.avi"
+
+# Read in tif and write subset of frames to file
+ijtiff::read_tif(in_path, frames = 1:50) %>% 
+  ijtiff::write_tif(intermediate_file)
+
+# Read back in with magick, process and convert to AVI
+magick::image_read(intermediate_file) %>% 
+  magick::image_normalize() %>% 
+#  magick::image_modulate(brightness = 600) %>% 
+#  magick::image_contrast(sharpen = 2) %>% 
+  magick::image_write_video(out_path)
+
+magick::image_read(in_path) %>% 
+  .[1:10] %>% 
+  magick::image_normalize() %>% 
+#  magick::image_modulate(brightness = 600) %>% 
+#  magick::image_contrast(sharpen = 2) %>% 
+  magick::image_write_video(out_path)
+
+```
+
+

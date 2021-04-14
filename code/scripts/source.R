@@ -6,6 +6,8 @@ library(tidyverse)
 library(ijtiff)
 library(gganimate)
 library(viridis)
+library(magick)
+library(av)
 
 ###########################
 # Functions
