@@ -1,0 +1,25 @@
+BootStrap: docker
+From: r-base:4.0.5
+
+%environment
+    LD_LIBRARY_PATH=/usr/local/lib
+
+%post
+    apt-get update
+
+    # Install linux libraries
+    apt-get -y install libbz2-dev liblzma-dev libicu-dev libicu67 libssl-dev libxml2 libjpeg-dev libzstd-dev libwebp-dev libtiff5-dev libmagick++-dev
+
+    # Replace lines in ImageMagick policy file
+    sed -i '60s/.*/\ \ \<policy domain=\"resource\" name=\"memory\" value=\"10GiB\"\/\>/' /etc/ImageMagick-6/policy.xml
+    sed -i '61s/.*/\ \ \<policy domain=\"resource\" name=\"map\" value=\"4GiB\"\/>/' /etc/ImageMagick-6/policy.xml
+    sed -i '62s/.*/\ \ \<policy domain=\"resource\" name=\"width\" value=\"128KP\"\/\>/' /etc/ImageMagick-6/policy.xml
+    sed -i '63s/.*/\ \ \<policy domain=\"resource\" name=\"height\" value=\"128KP\"\/\>/' /etc/ImageMagick-6/policy.xml
+    sed -i '65s/.*/\ \ \<policy domain=\"resource\" name=\"area\" value=\"1.0737GP\"\/\>/' /etc/ImageMagick-6/policy.xml
+    sed -i '66s/.*/\ \ \<policy domain=\"resource\" name=\"disk\" value=\"10GiB\"\/\>/' /etc/ImageMagick-6/policy.xml
+
+    # Install R packages
+    R --slave -e 'install.packages(c("renv", "ijtiff", "magick", "BiocManager"), repos="https://cloud.r-project.org/")'
+
+    # Install Bioconductor packages
+    R --slave -e 'BiocManager::install("EBImage")'
