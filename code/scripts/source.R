@@ -4,10 +4,10 @@
 
 library(tidyverse)
 library(ijtiff)
+library(magick)
 library(gganimate)
 library(viridis)
-library(magick)
-library(av)
+
 
 ###########################
 # Functions

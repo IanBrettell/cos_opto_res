@@ -42,16 +42,68 @@ ijtiff::read_tif(in_path, frames = 1:50) %>%
 magick::image_read(intermediate_file) %>% 
   magick::image_normalize() %>% 
 #  magick::image_modulate(brightness = 600) %>% 
-#  magick::image_contrast(sharpen = 2) %>% 
-  magick::image_write_video(out_path)
+  magick::image_contrast(sharpen = 2) %>% 
+  magick::image_write_video("~/Desktop/test_contrast_2.avi")
+
+# Try even higher contrast
+# Read back in with magick, process and convert to AVI
+magick::image_read(intermediate_file) %>% 
+  magick::image_normalize() %>% 
+  magick::image_modulate(brightness = 600) %>% 
+  magick::image_contrast(sharpen = 6) %>% 
+  magick::image_write_video("~/Desktop/test_contrast_6.avi")
 
 magick::image_read(in_path) %>% 
   .[1:10] %>% 
   magick::image_normalize() %>% 
 #  magick::image_modulate(brightness = 600) %>% 
-#  magick::image_contrast(sharpen = 2) %>% 
+  magick::image_contrast(sharpen = 2) %>% 
   magick::image_write_video(out_path)
+
+# Test code for snakemake script
+in_file = "../videos/20210316/tifs/20210317_5_2dpi_n_cab_cr_5_inj_9_w_50_sp_0.6_op_80_WB_1_MMStack_Default.ome.tif"
+intermediate_file = "../tmp.tif"
+out_file = "../videos/20210316/avis/20210317_5_2dpi_n_cab_cr_5_inj_9_w_50_sp_0.6_op_80_WB_1_MMStack_Default.avi"
+
+ijtiff::read_tif(in_file, frames = 1:200) %>% 
+  ijtiff::write_tif(intermediate_file, overwrite = T)
+
+magick::image_read(intermediate_file) %>% 
+  magick::image_normalize() %>% 
+  magick::image_contrast(sharpen = 2) %>% 
+  magick::image_write_video(out_file)
 
 ```
 
+# Send file names to `samples.csv`
+
+```{bash}
+samples_file=code/snakemake/20210316/config/samples.csv
+# header
+echo "samples" > $samples_file
+# body
+for i in $(ls /nfs/ftp/private/indigene_ftp/upload/OMR_Risa/202103* ); do \
+  basename $i; 
+done | cut -f1-2 -d'.' \
+  >> $samples_file
+```
+
+# Run `snakemake`
+
+```{bash, eval = F}
+snmk_proj=20210316
+
+conda activate snakemake
+snakemake \
+  --jobs 5000 \
+  --latency-wait 1000 \
+  --cluster-config code/snakemake/$snmk_proj/config/cluster.json \
+  --cluster 'bsub -g /snakemake_bgenie -J {cluster.name} -n {cluster.n} -M {cluster.memory} -o {cluster.output} -e {cluster.error}' \
+  --keep-going \
+  --rerun-incomplete \
+  --use-conda \
+  --use-singularity \
+  -s code/snakemake/$snmk_proj/Snakefile \
+  -p
+```
 

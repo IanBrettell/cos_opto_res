@@ -1,0 +1,489 @@
+---
+title: "Workflow for Risa"
+date: '`r format(Sys.Date())`'
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    dev: 'svg'
+    number_sections: true
+    pandoc_args: --lua-filter=color-text.lua
+    highlight: pygments 
+    theme: 'flatly'
+---
+
+# Notes
+
+1. **Great resources for learning R**:
+    + *R for Data Science*, Hadley Wickham and Garrett Grolemund: <https://r4ds.had.co.nz/>
+    + *Happy Git and GitHub for the useR*, Jenny Bryan and Jim Hester: <https://happygitwithr.com/>
+  
+1. This workflow generally follows Ilastik's animal tracking workflow described here: <https://www.ilastik.org/documentation/animaltracking/animaltracking>
+
+
+# Load `R` libraries
+
+In `R`:
+
+```{r, message =F, warning=F}
+library(tidyverse)
+library(ijtiff)
+library(magick)
+```
+
+## External software 
+
+You'll also need the following external software:
+
+* Fiji: <https://imagej.net/Downloads>
+* Ilastik: <https://www.ilastik.org/download.html>
+
+# Workflow
+
+## Create file with list of samples
+
+You have the metadata file called `samples.csv`. Here you want to use it to create a file with just a list of samples, so that you can "loop", i.e. successively run the following commands, over each of the samples.
+
+In `bash`:
+
+```{bash, eval =F}
+# NOTE: $samples_metadata_file is the file I sent called `samples.csv`
+################################################## To adapt
+samples_metadata_file=/Users/risa_admin/Desktop/test/samples.csv
+samples_list=/User/risa_admin/Desktop/test/samples_list.csv
+##################################################
+
+# Copy first column, remove header, and send to new file containing a list of samples to analyse
+cut -f1 -d',' $samples_metadata_file | tail -n+2 > $samples_list
+```
+
+## Copy videos from FTP to working directory
+
+Copy over the videos to your working directory.
+
+In `bash`: 
+
+```{bash, eval = F}
+################################################## To adapt
+path_to_ftp={path_to_ftp_directory}
+path_to_wd={path_to_working_directory}
+################################################## 
+
+cp -r $path_to_ftp/* path_to_wd
+```
+
+## Draw lanes
+
+This is useful because at the end of the Ilastik workflow, the software will output a CSV with the coordinates of all objects it thinks are fish across all the frames in each video. However, if it loses track of a fish in some frames and then picks it up again later, it will think that it's a different fish. So in your analysis you need to assume that any object identified within a given lane (i.e. within the defined interval of y-coordinates) is *the same* fish, by reassigning the labels. We'll return to this issue after the tracking is complete.
+
+The following code extracts a single frame from the video, draws horizontal lines where you've specified the boundaries of the lanes, and then saves it to a file. If the lane coordinates needs to be adjusted, you can just change the numbers in the appropriate columns in the `samples.csv` file. 
+
+In `R`:
+
+```{r, eval = F}
+################################################## To adapt
+samples_meta_file="/Users/risa_admin/Desktop/test/samples.csv"
+video_dir="/Users/risa_admin/Desktop/test/videos"
+output_path="/Users/risa_admin/Desktop/test/lanes"
+################################################## 
+
+# Read in samples file
+samples_df = readr::read_csv(samples_meta_file)
+
+# Loop over each video
+lapply(unique(samples_df$SAMPLE), function(sample_name){
+  
+  sample_video = file.path(video_dir, paste(sample_name, ".ome.tif", sep = ""))
+  
+  # Get lane coords
+  
+  ## Total lanes in video
+  lanes_n = samples_df %>%
+    dplyr::filter(SAMPLE == sample_name) %>%
+    dplyr::pull(TOTAL_LANES)
+  
+  ## Get lane coords
+  lane_coords = samples_df %>%
+    dplyr::filter(SAMPLE == sample_name) %>%
+    dplyr::select(starts_with("END_LANE")) %>%
+    subset(select = 1:lanes_n -1) %>%
+    unlist(use.names = F)
+  
+  # read first frame of tiff
+  frame_1 = ijtiff::read_tif(sample_video, frames = 1)
+  
+  # write to file (magick can't read directly...)
+  tmp_file_name = paste(sample_name, ".tmp.tif", sep = "")
+  ijtiff::write_tif(frame_1, tmp_file_name)
+  
+  # read back in as magick image
+  frame_1_m = magick::image_read(tmp_file_name)
+  
+  # add horizontal lines
+  
+  img = magick::image_draw(frame_1_m) # make image object
+  abline(h = lane_coords, col = "white") # draw lines
+  lined_img = magick::image_scale(img, 1000) %>% # shrink
+      magick::image_modulate(brightness = 700) # increase brightness
+  dev.off()
+  
+  # write image
+  
+  ## Create output name
+  out_name = file.path(output_path, paste(sample_name, ".png"))
+  magick::image_write(lined_img, path = out_name, format = "png")
+  
+  # clean up
+  
+  file.remove(tmp_file_name)
+  
+})
+```
+
+## Extract training frames
+
+The Ilastik GUI can struggle when dealing with large videos. To keep it relatively fast, you want to create short subsets of the videos and lead them into Ilastik for training instead.
+
+In `R`:
+
+```{r, eval = F}
+################################################## To adapt
+path_to_samples_file="/Users/risa_admin/Desktop/test/samples.csv"
+sample_video="{path_to_sample_video_tif_to_analyse}"
+training_video_dir="{path_to_output_directory}"
+################################################## 
+
+# Read in samples file
+samples_df = readr::read_csv(path_to_samples_file)
+
+# Loop over each video
+lapply(unique(samples_df$SAMPLE), function(sample_name){
+  
+  sample_video = file.path(video_dir, paste(sample_name, ".ome.tif", sep = ""))
+
+  # Get start and end frames
+  start = samples_df %>% 
+    dplyr::filter(SAMPLE == sample_name) %>% 
+    dplyr::pull(SAMPLE_START)
+  
+  end = samples_df %>% 
+    dplyr::filter(SAMPLE == sample_name) %>% 
+    dplyr::pull(SAMPLE_END)
+  
+  # Extract training frames
+  tif = ijtiff::read_tif(sample_video,
+                         frames = start:end)
+
+  # Write file
+  ## Create output name
+  out_file = file.path(training_video_dir, paste(sample_name, ".tif"))
+  ijtiff::write_tif(tif, out_file)
+
+})
+```
+
+## Convert tifs to h5
+
+Ilastik requires videos in the `.h5` format. To convert the videos from their original `.tif` format to `.h5`, you can use the Ilastik plugin in Fiji. 
+
+In `bash`:
+
+```{bash, eval = F}
+## NOTE: run this on both short training video tif AND full video tif by changing $input_directory
+################################################## To adapt
+samples_list=/Users/risa_admin/Desktop/test/samples.csv
+convert_tif2h5_script=/Users/risa_admin/Desktop/test/convert_tif_to_h5.ijm
+fiji={path_to_fiji}
+input_directory={tif_input_path}
+output_directory={h5_output_path}
+################################################## 
+
+# Loop over each video in $samples_list
+for sample in $(cat $samples_list ); do \
+  # Create $input_path and $output_path (note  that Fiji requires the absolute (not relative) paths of files, hence `realpath`)
+  input_file=$(realpath $input_directory/$sample.ome.tif) ;
+  output_file=$(realpath $output_directory/$sample.h5) ;
+  # Create string of parameters
+  params=$(echo -e \'input_tif\=\"$input_file\",output_h5\=\"$output_file\"\') ;
+  # Create command
+  cmd=$(echo "$fiji" --ij2 --headless --console --run "$convert_tif2h5_script" "$params") ;
+  # Run Fiji
+  eval $cmd ;
+done
+```
+
+## Create Ilastik pixel classification project and train on training videos
+
+Create a pixel classification project as described here: <https://www.ilastik.org/documentation/animaltracking/animaltracking#pixel-foregroundbackground-segmentation-using-the-pixel-classification-workflow>.
+
+Then train the project with your shortened training videos.
+
+## Generate `{sample}_Probabilities.h5` files with trained Ilastik project
+
+Run the trained project on all training **AND** full videos to create the `{sample}_Probabilities.h5` files.
+
+In `bash`:
+
+```{bash, eval = F}
+# Warning: this code works with Ilastik v1.4.0b13. Other versions may throw errors.
+##################################################
+samples_list={path_to_samples_list}
+ilastik_run={path_to_ilastik_runscript} # e.g. /ilastik-release/run_ilastik.sh
+pixclass_proj={path_to_ilastik_pixel_classification_project}
+input_directory={h5_input_directory}
+##################################################
+
+for sample in $(cat $samples_list); do \
+  # Set input video filename and output filename
+  input=$input_directory/$sample.h5 ;
+  output=$input_directory/$sample\_Probabilities.h5 ;
+  # Run Ilastik
+  $ilastik_run \
+    --headless \
+    --project=$pixclass_proj \
+    --readonly \
+    --raw_data=$input \
+    --export_source="Probabilities" \
+    --output_filename_format=$output ;
+done
+```
+
+## Create Ilastik animal tracking project and train on training videos
+
+Create an Ilastik animal tracking project as described here: <https://www.ilastik.org/documentation/animaltracking/animaltracking#automatic-tracking-using-the-animal-tracking-workflow>.
+
+Then load up the training videos **AND** their respective `{sample}_Probabilities.h5` files, and train the project as described in the workflow.
+
+Once it's trained, you can run it on all the full videos to create the CSV output:
+
+In `bash`:
+
+```{bash, eval = F}
+##################################################
+samples_list={path_to_samples_list}
+ilastik_run={path_to_ilastik_runscript} # e.g. /ilastik-release/run_ilastik.sh
+anitrack_proj={path_to_ilastik_animal_tracking_project}
+input_directory={path_to_video_input_directory}
+output_directory={path_to_csv_raw_output_directory}
+##################################################
+
+for sample in $(cat $samples_list); do \
+  # Set input video and probabilities filenames, and output filename
+  input_vid=$input_directory/$sample.h5 ;
+  input_probs=$input_directory/$sample\_Probabilities.h5 ;
+  output_csv=$output_directory/$sample\_CSV-Table.csv ;
+  # Run Ilastik
+  $ilastik_run \
+    --headless \
+    --readonly \
+    --project=$anitrack_proj \
+    --raw_data=$input_vid \
+    --input_axes=\"tzyxc\" \
+    --prediction_maps=$input_probs \
+    --export_source=\"Plugin\" \
+    --export_plugin=\"CSV-Table\" \
+    --output_filename_format=$output_csv ;
+done
+
+# NOTE: for some reason, Ilastik may output the file with an extra `.csv` in the filename
+# e.g. $output_directory/$sample_CSV-Table.csv.csv
+```
+
+## Extract key columns from CSV
+
+The CSV output contains a lot of data that you don't need, so this step extracts the columns you do need.
+
+In `R`: 
+
+```{r, eval = F}
+##################################################
+raw_csv_dir = "{path_to_csv_raw_output_directory}"
+new_csv_dir = {path_to_cleaned_csv_directory}
+##################################################
+
+files_to_process = list.files(raw_csv_dir, full.names = T)
+
+lapply(files_to_process, function(FILE){
+  # Get sample name
+  SAMPLE = basename(FILE) %>% 
+    stringr::str_remove("_CSV-Table.csv.csv")
+  # Create output file name
+  out_file = file.path(new_csv_dir, paste(SAMPLE, ".csv", sep = ""))
+  # Read in file, extract key columns, and write to new directory
+  readr::read_csv(FILE) %>%
+    dplyr::select(FRAME = frame,
+                  TRACKID = trackId,
+                  COORD_X = Object_Center_0,
+                  COORD_Y = Object_Center_1) %>%
+    readr::write_csv(out_file)  
+})
+```
+
+## Read CSVs into R and create tracking plots
+
+### Read in files
+
+In `R`:
+
+```{r, eval = F}
+##################################################
+samples_file = "{path_to_samples_metadata_file}"
+in_dir = "{path_to_cleaned_csvs_directory}"
+##################################################
+
+# Get samples metadata
+samples_df = readr::read_csv(samples_file)
+
+# Get list of files
+files = list.files(in_dir, full.names = T)
+names(files) = basename(files) %>% 
+  stringr::str_remove(".csv")
+
+# Read all into list
+df_list = lapply(files, function(file){
+  # get sample name
+  sample_name = basename(file) %>% 
+    stringr::str_remove(".csv")
+  # get target_row from samples_df
+  target_row = samples_df %>% 
+    dplyr::filter(SAMPLE == sample_name)
+  # set up output list
+  out = list()
+  # get sample name
+  out[["META"]] = list()
+  out[["META"]][["SAMPLE"]] = sample_name
+  # add some metadata
+  out[["META"]][["TOTAL_FRAMES"]] = target_row %>% 
+    dplyr::pull(TOTAL_FRAMES)
+  out[["META"]][["MAX_Y"]] = target_row %>% 
+    dplyr::pull(MAX_Y)
+  out[["META"]][["N_LANES"]] = target_row %>% 
+    dplyr::pull(TOTAL_LANES)
+  
+  # add lane breaks
+  lanes_n = out$META$N_LANES
+  
+  out[["META"]][["LANE_BREAKS"]] = samples_df %>%
+    dplyr::filter(SAMPLE == out$META$SAMPLE) %>%
+    dplyr::select(starts_with("END_LANE")) %>%
+    subset(select = 1:lanes_n -1) %>%
+    unlist(use.names = F) %>% 
+    c(0, ., out$META$MAX_Y)
+  
+  # add tracking data
+  out[["RAW"]] = readr::read_csv(file)
+  
+  # process
+  ## create recode vector for `COORD_Y`
+  frames_seq = seq(0, out$META$MAX_Y)
+  recode_vec = rev(frames_seq)
+  names(recode_vec) = frames_seq
+  ## run
+  out[["CLEAN"]] = out$RAW %>% 
+    dplyr::filter(TRACKID != -1) %>% 
+    # divide by lane and flip Y coords
+    dplyr::mutate(LANE = cut(COORD_Y,
+                             breaks = out$META$LANE_BREAKS,
+                             labels = F),
+                  COORD_X = round(COORD_X),
+                  COORD_Y = round(COORD_Y),
+                  COORD_Y = dplyr::recode(COORD_Y, !!!recode_vec)) %>% 
+    dplyr::arrange(LANE, FRAME) 
+  
+  return(out)
+})
+
+return(df_list)
+
+```
+
+### Create tile plot
+
+This quality-control step creates a tile plot. It fills a tile for each frame in each video where an object is tracked, so you can see where the tracking failed, or where the fish was hidden.
+
+In `R`: 
+
+```{r, eval = F}
+##################################################
+out_path = "{directory_for_tile_plots}"
+##################################################
+
+# create directory if it doesn't exist
+dir.create(out_path, showWarnings = F, recursive = T)
+out_file = file.path(out_path, "tile.png")
+
+# extract data from list and bind into DF
+lapply(df_list, function(SAMPLE){
+  SAMPLE$CLEAN
+}) %>% 
+  dplyr::bind_rows(.id = "SAMPLE") %>% 
+  dplyr::mutate(LANE = factor(LANE, levels = rev(1:max(LANE)))) %>% 
+  ggplot() +
+    geom_tile(aes(FRAME, LANE, fill = LANE)) +
+    facet_wrap(~SAMPLE, ncol = 1) +
+    scale_fill_viridis_d() +
+    guides(fill = guide_legend(reverse = T))
+
+# save
+ggsave(out_file, 
+       device = "png",
+       width = 20,
+       height = 40,
+       units = "cm",
+       dpi = 400)  
+```
+
+### Create path plot
+
+The path plot creates lines that follows the position of each fish over the course of the video.
+
+In `R`: 
+
+```{r, eval = F}
+##################################################
+out_path = "{directory_for_path_plots}"
+##################################################
+
+dir.create(out_path, recursive = T)
+out_file = file.path(out_path, "path.png")
+
+lapply(df_list, function(SAMPLE){
+  SAMPLE$CLEAN
+}) %>% 
+  dplyr::bind_rows(.id = "SAMPLE") %>% 
+  ggplot() +
+  geom_path(aes(COORD_X, COORD_Y, group = LANE, colour = FRAME)) +
+  scale_colour_viridis_c() +
+  coord_fixed() +
+  facet_wrap(~SAMPLE, ncol = 1) +
+  theme(strip.text = element_text(size = 8)) +
+  # save
+  ggsave(out_file, 
+         device = "png",
+         width = 30,
+         height = 100,
+         units = "cm",
+         dpi = 400)
+```
+
+### Collapse all CSVs into single CSV and write to table
+
+In `R`: 
+
+```{r, eval = F}
+##################################################
+out_path = "{directory_for_final_consolidated_CSV}"
+##################################################
+
+dir.create(out_path, recursive = T)
+out_file = file.path(out_path, "final.csv")
+
+lapply(df_list, function(SAMPLE){
+  SAMPLE$CLEAN
+}) %>%
+  dplyr::bind_rows(.id = "SAMPLE") %>%
+  dplyr::select(SAMPLE, LANE, FRAME, COORD_X, COORD_Y) %>% 
+  readr::write_csv(out_file)
+```
+
+

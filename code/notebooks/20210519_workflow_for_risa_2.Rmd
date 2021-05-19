@@ -1,0 +1,39 @@
+---
+title: "R Notebook"
+output: html_notebook
+editor_options: 
+  chunk_output_type: inline
+---
+
+# Notes for Risa
+
+1. Create GitHub account.
+
+    - Refer to <https://happygitwithr.com/>
+    
+
+1. Create repo on local and copy over existing code
+
+1. Run through code to automatically pull out poorly-tracked samples
+
+1. Log on to cluster
+
+    - Clone repo
+    - Install Ilastik on cluster
+
+
+
+## Code
+
+```{bash, eval = F}
+# Submit single node, 30GB
+sbatch -p single --mem=10gb
+# Submit 2 nodes, 16 cores each, 50GB
+sbatch -p multiple -N 2 --ntasks-per-node=16 -t 03:00:00 --mem=50gb
+
+# Interactive, single node, 2 hours, 5GB
+salloc -p single -n 1 -t 120 --mem=10gb
+# Interactive, 5 nodes, 40 cores each, 1 hour, 50gb
+salloc -p multiple -N 5 --ntasks-per-node=40 -t 01:00:00  --mem=50gb
+```
+

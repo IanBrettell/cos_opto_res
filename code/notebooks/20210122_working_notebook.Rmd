@@ -9,7 +9,7 @@ editor_options:
 
 ## `conda` env
 
-```{bash}
+```{bash, eval = F}
 # Linux tools
 mamba create -n opto_env av h5py fiji
 conda activate opto_env
@@ -40,7 +40,7 @@ singularity build \
 ## `renv`
 
 ```{r, eval = F}
-conda activate baseR
+#conda activate baseR
 # initiate
 renv::init()
 # s
