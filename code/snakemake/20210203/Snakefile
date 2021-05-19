@@ -171,7 +171,8 @@ rule full_ilastik_track:
     singularity:
         config["ilastik_container"]
     shell:
-        "{config[ilastik_run]} \
+        """
+        {config[ilastik_run]} \
           --headless \
           --readonly \
           --project={config[ilastik_project_anitrack]} \
@@ -180,7 +181,8 @@ rule full_ilastik_track:
           --prediction_maps={input.probs} \
           --export_source=\"Plugin\" \
           --export_plugin=\"CSV-Table\" \
-          --output_filename_format={params.output_file}"
+          --output_filename_format={params.output_file}
+        """
 
 rule extract_columns:
     input:
