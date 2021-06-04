@@ -6,16 +6,12 @@ input_dir:
     "/nfs/ftp/private/indigene_ftp/upload/OMR_Risa/20210225-0301"
 training_dir:
     "/hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/pass_3"
-extract_frames_script:
-    "scripts/extract_frames.R"
 output_dir:
     "/hps/research1/birney/users/ian/opto_res/videos/20210203"
 plots_dir:
     "plots/20210203/lane_demarcations"
 r_container:
     "../sing_conts/baseR.sif"
-plot_lanes_script:
-    "scripts/plot_lanes.R"
 fiji:
     "/nfs/software/birney/Fiji.app/ImageJ-linux64"
 convert_to_h5_script:
@@ -32,7 +28,5 @@ ilastik_project_anitrack:
     "../ilastik/projects/20210107_test_anitrack.ilp"
 training_results_dir:
     "/hps/research1/birney/users/ian/opto_res/ilastik/training/20210306/results/pass_3/raw"
-extract_columns_script:
-    "scripts/extract_columns.R"
 full_results_out:
     "data/tracking/20210203/pass_3"

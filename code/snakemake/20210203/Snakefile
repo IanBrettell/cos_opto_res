@@ -1,20 +1,7 @@
-# Bash script to run on EBI cluster:
-#
-# cd /hps/research1/birney/users/ian/opto_res/cos_opto_res
-# conda activate snakemake
-# snakemake \
-#   --jobs 5000 \
-#   --latency-wait 100 \
-#   --cluster-config code/snakemake/20210203/config/cluster.json \
-#   --cluster 'bsub -g /snakemake_bgenie -J {cluster.name} -n {cluster.n} -M {cluster.memory} -o {cluster.output} -e {cluster.error}' \
-#   --keep-going \
-#   --rerun-incomplete \
-#   --use-conda \
-#   --use-singularity \
-#   -s code/snakemake/20210203/Snakefile \
-#   -p
+#######################
+# Libraries
+#######################
 
-# import functions and packages
 from os.path import join
 import pandas as pd
 
@@ -28,7 +15,9 @@ configfile: "code/snakemake/20210203/config/config.yaml"
 SAMPLES = pd.read_csv(config["samples_file"], comment="#", skip_blank_lines=True, sep=",", index_col=0)
 TRAINING_SAMPLES = pd.read_csv(config["training_samples_file"], comment="#", skip_blank_lines=True, sep=",", index_col=0)
 
+#######################
 # Rules
+#######################
 
 rule all:
     input:
@@ -51,6 +40,12 @@ rule all:
         expand(join(config["full_results_out"], "{sample}.csv"),
             sample = SAMPLES.index)
 
+rule setup_r_env:
+    conda:
+        "envs/r_4.1.0.yaml"
+    script:
+        "scripts/r-dependencies.R"
+
 # Need to copy videos to working directory because Singularity can't access /nfs/ftp/private
 rule copy_to_wd:
     input:
@@ -68,10 +63,12 @@ rule draw_lanes:
     params:
         samples_file = config["samples_file"],
         sample_name = lambda wildcards: wildcards.sample
-    singularity:
-        config["r_container"]
+#    singularity:
+#        config["r_container"]
+    conda:
+        "envs/"
     script:
-        config["plot_lanes_script"]
+        "scripts/plot_lanes.R"
 
 rule extract_training_frames:
     input:
@@ -84,7 +81,7 @@ rule extract_training_frames:
     singularity:
         config["r_container"]
     script:
-        config["extract_frames_script"]
+        "scripts/extract_frames.R"
 
 rule training_tif2h5:
     input:
@@ -192,4 +189,4 @@ rule extract_columns:
     singularity:
         config["r_container"]
     script:
-        config["extract_columns_script"]
+        "scripts/extract_columns.R"
