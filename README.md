@@ -1,5 +1,6 @@
 # Pipeline for tracking medaka in opto-res experiments
 
+Heidelberg cluster info: https://wiki.bwhpc.de/e/BwUniCluster_Hardware_and_Architecture
 
 ## Instructions
 
