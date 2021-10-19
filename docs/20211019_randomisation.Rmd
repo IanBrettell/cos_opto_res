@@ -1,0 +1,81 @@
+# Randomising
+
+## Load libraries
+
+```{r, message = F}
+library(tidyverse)
+library(DT)
+```
+
+## Parameters
+
+```{r Set parameters}
+# Specify MIKK lines (examples)
+inbred_lines = c("10-1", "22-1", "40-1", "95-1", "134-1")
+# 4 arenas
+arenas = c("A", "B", "C", "D")
+# 7 controls fishes go on top or bottom lanes?
+control_loc = c("bottom", "top")
+# Time of day
+time_of_day = c("morning", "afternoon", "evening")
+# Number of runs per line
+n_runs = 10
+# Number of runs per day
+n_per_day = 2
+# If number of `time_of_day` slots is different from `n_per_day`...
+replace_tpd = if_else(n_per_day > length(time_of_day),
+                      TRUE,
+                      FALSE)
+# Number of line-pattern parameters
+n_params = 7
+```
+
+## Randomise
+
+```{r Create randomised data frame}
+# Make randomisation reproducible by setting seed
+set.seed(5)
+# Multiply lines by desired number of runs per line
+sampled_lines = sample(rep(inbred_lines, times = n_runs))
+
+# Get total number of runs
+n_total = length(sampled_lines)
+
+# How many days to run experiment?
+n_days = ceiling(n_total/ n_per_day)
+
+# Get days
+days = unlist(lapply(1:n_days, function(x) rep(x, n_per_day)))[1:n_total]
+
+# Get times of day
+tod = lapply(1:n_days, function(x) {
+  sample(time_of_day,
+         size = n_per_day,
+         replace = replace_tpd)
+}) %>% 
+  unlist(.)
+
+# Get order of parameters
+param_order = lapply(1:n_total, function(x){
+  sample(1:n_params)
+})
+
+# Compile into data frame
+out = tibble::tibble(DAY = days,
+                     TIME_OF_DAY = tod,
+                     LINE = sampled_lines,
+                     ARENA = sample(arenas,
+                                    size = n_total,
+                                    replace = T),
+                     CONTROL_LOC = sample(control_loc,
+                                          size = n_total,
+                                          replace = T),
+                     PARAM_ORDER = param_order) %>% 
+  # order by `DAY` and `TIME_OF_DAY`
+  dplyr::mutate(DAY = factor(DAY, levels = 1:max(days)),
+                TIME_OF_DAY = factor(TIME_OF_DAY, levels = time_of_day)) %>% 
+  dplyr::arrange(DAY, TIME_OF_DAY)
+
+DT::datatable(out)
+```
+
