@@ -1,0 +1,19 @@
+Bootstrap: docker
+From: rocker/tidyverse:4.1.0
+
+%post
+
+# Install packages required for R packages
+    apt update
+    apt install -y libtiff-dev libwebp-dev libzstd-dev libmagick++-dev libavfilter-dev
+
+# Install CRAN packages
+    install2.r --error \
+        BiocManager \
+        here \
+        ijtiff \
+        magick \
+        av
+
+# Install non-CRAN packages
+    R -e 'BiocManager::install("EBImage")'

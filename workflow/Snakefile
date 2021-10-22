@@ -1,0 +1,7 @@
+include: "rules/00_common.smk"
+
+
+##### Target rules #####
+
+rule all:
+    input:

@@ -1,0 +1,52 @@
+# Load libraries
+
+```{r}
+library(ijtiff)
+library(magick)
+library(av)
+```
+
+# Set paths
+
+```{r}
+data_dir = "/hps/nobackup/birney/users/ian/cos_opto_res/20211019_videos_idtracker"
+working_dir = "/hps/nobackup/birney/users/ian/cos_opto_res"
+in_files = list.files(data_dir, full.names = T)
+in_file = in_files[1]
+```
+
+# Convert to AVI
+
+```{r}
+# read first frame of tiff
+vid = ijtiff::read_tif(in_file, frames = 300:300)
+
+# write to file
+out_tiff = file.path(working_dir, "tifs", basename(in_file))
+ijtiff::write_tif(vid, out_tiff, overwrite = T)
+
+
+ijtiff::display(vid[, , , 1])
+
+# Read back in with `magick`
+in_vid = magick::image_read_video(out_tiff, fps = NULL) %>% 
+  # increase brightness
+  magick::image_modulate(brightness = 700)
+
+# Play with parameters
+magick::image_read_video(out_tiff, fps = NULL) %>% 
+  magick::image_normalize() %>% 
+  magick::image_contrast(sharpen = 2) %>% 
+  magick::image_write_video(file.path(working_dir, "tests", "norm_contr-2"))
+  # increase brightness
+ #magick::image_modulate(brightness = 700) %>% 
+ #magick::image_contrast(sharpen = 10)
+
+# Write as avi
+out_avi = file.path(working_dir,
+                    "avis",
+                    paste(tools::file_path_sans_ext(basename(in_file)), ".avi", sep = ""))
+
+magick::image_write_video(in_vid, out_avi)
+```
+

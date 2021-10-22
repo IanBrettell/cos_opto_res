@@ -48,12 +48,11 @@ n_days = ceiling(n_total/ n_per_day)
 days = unlist(lapply(1:n_days, function(x) rep(x, n_per_day)))[1:n_total]
 
 # Get times of day
-tod = lapply(1:n_days, function(x) {
+tod = unlist(lapply(1:n_days, function(x) {
   sample(time_of_day,
          size = n_per_day,
          replace = replace_tpd)
-}) %>% 
-  unlist(.)
+}))[1:n_total]
 
 # Get order of parameters
 param_order = lapply(1:n_total, function(x){
