@@ -19,14 +19,16 @@ in_file = in_files[1]
 
 ```{r}
 # read first frame of tiff
-vid = ijtiff::read_tif(in_file, frames = 300:300)
+vid = ijtiff::read_tif(in_file, frames = 1:600)
 
 # write to file
-out_tiff = file.path(working_dir, "tifs", basename(in_file))
+out_tiff = file.path(working_dir, "tifs/full_test.tif")
 ijtiff::write_tif(vid, out_tiff, overwrite = T)
 
 
 ijtiff::display(vid[, , , 1])
+
+new_vid = image_read_video(out_tiff, fps = NULL)
 
 # Read back in with `magick`
 in_vid = magick::image_read_video(out_tiff, fps = NULL) %>% 
@@ -34,19 +36,63 @@ in_vid = magick::image_read_video(out_tiff, fps = NULL) %>%
   magick::image_modulate(brightness = 700)
 
 # Play with parameters
+magick::image_read(out_tiff) %>% 
+  magick::image_normalize() %>% 
+  magick::image_contrast(sharpen = 2)
+
+magick::image_read(out_tiff) %>% 
+  magick::image_normalize() %>% 
+  magick::image_modulate(brightness = 200) %>% 
+  magick::image_contrast(sharpen = 4)
+  
+
+magick::image_read(out_tiff) %>% 
+  magick::image_normalize() %>% 
+  magick::image_enhance() %>% 
+  magick::image_contrast(sharpen = 2)
+
+magick::image_read(out_tiff) %>% 
+  magick::image_normalize() %>% 
+  magick::image_contrast(sharpen = 3)
+
+magick::image_read(out_tiff) %>% 
+  magick::image_normalize() %>% 
+  magick::image_contrast(sharpen = 4)
+
+magick::image_read(out_tiff) %>% 
+  magick::image_normalize() %>% 
+  magick::image_contrast(sharpen = 10)
+
 magick::image_read_video(out_tiff, fps = NULL) %>% 
   magick::image_normalize() %>% 
+  magick::image_enhance() %>% 
   magick::image_contrast(sharpen = 2) %>% 
-  magick::image_write_video(file.path(working_dir, "tests", "norm_contr-2"))
+  magick::image_write_video(file.path(working_dir, "tests", "norm_enhan_contr-2.avi"))
   # increase brightness
  #magick::image_modulate(brightness = 700) %>% 
  #magick::image_contrast(sharpen = 10)
 
+magick::image_read_video(file.path(working_dir, "tests", "norm_contr-2.avi"), fps = NULL)
+magick::image_read_video(file.path(working_dir, "tests", "norm_enhan_contr-2.avi"), fps = NULL)
 # Write as avi
 out_avi = file.path(working_dir,
                     "avis",
                     paste(tools::file_path_sans_ext(basename(in_file)), ".avi", sep = ""))
 
 magick::image_write_video(in_vid, out_avi)
+```
+## Write video
+
+```{r}
+out_avi = file.path(working_dir,
+                    "avis",
+                    paste(tools::file_path_sans_ext(basename(in_file)), ".avi", sep = ""))
+
+out = magick::image_read_video(out_tiff, fps = NULL) %>% 
+  magick::image_normalize() %>% 
+  magick::image_modulate(brightness = 200) %>% 
+  magick::image_contrast(sharpen = 4)
+
+magick::image_write_video(out, out_avi, framerate = 2)
 ```
 
